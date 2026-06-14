@@ -351,6 +351,15 @@ nav button.active::after{content:"";position:absolute;left:14px;right:14px;botto
 #home .rl-step{padding:26px 16px;min-height:104px;display:flex;flex-direction:column;justify-content:center;text-align:center}
 @media(max-width:980px){#home .research-line{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:430px){#home .research-line{grid-template-columns:1fr}}
+
+/* v7.9 整页填充：粘性页脚 + 首页内容垂直居中，任意窗口大小都铺满视口、页脚贴底 */
+body{display:flex;flex-direction:column;min-height:100vh}
+main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);margin-inline:auto}
+.site-footer{flex-shrink:0}
+/* 首页：在主区内垂直居中并撑满剩余高度 */
+#home.page.active{display:flex;flex-direction:column;justify-content:center;flex:1 0 auto}
+/* 内容页：作为列内普通块从顶部排布，必要时各自滚动 */
+#library.page.active,#analysis.page.active,#slice.page.active,#integration.page.active,#extension.page.active{display:block}
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
