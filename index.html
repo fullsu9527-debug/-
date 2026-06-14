@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>多版本高中物理例题资源研究平台 · v6 整合决策与语义变式版</title>
+<style>
+:root{--p:#3156d4;--p2:#172554;--a:#06b6d4;--g:#10b981;--o:#f59e0b;--r:#ef4444;--v:#8b5cf6;--pink:#ec4899;--ink:#142033;--muted:#64748b;--line:#dce6f3;--soft:#f8fbff;--card:#fff;--bg:#eef5ff;--shadow:0 18px 45px rgba(15,23,42,.10);--radius:22px}
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Microsoft YaHei","PingFang SC",system-ui,-apple-system,Segoe UI,sans-serif}html{scroll-behavior:smooth}body{min-height:100vh;color:var(--ink);background:radial-gradient(circle at 6% 2%,rgba(6,182,212,.20),transparent 32%),radial-gradient(circle at 92% 0%,rgba(49,86,212,.20),transparent 35%),linear-gradient(135deg,#f8fbff,#eaf0ff 60%,#f8fafc);}.container{width:min(1380px,94vw);margin:auto}header{position:sticky;top:0;z-index:80;background:rgba(23,37,84,.92);backdrop-filter:blur(18px);box-shadow:0 10px 35px rgba(15,23,42,.18)}.topbar{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:#fff}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:19px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#60a5fa,#22d3ee);display:grid;place-items:center;box-shadow:0 12px 28px rgba(6,182,212,.28)}nav{display:flex;gap:8px;flex-wrap:wrap}nav button{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);color:rgba(255,255,255,.86);border-radius:999px;padding:9px 13px;cursor:pointer;font-weight:700;transition:.2s}nav button:hover,nav button.active{background:#fff;color:var(--p2);transform:translateY(-1px)}main{padding:26px 0 54px}.page{display:none;animation:fade .35s ease}.page.active{display:block}@keyframes fade{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch;margin:20px 0 24px}.hero-card,.panel{background:rgba(255,255,255,.86);border:1px solid rgba(220,230,243,.95);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.hero-card{padding:34px}.eyebrow{color:var(--p);font-weight:900;letter-spacing:.06em;font-size:13px;margin-bottom:10px}.hero h1{font-size:42px;line-height:1.13;color:var(--p2);margin-bottom:16px}.hero p{color:var(--muted);font-size:16px;line-height:1.85}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{border:0;background:linear-gradient(135deg,var(--p),var(--a));color:white;padding:11px 16px;border-radius:14px;cursor:pointer;font-weight:900;box-shadow:0 12px 25px rgba(49,86,212,.20);transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:#fff;color:var(--p);border:1px solid var(--line);box-shadow:none}.btn.ghost{background:#eef6ff;color:var(--p);box-shadow:none}.canvas{padding:26px;min-height:100%}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:center}.node{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;text-align:center;box-shadow:0 10px 24px rgba(15,23,42,.06);position:relative}.node b{display:block;color:var(--p2);margin:8px 0 4px}.node span{font-size:12px;color:var(--muted)}.node:after{content:'→';position:absolute;right:-14px;top:38%;color:var(--a);font-size:25px;font-weight:900}.node:last-child:after{display:none}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:18px 0}.metric{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 12px 28px rgba(15,23,42,.06)}.metric .num{font-size:32px;font-weight:950;color:var(--p)}.metric .lab{color:var(--muted);font-size:13px}.section-title{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin:22px 0 14px}.section-title h2{font-size:25px;color:var(--p2)}.section-title p{color:var(--muted);font-size:14px;max-width:760px;line-height:1.7}.grid{display:grid;gap:16px}.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.toolbar{padding:16px;background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}.toolbar label{font-size:13px;font-weight:900;color:var(--p2)}select,input{border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 12px;outline:none;color:var(--ink);min-height:40px}input{min-width:220px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 28px rgba(15,23,42,.06);padding:16px;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(49,86,212,.14)}.card h3{color:var(--p2);margin-bottom:8px}.meta{color:var(--muted);font-size:13px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.tag{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:900;background:#eef2ff;color:var(--p)}.tag.g{background:#dcfce7;color:#047857}.tag.o{background:#ffedd5;color:#b45309}.tag.r{background:#fee2e2;color:#b91c1c}.tag.v{background:#f3e8ff;color:#6d28d9}.tag.p{background:#fce7f3;color:#be185d}.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:950;color:var(--p)}.list{display:grid;gap:10px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:#fff}.row:hover{border-color:#93c5fd;background:#f8fbff}.row .left{min-width:0}.row .title{font-weight:900;color:var(--p2)}.row .desc{font-size:12px;color:var(--muted);margin-top:3px}.small-btn{border:1px solid var(--line);background:#fff;color:var(--p);border-radius:999px;padding:7px 10px;font-weight:900;cursor:pointer;white-space:nowrap}.small-btn:hover{background:#eef6ff}.chart-panel{padding:18px}.stack-row{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:center;margin:10px 0}.stack-label{font-size:13px;font-weight:900;color:var(--p2);text-align:right}.stack{display:flex;height:30px;border-radius:999px;overflow:hidden;background:#eef2ff;border:1px solid var(--line)}.seg{height:100%;min-width:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:900;transition:.2s}.seg:hover{filter:brightness(.92);transform:scaleY(1.08)}.heatmap{display:grid;gap:8px}.heat-row{display:grid;grid-template-columns:110px repeat(4,1fr);gap:8px;align-items:stretch}.heat-cell{border-radius:14px;padding:12px 8px;text-align:center;font-weight:950;border:1px solid rgba(255,255,255,.7);cursor:pointer;min-height:48px}.heat-head{font-weight:900;color:var(--muted);font-size:13px;text-align:center;padding:8px}.pyramid{display:grid;gap:10px;justify-items:center}.pyr{height:46px;border-radius:14px;color:#fff;font-weight:950;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 20px rgba(15,23,42,.08)}.matrix{display:grid;grid-template-columns:120px repeat(6,1fr);gap:8px}.matrix .head,.matrix .level{padding:10px;border-radius:14px;background:#eef2ff;font-weight:950;text-align:center;color:var(--p2)}.matrix .cell{min-height:92px;border:1px dashed var(--line);border-radius:16px;padding:8px;background:#fff}.chip{display:inline-block;margin:3px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:12px;font-weight:950;padding:5px 8px;cursor:pointer}.chip:hover{background:#bae6fd}.decision-wrap{display:grid;grid-template-columns:360px 1fr;gap:16px}.form-col{padding:18px}.form-col .field{display:grid;gap:6px;margin-bottom:12px}.result-box{padding:18px}.path-banner{border-left:6px solid var(--p);background:#f8fbff;padding:15px;border-radius:16px;margin-bottom:14px}.step{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff;margin-bottom:10px}.step b{color:var(--p)}.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}.principle{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:12px}.principle b{display:block;color:var(--p2);margin-bottom:4px}.variant-workbench{display:grid;grid-template-columns:360px 1fr;gap:16px}.dim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.dim-card{border:2px solid var(--line);background:#fff;border-radius:18px;padding:12px;cursor:pointer;transition:.2s}.dim-card.active{border-color:var(--p);box-shadow:0 0 0 4px rgba(49,86,212,.10)}.dim-card b{display:block;color:var(--p2);margin-bottom:4px}.dim-card span{font-size:12px;color:var(--muted)}.variant-output{padding:18px}.coding-change{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}.coding-box{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:14px}.arrow-big{font-size:28px;color:var(--a);font-weight:950}.variant-text{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;line-height:1.8;margin-top:14px}.timeline{display:grid;gap:12px}.timeline-item{display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:start}.time-badge{background:linear-gradient(135deg,var(--p),var(--a));color:#fff;border-radius:16px;padding:10px;text-align:center;font-weight:950}.timeline-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}.modal{position:fixed;inset:0;background:rgba(15,23,42,.58);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}.modal.active{display:flex}.modal-card{width:min(1060px,96vw);max-height:90vh;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 35px 80px rgba(0,0,0,.28);display:flex;flex-direction:column}.modal-header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#f8fbff}.modal-body{padding:20px;overflow:auto}.close{border:0;background:#e2e8f0;width:36px;height:36px;border-radius:50%;font-size:23px;cursor:pointer}.img-wrap{display:grid;gap:12px}.problem-img{width:100%;border:1px solid var(--line);border-radius:16px;background:#fff}.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:18px;background:#fff}.footer-note{color:var(--muted);font-size:12px;line-height:1.6;margin-top:12px}@media(max-width:1000px){.hero,.decision-wrap,.variant-workbench{grid-template-columns:1fr}.flow,.metrics,.cols-3,.cols-4,.principles,.dim-grid{grid-template-columns:1fr 1fr}.cols-2{grid-template-columns:1fr}.matrix{grid-template-columns:90px repeat(3,1fr);overflow-x:auto}.heat-row{grid-template-columns:80px repeat(4,1fr)}}@media(max-width:640px){nav{display:none}.hero h1{font-size:30px}.flow,.metrics,.principles,.dim-grid{grid-template-columns:1fr}.row{align-items:flex-start;flex-direction:column}.coding-change{grid-template-columns:1fr}.arrow-big{display:none}}
+
+/* v4: 题干要素抽取与组合整合 */
+.element-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.element-box{background:#f8fbff;border:1px solid var(--line);border-radius:14px;padding:12px}.element-box b{display:block;color:var(--p2);margin-bottom:4px}.element-box span,.element-box p{font-size:13px;color:var(--muted);line-height:1.65}.element-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:12px;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#fff}.element-table th,.element-table td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:13px;text-align:left;vertical-align:top}.element-table th{background:#eef6ff;color:var(--p2);font-weight:900}.element-table tr:last-child td{border-bottom:0}.combo-workbench{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;margin-top:18px}.combo-output{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}.combo-chip{display:inline-flex;align-items:center;gap:5px;background:#eff6ff;color:var(--p);font-weight:800;border:1px solid var(--line);border-radius:999px;padding:5px 9px;margin:4px;cursor:pointer}.semantic-note{border-left:5px solid var(--a);background:#f0fbff;border-radius:14px;padding:12px 14px;color:#475569;font-size:13px;line-height:1.7;margin:12px 0}.variant-text .semantic-note{margin-top:10px}
+@media(max-width:900px){.element-grid,.combo-workbench{grid-template-columns:1fr}}
+
+/* v5: 物理题 OCR 识别与题干全文校对 */
+.ocr-panel{margin-top:14px;background:#f8fbff;border:1px dashed #b8c7e6;border-radius:18px;padding:14px;box-shadow:0 10px 28px rgba(15,23,42,.04)}
+.ocr-panel h3{font-size:16px;color:var(--p2);margin-bottom:6px}.ocr-panel .ocr-help{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px}.ocr-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}.ocr-toolbar .btn{padding:8px 12px;border-radius:12px}.ocr-status{min-height:22px;font-size:13px;color:#3156d4;font-weight:700;margin:8px 0}.ocr-textarea{width:100%;min-height:190px;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:14px;line-height:1.75;resize:vertical;background:white;color:var(--ink)}.ocr-preview{max-height:140px;overflow:auto;border-radius:12px;background:white;border:1px solid var(--line);padding:8px;margin-top:8px}.ocr-preview img{max-width:100%;border-radius:10px;display:block}.ocr-mini{font-size:12px;color:#64748b;line-height:1.65;margin-top:8px}.ocr-badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:#e0f2fe;color:#075985;padding:4px 10px;font-size:12px;font-weight:800;margin:4px 4px 4px 0}.ocr-badge.warn{background:#fff7ed;color:#9a3412}.ocr-element-source{margin-top:8px;padding:8px 10px;border-radius:12px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-size:12px;font-weight:800}
+
+</style>
+<script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="library">原题库</button><button data-page="analysis">文本分析</button><button data-page="slice">横向切片</button><button data-page="integration">整合工具</button><button data-page="extension">六维拓展</button></nav></div></header>
+<main class="container">
+<section id="home" class="page active"><div class="hero"><div class="hero-card"><div class="eyebrow">RESEARCH PLATFORM</div><h1>把 95 道教材例题变成可筛选、可整合、可拓展的研究成果库</h1><p>本网页以六版本必修一例题六维编码总表为唯一数据源，围绕“原题库—文本分析—整合决策—六维变式拓展”建立交互式展示。整合部分只调配已有跨版本资源；拓展部分则以任意原题为母题，按 D1–D6 定向生成变式链条。</p><div class="hero-actions"><button class="btn" onclick="showPage('extension')">进入六维变式拓展</button><button class="btn secondary" onclick="showPage('integration')">进入整合决策工具</button></div></div><div class="hero-card canvas"><div class="flow"><div class="node">📚<b>原题采集</b><span>六版本 95 道</span></div><div class="node">🧬<b>六维编码</b><span>D1–D6 结构化</span></div><div class="node">📊<b>文本分析</b><span>统计、交叉、切片</span></div><div class="node">🔀<b>跨版本整合</b><span>融合 / 补充 / 替换</span></div><div class="node">✨<b>六维拓展</b><span>母题变式生成</span></div></div></div></div><div class="metrics" id="homeMetrics"></div><div class="section-title"><h2>本版新增重点</h2><p>整合页依据第三章正式框架重做；拓展页不再只是固定 S4 案例，而是面向全部 95 道原题的六维变式工作台。</p></div><div class="grid cols-3"><div class="card"><h3>整合：只做已有资源调配</h3><p class="meta">判断主用版本有无例题；有则走融合、补充、替换；无则做筛选判断与定位判断；六版均无则转入拓展。</p></div><div class="card"><h3>拓展：以原题为母题</h3><p class="meta">选择任意 RJ/YJ/LK/JK/HK/HKJ 原题，按 D1–D6 选择改造方向，生成变式题干、设问、编码变化与教学建议。</p></div><div class="card"><h3>分析：点击图表回到例题</h3><p class="meta">情境、模块、层级、横向切片都可点击筛选，下方实时列出对应例题，突出全样本编码数据的研究硬度。</p></div></div></section>
+
+<section id="library" class="page"><div class="section-title"><h2>95 道教材原题库</h2><p>每道原题均以编码总表中的 D1–D6 为准，并保留原题截图。可筛选、查看、设为拓展母题。</p></div><div class="toolbar"><label>关键词</label><input id="libSearch" placeholder="编号/题名，如 YJ-05、刹车、风力仪" oninput="renderLibrary()"><label>版本</label><select id="libVersion" onchange="renderLibrary()"></select><label>D1 情境</label><select id="libD1" onchange="renderLibrary()"></select><label>D2 模块</label><select id="libD2" onchange="renderLibrary()"></select><label>D6 层级</label><select id="libD6" onchange="renderLibrary()"></select><button class="btn secondary" onclick="resetLibrary()">清空筛选</button><span class="meta" id="libCount"></span></div><div class="list" id="libraryList"></div></section>
+
+<section id="analysis" class="page"><div class="section-title"><h2>第二章文本分析 · 动态图表</h2><p>图表均由 95 道真实编码数据即时统计生成。点击任意图形片段，下方会列出对应例题。</p></div><div class="grid cols-2"><div class="panel chart-panel"><h3>版本 × 情境类型堆叠图</h3><div id="d1Stack"></div></div><div class="panel chart-panel"><h3>版本 × 认知层级堆叠图</h3><div id="d6Stack"></div></div><div class="panel chart-panel"><h3>知识模块 × 情境类型交叉热力图</h3><div id="heatmap"></div></div><div class="panel chart-panel"><h3>认知层级金字塔</h3><div id="pyramid"></div></div></div><div class="section-title"><h2 id="analysisTitle">图表筛选结果</h2><p id="analysisSub">点击上方图表后显示对应例题。</p></div><div class="list" id="analysisList"></div></section>
+
+<section id="slice" class="page"><div class="section-title"><h2>横向切片专题：交通制动安全模型</h2><p>将 16 道交通制动安全相关例题放入“版本 × 层级”矩阵，展示“同模型异层级”“一境多级”的规律。</p></div><div class="panel chart-panel"><div class="matrix" id="trafficMatrix"></div></div><div class="section-title"><h2>切片例题列表</h2><p>点击编号查看原题截图与核心认知任务。</p></div><div class="list" id="trafficList"></div></section>
+
+<section id="integration" class="page">
+<style id="v6-style">
+/* v6: 整合决策工作台与可编辑要素 */
+.v6-cols{display:grid;grid-template-columns:1fr 1.05fr 1.15fr;gap:14px;margin:14px 0}
+@media(max-width:1100px){.v6-cols{grid-template-columns:1fr}}
+.v6-col{padding:14px;max-height:760px;overflow:auto}
+.v6-col>h3{color:var(--p2);margin-bottom:10px;position:sticky;top:-14px;background:rgba(255,255,255,.95);padding:6px 0;z-index:2}
+.v6-col .card{margin-bottom:10px;padding:13px}
+.v6-base{cursor:pointer;border:2px solid var(--line)}
+.v6-base.v6-on{border-color:var(--p);box-shadow:0 0 0 4px rgba(49,86,212,.10)}
+.v6-screen{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.v6-el-editor{margin-top:10px;background:#f8fbff;border:1px dashed #b8c7e6;border-radius:14px;padding:10px}
+.v6-el-row{display:grid;grid-template-columns:120px 1fr;gap:8px;align-items:center;margin:5px 0}
+.v6-el-row label{font-size:12px;font-weight:900;color:var(--p2)}
+.v6-el-row input{min-width:0;width:100%;font-size:13px;padding:7px 9px;border-radius:10px}
+.v6-preset{display:flex;gap:8px;flex-wrap:wrap}
+.v6-divider{border:0;border-top:2px dashed var(--line);margin:26px 0}
+#v6DraftWrap{padding:18px;margin-top:4px}
+#v6Draft .variant-text p{margin:4px 0}
+</style>
+<!-- v6 整合决策工作台 -->
+<div class="section-title"><h2>整合决策工作台（第三章框架 · 情形一/情形二）</h2><p>左：主用版本例题（选基底）；中：跨版本候选（标注可融合/补充/替换的具体要素）；右：方案序列与整合类型标注。下方生成"要素抽取与组合"级别的整合草案，并自动完成四项原则复核取证。</p></div>
+<div class="toolbar">
+  <label>主用版本</label><select id="v6Ver"></select>
+  <label>目标模块</label><select id="v6Mod"></select>
+  <label>课时关键词</label><input id="v6Kw" placeholder="如：刹车 / 摩擦 / 风力仪（可留空）" style="min-width:180px">
+  <label>当前需求</label><select id="v6Need"></select>
+  <label>学生基础</label><select id="v6Stu"><option value="normal">普通班级</option><option value="weak">基础较弱</option><option value="strong">基础较强</option></select>
+  <label style="display:none">定位</label><select id="v6Pos" style="display:none"></select>
+  <button class="btn" onclick="v6Apply()">检索并判定情形</button>
+</div>
+<div class="toolbar v6-preset">
+  <label>论文案例一键演示</label>
+  <button class="small-btn" onclick="v6Preset('friction')">摩擦力：RJ-04＋LK-05＋HK-06＋YJ-08</button>
+  <button class="small-btn" onclick="v6Preset('traffic')">交通制动梯度：HKJ-03→RJ-01→LK-02→YJ-05→YJ-16</button>
+  <button class="small-btn" onclick="v6Preset('windvane')">风力仪：HK-10＋YJ-13＋RJ-09</button>
+</div>
+<div class="v6-cols">
+  <div class="panel v6-col"><h3>① 主用版本例题</h3><div id="v6BaseCol"></div></div>
+  <div class="panel v6-col"><h3>② 跨版本候选</h3><div id="v6CandCol"></div></div>
+  <div class="panel v6-col"><h3>③ 整合方案</h3><div id="v6PlanCol"></div></div>
+</div>
+<div class="panel" id="v6DraftWrap"><div id="v6Draft"><div class="empty">组建方案后点击"生成整合草案"。</div></div></div>
+<div id="v6Audit"></div>
+<hr class="v6-divider">
+
+<div class="section-title"><h2>第三章整合策略 · 跨版本整合决策工具</h2><p>整合不是生成原创题，而是在六版已有资源之间进行选择、组合与替换。工具按“主用版本有无例题”自动进入情形一或情形二。</p></div><div class="decision-wrap"><div class="panel form-col"><h3 style="margin-bottom:12px;color:var(--p2)">输入备课条件</h3><div class="field"><label>主用版本</label><select id="intVersion"></select></div><div class="field"><label>目标知识模块 / 课时范围</label><select id="intModule"></select></div><div class="field"><label>想补的主要维度</label><select id="intDimension"><option value="d1">D1 情境类型</option><option value="d3">D3 图示类型</option><option value="d4">D4 呈现结构</option><option value="d5">D5 助学栏目</option><option value="d6">D6 认知层级</option></select></div><div class="field"><label>学生基础</label><select id="intStudent"><option value="normal">普通班级</option><option value="weak">基础较弱</option><option value="strong">基础较强</option></select></div><button class="btn" onclick="runIntegrationDecision()">生成整合建议</button><div class="footer-note">判断规则：先看主用版本在该模块是否有例题；有则进入情形一，优先融合，再补充，最后谨慎替换；无则进入情形二，执行知识一致、情境适切、层级匹配、呈现兼容四项筛选，并确定教学定位。</div></div><div class="panel result-box"><div id="integrationResult"></div></div></div><div class="section-title"><h2>第三章固定案例库</h2><p>以下四个案例对应情境、知识模块、呈现系统、认知层级四类整合策略，可直接用于答辩演示。</p></div><div class="grid cols-2" id="integrationCases"></div><div class="section-title"><h2>题干要素抽取与组合整合器</h2><p>把整合从“编号推荐”推进到“题干要素层面”：先抽取研究对象、物理过程、已知量、未知量、模型与设问，再进行融合、两两组合或多题组合。</p></div><div class="combo-workbench"><div class="panel form-col"><h3 style="color:var(--p2);margin-bottom:12px">选择要组合的例题</h3><div class="semantic-note">说明：当前版本先依据已录入的题名、编号与六维编码进行要素抽取；若后续补入 OCR 校对后的题干全文，抽取结果会更精确。</div><div class="field"><label>基底母题</label><select id="comboBase"></select></div><div class="field"><label>组合题编号</label><input id="comboCodes" placeholder="例如 LK-05,HK-06,YJ-08"></div><div class="toolbar"><button class="btn" onclick="generateElementCombo()">生成要素组合方案</button><button class="btn secondary" onclick="autoFillCombo()">按母题自动推荐</button></div></div><div class="panel result-box"><div id="comboOutput"><div class="empty">请选择基底母题和组合题，生成要素抽取与整合草案。</div></div></div></div></section>
+
+<section id="extension" class="page"><div class="section-title"><h2>第四章拓展策略 · 六维度变式拓展工作台</h2><p>从全部原题库中选取任意一道母题，按 D1–D6 选择改造方向。输出内容包括变式题干、设问、编码变化、教学定位和变式链条。</p></div><div class="variant-workbench"><div class="panel form-col"><h3 style="color:var(--p2);margin-bottom:12px">1. 选择母题</h3><div class="field"><label>母题编号/关键词</label><input id="motherSearch" placeholder="如 RJ-04、YJ-05、风力仪" oninput="renderMotherOptions()"></div><div class="field"><label>母题</label><select id="motherSelect" onchange="selectMother()"></select></div><div id="motherCard" class="card" style="margin-top:12px"></div><button class="btn secondary" style="margin-top:12px" onclick="openProblem(getMother().code)">查看原题截图</button>
+<div class="ocr-panel" id="ocrPanel">
+  <h3>2. 物理题 OCR 识别实验</h3>
+  <div class="ocr-help">先对母题截图进行浏览器端 OCR，识别结果可手动校对。保存后，下面的题干要素抽取与六维变式会优先使用 OCR 题干全文，而不是只依赖题名与编码。</div>
+  <div id="ocrBadges"><span class="ocr-badge warn">未识别</span></div>
+  <div class="ocr-preview" id="ocrPreview"></div>
+  <div class="ocr-toolbar">
+    <button class="btn" onclick="runMotherOCR()">识别当前母题截图</button>
+    <button class="btn secondary" onclick="applyEditedOCR()">保存校对文本并用于变式</button>
+    <button class="btn secondary" onclick="clearMotherOCR()">清除本题 OCR</button>
+  </div>
+  <div class="ocr-status" id="ocrStatus">请选择母题后开始识别。</div>
+  <textarea id="ocrText" class="ocr-textarea" placeholder="OCR 识别结果会显示在这里。物理单位、上下标、希腊字母和公式建议人工校对后再保存。"></textarea>
+  <div class="ocr-mini">建议校对重点：m/s²、km/h、N、kg、μ、θ、v₀、a、t、x、正负号、题目设问序号。OCR 文本保存在本浏览器 localStorage 中，不上传服务器。</div>
+</div></div><div class="panel variant-output"><h3 style="color:var(--p2);margin-bottom:12px">2. 选择改造维度</h3><div class="dim-grid" id="dimGrid"></div><div class="toolbar" style="margin-top:12px"><label>目标类别</label><select id="variantTarget" onchange="generateVariant()"></select><button class="btn" onclick="generateVariant()">生成六维变式</button><button class="btn secondary" onclick="copyVariantText()">复制变式文本</button></div><div id="variantResult"></div></div></div><div class="section-title"><h2>变式链条示例</h2><p>同一道母题可形成“基础变式—情境变式—图示变式—方法变式—高阶变式—开放探究变式”的连续链条。</p></div><div class="timeline" id="variantTimeline"></div></section>
+</main>
+
+<div class="modal" id="modal" onclick="closeModal(event)"><div class="modal-card" onclick="event.stopPropagation()"><div class="modal-header"><div><h2 id="modalTitle"></h2><div class="meta" id="modalSub"></div></div><button class="close" onclick="closeModal()">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
+
+<script>
+const DATA = {"meta": {"title": "多版本高中物理教材例题资源研究全库 · 六维整合拓展版", "sampleSize": 95, "versions": ["人教版", "粤教版", "鲁科版", "教科版", "沪科版", "沪科教版"], "dimensions": {"D1": "情境类型", "D2": "知识模块", "D3": "图示类型", "D4": "呈现结构范式", "D5": "助学栏目功能", "D6": "认知层级"}}, "problems": [{"version": "人教版", "prefix": "RJ", "code": "RJ-01", "title": "汽车加速后刹车", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-001.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "两阶段运动衔接：加速段末速度→制动段初速度，识别阶段边界。", "isTraffic": true}, {"version": "人教版", "prefix": "RJ", "code": "RJ-02", "title": "航母舰载机起降", "d1": "工程", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "工程技术", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-002.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-03", "title": "动车进站里程碑", "d1": "生活", "d2": "运动", "d3": "实景图", "d4": "三段", "d5": "规范提醒", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "实景图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅱ", "images": ["images/img-003.png", "images/img-004.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "由里程碑位置反推减速过程的速度与时间关系。", "isTraffic": true}, {"version": "人教版", "prefix": "RJ", "code": "RJ-04", "title": "马拉雪橇", "d1": "生活", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-005.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-05", "title": "正交力合成", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "二段", "d5": "无", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "极简二段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-006.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-06", "title": "滑梯设计", "d1": "生活", "d2": "相互", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "生活情境", "module": "相互作用与力", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-007.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-07", "title": "悬挂重物", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-008.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-08", "title": "汽车路测", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-009.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-09", "title": "列车悬球", "d1": "纯模", "d2": "牛顿", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅲ", "situation": "纯物理模型", "module": "牛顿运动定律", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅲ", "images": ["images/img-010.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-10", "title": "光滑桌面推物（单位制）", "d1": "生活", "d2": "牛顿", "d3": "示意", "d4": "三段", "d5": "规范提醒", "d6": "Ⅰ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "示意图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅰ", "images": ["images/img-011.png", "images/img-012.png", "images/img-013.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-11", "title": "冰壶比赛", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-014.png", "images/img-015.png", "images/img-016.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-12", "title": "滑雪下坡", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-017.png", "images/img-018.png", "images/img-019.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "人教版", "prefix": "RJ", "code": "RJ-13", "title": "电梯超重", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "规范提醒", "d6": "Ⅰ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅰ", "images": ["images/img-020.png", "images/img-021.png", "images/img-022.png", "images/img-023.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-01", "title": "无人机侦察", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-024.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-02", "title": "电梯减速", "d1": "生活", "d2": "运动", "d3": "无图", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "无图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-025.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-03", "title": "快艇加速", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "反思评价", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅰ", "images": ["images/img-026.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-04", "title": "椰子下落", "d1": "生活", "d2": "运动", "d3": "实景", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "实景图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-027.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-05", "title": "汽车刹车", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "规范提醒", "d6": "Ⅲ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅲ", "images": ["images/img-028.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "计算制动距离并与安全距离比较，作出安全裁决。", "isTraffic": true}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-06", "title": "汽车安全（含反应时间）", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "反思评价", "d6": "Ⅲ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅲ", "images": ["images/img-029.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "叠加驾驶员反应时间，总位移与安全距离比较，结论反转。", "isTraffic": true}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-07", "title": "酒驾反应", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "规范提醒", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅱ", "images": ["images/img-030.png", "images/img-031.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "由总距离与制动数据逆向推理实际反应时间。", "isTraffic": true}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-08", "title": "推书桌", "d1": "生活", "d2": "相互", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "生活情境", "module": "相互作用与力", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-032.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-09", "title": "小球受风", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-033.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-10", "title": "拉行李箱", "d1": "生活", "d2": "相互", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "相互作用与力", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-034.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-11", "title": "斜面重力分解", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-035.png", "images/img-036.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-12", "title": "光滑挡板", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-037.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-13", "title": "风力仪", "d1": "探究", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "科学探究", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-038.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-14", "title": "汽车起步", "d1": "纯模", "d2": "牛顿", "d3": "无图", "d4": "三段", "d5": "反思评价", "d6": "Ⅰ", "situation": "纯物理模型", "module": "牛顿运动定律", "figure": "无图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅰ", "images": ["images/img-039.png", "images/img-040.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-15", "title": "火车出站", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "规范提醒", "d6": "Ⅰ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅰ", "images": ["images/img-041.png", "images/img-042.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "粤教版", "prefix": "YJ", "code": "YJ-16", "title": "刹车判超速", "d1": "生活", "d2": "牛顿", "d3": "无图", "d4": "三段", "d5": "无", "d6": "Ⅲ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "无图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅲ", "images": ["images/img-043.png", "images/img-044.png", "images/img-045.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。", "trafficTask": "由制动痕迹反推初速度，再与限速标准比较作出法规裁决。", "isTraffic": true}, {"version": "鲁科版", "prefix": "LK", "code": "LK-01", "title": "猎豹加速", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅰ", "images": ["images/img-046.png", "images/img-047.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-02", "title": "遇红灯刹车", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-048.png", "images/img-049.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "判断停止时间与所求时刻的大小关系，处理“刹车陷阱”。", "isTraffic": true}, {"version": "鲁科版", "prefix": "LK", "code": "LK-03", "title": "刹车距离（含停止时间陷阱）", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-050.png", "images/img-051.png", "images/img-052.png", "images/img-053.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "在刹车距离计算中处理停止时间约束。", "isTraffic": true}, {"version": "鲁科版", "prefix": "LK", "code": "LK-04", "title": "弹簧伸长（胡克定律应用）", "d1": "纯模", "d2": "相互", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅰ", "images": ["images/img-054.png", "images/img-055.png", "images/img-056.png", "images/img-057.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-05", "title": "狗拉雪橇", "d1": "生活", "d2": "相互", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅰ", "situation": "生活情境", "module": "相互作用与力", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅰ", "images": ["images/img-058.png", "images/img-059.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-06", "title": "木箱摩擦突变", "d1": "纯模", "d2": "相互", "d3": "无图", "d4": "闭环", "d5": "方法策略", "d6": "Ⅱ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "无图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-060.png", "images/img-061.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-07", "title": "岸边拉船", "d1": "生活", "d2": "相互", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅱ", "situation": "生活情境", "module": "相互作用与力", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-062.png", "images/img-063.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-08", "title": "鸟笼悬挂", "d1": "纯模", "d2": "相互", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅱ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-064.png", "images/img-065.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-09", "title": "高铁起动", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅰ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅰ", "images": ["images/img-066.png", "images/img-067.png", "images/img-068.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-10", "title": "雪橇斜拉", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅱ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-069.png", "images/img-070.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-11", "title": "气球掉物", "d1": "纯模", "d2": "牛顿", "d3": "示意", "d4": "闭环", "d5": "方法策略", "d6": "Ⅱ", "situation": "纯物理模型", "module": "牛顿运动定律", "figure": "示意图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-071.png", "images/img-072.png", "images/img-073.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "鲁科版", "prefix": "LK", "code": "LK-12", "title": "电梯下楼", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "闭环", "d5": "方法策略", "d6": "Ⅱ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "案例闭环式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-074.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-01", "title": "长安街地标位移", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "闭环", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-075.png", "images/img-076.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-02", "title": "交通灯区间速度", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "闭环", "d5": "无", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-077.png", "images/img-078.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-03", "title": "汽车出站与制动", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-079.png", "images/img-080.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "基础公式代入，分段求速度或加速度。", "isTraffic": true}, {"version": "教科版", "prefix": "JK", "code": "JK-04", "title": "证明中间时刻速度", "d1": "探究", "d2": "运动", "d3": "示意（v-t 图）", "d4": "二段", "d5": "无", "d6": "Ⅲ", "situation": "科学探究", "module": "运动学", "figure": "示意图", "structure": "极简二段式", "support": "无栏目", "level": "层级Ⅲ", "images": ["images/img-081.png", "images/img-082.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-05", "title": "3s/7s 位移求加速度", "d1": "纯模", "d2": "运动", "d3": "示意", "d4": "三段", "d5": "规范提醒", "d6": "Ⅱ", "situation": "纯物理模型", "module": "运动学", "figure": "示意图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅱ", "images": ["images/img-083.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-06", "title": "证明位移公式（面积法）", "d1": "探究", "d2": "运动", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅲ", "situation": "科学探究", "module": "运动学", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅲ", "images": ["images/img-084.png", "images/img-085.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-07", "title": "飞机跑道长度设计", "d1": "工程", "d2": "运动", "d3": "无图", "d4": "闭环", "d5": "规范提醒", "d6": "Ⅰ", "situation": "工程技术", "module": "运动学", "figure": "无图", "structure": "案例闭环式", "support": "规范/提醒类", "level": "层级Ⅰ", "images": ["images/img-086.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-08", "title": "飞机中断起飞刹车", "d1": "工程", "d2": "运动", "d3": "无图", "d4": "闭环", "d5": "无", "d6": "Ⅱ", "situation": "工程技术", "module": "运动学", "figure": "无图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-087.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "识别可用跑道长度约束，求最小减速度。", "isTraffic": true}, {"version": "教科版", "prefix": "JK", "code": "JK-09", "title": "88 式狙击步枪子弹", "d1": "工程", "d2": "运动", "d3": "无图", "d4": "闭环", "d5": "无", "d6": "Ⅱ", "situation": "工程技术", "module": "运动学", "figure": "无图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-088.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-10", "title": "枯井扔石子回声", "d1": "生活", "d2": "运动", "d3": "无图", "d4": "闭环", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "无图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-089.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-11", "title": "狗拉雪橇", "d1": "生活", "d2": "相互", "d3": "复合", "d4": "闭环", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "相互作用与力", "figure": "复合图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-090.png", "images/img-091.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "教科版", "prefix": "JK", "code": "JK-12", "title": "互成直角两力合成", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-092.png", "images/img-093.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "教科版", "prefix": "JK", "code": "JK-13", "title": "斜面木块重力分解", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "闭环", "d5": "无", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-094.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "教科版", "prefix": "JK", "code": "JK-14", "title": "斜面物体受力平衡", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "闭环", "d5": "无", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-095.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "教科版", "prefix": "JK", "code": "JK-15", "title": "支架/绳索受力（多解）", "d1": "纯模", "d2": "相互", "d3": "复合", "d4": "闭环", "d5": "无", "d6": "Ⅱ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "复合图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-096.png", "images/img-097.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "教科版", "prefix": "JK", "code": "JK-16", "title": "马拉雪橇加速度", "d1": "生活", "d2": "牛顿", "d3": "实景", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "实景图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-098.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-17", "title": "长征二号 F 火箭", "d1": "工程", "d2": "牛顿", "d3": "复合", "d4": "闭环", "d5": "无", "d6": "Ⅱ", "situation": "工程技术", "module": "牛顿运动定律", "figure": "复合图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-099.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-18", "title": "量纲检验公式", "d1": "探究", "d2": "牛顿", "d3": "无图", "d4": "三段", "d5": "无", "d6": "Ⅲ", "situation": "科学探究", "module": "牛顿运动定律", "figure": "无图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅲ", "images": ["images/img-100.png", "images/img-101.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-19", "title": "推车单位运算规范", "d1": "生活", "d2": "牛顿", "d3": "示意图", "d4": "闭环", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "示意图", "structure": "案例闭环式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-102.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-20", "title": "推木箱反作用力", "d1": "纯模", "d2": "牛顿", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "纯物理模型", "module": "牛顿运动定律", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-103.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-21", "title": "竖直拉重物测质量", "d1": "纯模", "d2": "牛顿", "d3": "示意", "d4": "闭环", "d5": "反思评价", "d6": "Ⅱ", "situation": "纯物理模型", "module": "牛顿运动定律", "figure": "示意图", "structure": "案例闭环式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-104.png", "images/img-105.png", "images/img-106.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "教科版", "prefix": "JK", "code": "JK-22", "title": "汽车阻力测试", "d1": "工程", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "反思评价", "d6": "Ⅱ", "situation": "工程技术", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-107.png", "images/img-108.png", "images/img-109.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。", "trafficTask": "由制动数据反推车辆阻力大小。", "isTraffic": true}, {"version": "教科版", "prefix": "JK", "code": "JK-23", "title": "滑雪冲坡", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "反思评价", "d6": "Ⅱ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-110.png", "images/img-111.png", "images/img-112.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-01", "title": "百公里加速时间", "d1": "工程", "d2": "运动", "d3": "无图", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "工程技术", "module": "运动学", "figure": "无图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-113.png", "images/img-114.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-02", "title": "跳楼机自由落体", "d1": "生活", "d2": "运动", "d3": "实景", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "实景图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-115.png", "images/img-116.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-03", "title": "C919 起飞最小加速度", "d1": "工程", "d2": "运动", "d3": "无图", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "工程技术", "module": "运动学", "figure": "无图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-117.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-04", "title": "高速公路紧急制动判断", "d1": "生活", "d2": "运动", "d3": "无图", "d4": "三段", "d5": "规范提醒", "d6": "Ⅲ", "situation": "生活情境", "module": "运动学", "figure": "无图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅲ", "images": ["images/img-118.png", "images/img-119.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "制动距离计算后与安全距离比较，作出安全裁决。", "isTraffic": true}, {"version": "沪科版", "prefix": "HK", "code": "HK-05", "title": "悬吊木棒弹力分析", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-120.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-06", "title": "木块压墙摩擦力变化", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-121.png", "images/img-122.png", "images/img-123.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-07", "title": "两人推木箱求合力", "d1": "生活", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "生活情境", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-124.png", "images/img-125.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-08", "title": "斜面木箱重力分解", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-126.png", "images/img-127.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-09", "title": "斜面木块弹簧测力计", "d1": "纯模", "d2": "相互", "d3": "复合", "d4": "三段", "d5": "反思评价", "d6": "Ⅱ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "复合图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-128.png", "images/img-129.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-10", "title": "风力仪原理推导", "d1": "探究", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "反思评价", "d6": "Ⅱ", "situation": "科学探究", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-130.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-11", "title": "长征二号丁火箭", "d1": "工程", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "反思评价", "d6": "Ⅰ", "situation": "工程技术", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅰ", "images": ["images/img-131.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-12", "title": "重现伽利略斜面实验", "d1": "探究", "d2": "牛顿", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "科学探究", "module": "牛顿运动定律", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-132.png", "images/img-133.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-13", "title": "民航飞机最大合力最短时间", "d1": "工程", "d2": "牛顿", "d3": "无图", "d4": "三段", "d5": "方法策略", "d6": "Ⅰ", "situation": "工程技术", "module": "牛顿运动定律", "figure": "无图", "structure": "标准三段式", "support": "方法/策略类", "level": "层级Ⅰ", "images": ["images/img-134.png", "images/img-135.png", "images/img-136.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "沪科版", "prefix": "HK", "code": "HK-14", "title": "滑雪运动员所受阻力", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "三段", "d5": "方法策略", "d6": "Ⅱ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "标准三段式", "support": "方法/策略类", "level": "层级Ⅱ", "images": ["images/img-137.png", "images/img-138.png", "images/img-139.png", "images/img-140.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-01", "title": "列车道口安全距离", "d1": "生活", "d2": "运动", "d3": "复合图", "d4": "三段", "d5": "规范提醒", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅱ", "images": ["images/img-141.png", "images/img-142.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-02", "title": "兔龟赛跑 s-t 图像", "d1": "纯模", "d2": "运动", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "纯物理模型", "module": "运动学", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-143.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-03", "title": "汽车制动避让小动物", "d1": "生活", "d2": "运动", "d3": "示意", "d4": "三段", "d5": "规范提醒", "d6": "Ⅰ", "situation": "生活情境", "module": "运动学", "figure": "示意图", "structure": "标准三段式", "support": "规范/提醒类", "level": "层级Ⅰ", "images": ["images/img-144.png", "images/img-145.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "基础加速度概念应用。", "isTraffic": true}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-04", "title": "运-20 飞机降落", "d1": "工程", "d2": "运动", "d3": "实景", "d4": "三段", "d5": "反思评价", "d6": "Ⅰ", "situation": "工程技术", "module": "运动学", "figure": "实景图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅰ", "images": ["images/img-146.png", "images/img-147.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-05", "title": "比萨斜塔自由落体", "d1": "探究", "d2": "运动", "d3": "无图", "d4": "二段", "d5": "反思评价", "d6": "Ⅰ", "situation": "科学探究", "module": "运动学", "figure": "无图", "structure": "极简二段式", "support": "反思/评价类", "level": "层级Ⅰ", "images": ["images/img-148.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-06", "title": "高速公路追尾安全车距", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "三段", "d5": "反思评价", "d6": "Ⅱ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-149.png", "images/img-150.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "高速公路追尾安全车距判断。", "isTraffic": true}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-07", "title": "校门前违章超速判断", "d1": "生活", "d2": "运动", "d3": "复合", "d4": "二段", "d5": "方法策略", "d6": "Ⅲ", "situation": "生活情境", "module": "运动学", "figure": "复合图", "structure": "极简二段式", "support": "方法/策略类", "level": "层级Ⅲ", "images": ["images/img-151.png", "images/img-152.png", "images/img-153.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向交通安全、无人机巡检、百公里加速、频闪照片等情境拓展。", "trafficTask": "由车痕反推初速度并与校门限速比较，作出合规裁决。", "isTraffic": true}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-08", "title": "叠放木块求拉力", "d1": "纯模", "d2": "相互", "d3": "示意", "d4": "二段", "d5": "反思评价", "d6": "Ⅰ", "situation": "纯物理模型", "module": "相互作用与力", "figure": "示意图", "structure": "极简二段式", "support": "反思/评价类", "level": "层级Ⅰ", "images": ["images/img-154.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-09", "title": "拔河运动员受力分析", "d1": "生活", "d2": "相互", "d3": "复合", "d4": "三段", "d5": "方法策略", "d6": "Ⅰ", "situation": "生活情境", "module": "相互作用与力", "figure": "复合图", "structure": "标准三段式", "support": "方法/策略类", "level": "层级Ⅰ", "images": ["images/img-155.png", "images/img-156.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-10", "title": "机场输送带行李受力", "d1": "生活", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "反思评价", "d6": "Ⅱ", "situation": "生活情境", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-157.png", "images/img-158.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-11", "title": "斜拉桥对称钢索合力", "d1": "工程", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "反思评价", "d6": "Ⅱ", "situation": "工程技术", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-159.png", "images/img-160.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-12", "title": "斜面木箱重力分解评价（含不对称钢索）", "d1": "探究", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "方法策略", "d6": "Ⅲ", "situation": "科学探究", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "方法/策略类", "level": "层级Ⅲ", "images": ["images/img-161.png", "images/img-162.png", "images/img-163.png", "images/img-164.png"], "role": "提升型原题：适合放在题组末端，用于比较、裁决、证明或开放讨论。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-13", "title": "两根细绳悬挂电灯", "d1": "探究", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "科学探究", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-165.png", "images/img-166.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-14", "title": "风力仪测重力原理", "d1": "探究", "d2": "相互", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "科学探究", "module": "相互作用与力", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-167.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向桥梁拉索、起重机吊臂、传送带等工程情境拓展，补足该模块工程联结不足。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-15", "title": "箱子斜向上拉力匀加速", "d1": "纯模", "d2": "牛顿", "d3": "示意", "d4": "三段", "d5": "无", "d6": "Ⅱ", "situation": "纯物理模型", "module": "牛顿运动定律", "figure": "示意图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅱ", "images": ["images/img-168.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-16", "title": "神舟五号火箭推力", "d1": "工程", "d2": "牛顿", "d3": "实景", "d4": "三段", "d5": "无", "d6": "Ⅰ", "situation": "工程技术", "module": "牛顿运动定律", "figure": "实景图", "structure": "标准三段式", "support": "无栏目", "level": "层级Ⅰ", "images": ["images/img-169.png"], "role": "基础型原题：适合作为导入或第一层训练，帮助学生熟悉概念与公式。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。"}, {"version": "沪科教版", "prefix": "HKJ", "code": "HKJ-17", "title": "冰面紧急制动滑行距离", "d1": "生活", "d2": "牛顿", "d3": "复合", "d4": "二段", "d5": "反思评价", "d6": "Ⅱ", "situation": "生活情境", "module": "牛顿运动定律", "figure": "复合图", "structure": "极简二段式", "support": "反思/评价类", "level": "层级Ⅱ", "images": ["images/img-170.png", "images/img-171.png", "images/img-172.png", "images/img-173.png"], "role": "核心型原题：适合作为整合母题，训练阶段判断、受力建模或变量关系分析。", "extend": "可向车辆启停、火箭发射、电梯超失重、行李传送系统等动力学应用拓展。", "trafficTask": "比较不同路面制动距离，分析变量关系。", "isTraffic": true}], "trafficCodes": ["RJ-01", "RJ-03", "YJ-05", "YJ-06", "YJ-07", "YJ-16", "LK-02", "LK-03", "JK-03", "JK-08", "JK-22", "HK-04", "HKJ-03", "HKJ-06", "HKJ-07", "HKJ-17"], "integrationCases": [{"id": "friction-rj", "title": "摩擦力章节：以人教版 RJ-04 为基底", "base": "人教版", "module": "相互", "summary": "主用版本有例题，进入情形一：先融合 LK-05 的策略提炼与迁移追问，再补充 HK-06、YJ-08 形成层级Ⅰ→Ⅱ序列。", "path": "情形一 · 融合 + 补充", "codes": ["RJ-04", "LK-05", "HK-06", "YJ-08"], "steps": [{"op": "融合", "codes": ["RJ-04", "LK-05"], "text": "保留 RJ-04 原题结构，移植 LK-05 的“抓主要因素、忽略次要因素”策略提炼与“加速时摩擦力是否改变”的迁移追问。"}, {"op": "补充", "codes": ["HK-06"], "text": "补入纯物理模型、层级Ⅱ的摩擦力变化分析，弥补 RJ-04 仅为生活情境与层级Ⅰ的不足。"}, {"op": "选配延伸", "codes": ["YJ-08"], "text": "补入推书桌任务，形成“逆向求 μ → 正向判断能否拉动”的双向推理。"}]}, {"id": "newton-lk", "title": "牛顿运动定律大章：以鲁科版为基底", "base": "鲁科版", "module": "牛顿", "summary": "鲁科版没有独立应用节，但应用训练嵌入定律节内部；整合时补工程情境、科学探究与层级Ⅲ出口。", "path": "情形一 · 大章补充", "codes": ["LK-09", "LK-10", "LK-11", "JK-17", "JK-18", "LK-12", "YJ-16"], "steps": [{"op": "保留主用", "codes": ["LK-09", "LK-10", "LK-11", "LK-12"], "text": "保留鲁科版案例闭环式与策略迁移优势，作为层级Ⅰ/Ⅱ主干。"}, {"op": "补充工程情境", "codes": ["JK-17"], "text": "引入长征二号 F 火箭，补足鲁科版牛顿大章工程技术情境缺口。"}, {"op": "补充科学探究与层级Ⅲ", "codes": ["JK-18"], "text": "量纲检验公式兼具科学方法论与批判性推理训练。"}, {"op": "补充 STSE 裁决", "codes": ["YJ-16"], "text": "以刹车判超速作为大章末综合裁决任务。"}]}, {"id": "balance-rj", "title": "共点力平衡：以人教版 RJ-06/RJ-07 为基底", "base": "人教版", "module": "相互", "summary": "不增加大量题目，而是对图示、结构与助学支架进行补强。", "path": "情形一 · 呈现系统融合", "codes": ["RJ-06", "RJ-07", "LK-08", "HK-09", "HK-10", "YJ-12", "HKJ-13"], "steps": [{"op": "图示支架", "codes": ["RJ-06", "LK-08", "HK-09"], "text": "重构为“情境图→受力示意图→几何关系图”的三层呈现。"}, {"op": "方法结构提升", "codes": ["RJ-07", "LK-08"], "text": "移植“选择研究对象→受力分析→坐标分解→列方程→检查结果”的共点力平衡通法。"}, {"op": "助学栏目嵌入", "codes": ["HK-09", "HK-10"], "text": "加入“为什么不能直接相加”“坐标轴如何选择”“还有没有其他解法”等反思追问。"}]}, {"id": "traffic-rj", "title": "交通制动安全：以人教版为基底构建认知梯度", "base": "人教版", "module": "运动", "summary": "人教版 RJ-01/RJ-03 是层级Ⅱ主干，需补层级Ⅰ入口和层级Ⅲ出口，形成“基础计算→阶段分析→安全裁决→法规判断”。", "path": "情形一 · 层级补足", "codes": ["HKJ-03", "RJ-01", "LK-02", "RJ-03", "YJ-05", "HK-04", "YJ-16", "HKJ-07"], "steps": [{"op": "入口铺垫", "codes": ["HKJ-03"], "text": "先用层级Ⅰ任务完成基础公式直接代入。"}, {"op": "主干训练", "codes": ["RJ-01", "LK-02", "RJ-03"], "text": "训练两阶段衔接、停止时间识别与里程碑反推。"}, {"op": "高阶裁决", "codes": ["YJ-05", "HK-04"], "text": "引入安全距离标准，完成计算→比较→裁决。"}, {"op": "综合裁决", "codes": ["YJ-16", "HKJ-07"], "text": "由车痕逆向反推初速度，再与限速法规比较。"}]}]};
+const P = DATA.problems;
+const versions = DATA.meta.versions;
+const D1 = ['生活','工程','探究','纯模'];
+const D2 = ['运动','相互','牛顿'];
+const D3 = ['实景','示意','复合','无图'];
+const D4 = ['二段','三段','闭环'];
+const D5 = ['无','规范提醒','方法策略','反思评价'];
+const D6 = ['Ⅰ','Ⅱ','Ⅲ'];
+const dLabel={d1:'D1 情境类型',d2:'D2 知识模块',d3:'D3 图示类型',d4:'D4 呈现结构',d5:'D5 助学栏目',d6:'D6 认知层级'};
+const full={生活:'生活情境',工程:'工程技术',探究:'科学探究',纯模:'纯物理模型',运动:'运动学',相互:'相互作用与力',牛顿:'牛顿运动定律',实景:'实景图',示意:'示意图',复合:'复合图',无图:'无图',二段:'极简二段式',三段:'标准三段式',闭环:'案例闭环式',无:'无栏目',规范提醒:'规范/提醒类',方法策略:'方法/策略类',反思评价:'反思/评价类','Ⅰ':'层级Ⅰ','Ⅱ':'层级Ⅱ','Ⅲ':'层级Ⅲ'};
+const colors={生活:'#10b981',工程:'#f59e0b',探究:'#eab308',纯模:'#3b82f6','Ⅰ':'#60a5fa','Ⅱ':'#3156d4','Ⅲ':'#ef4444',运动:'#3b82f6',相互:'#10b981',牛顿:'#f59e0b'};
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function problem(code){return P.find(x=>x.code===code)}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo(0,0); if(id==='analysis') renderAnalysis(); if(id==='slice') renderTraffic(); if(id==='integration') runIntegrationDecision(); if(id==='extension') initExtension();}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+function tagClass(v){if(['生活','Ⅰ'].includes(v))return'g'; if(['工程','Ⅱ'].includes(v))return'o'; if(['探究','Ⅲ'].includes(v))return'r'; if(['纯模','闭环'].includes(v))return'v'; return''}
+function tags(p){return `<div class="tags"><span class="tag ${tagClass(p.d1)}">D1 ${full[p.d1]||p.d1}</span><span class="tag ${tagClass(p.d2)}">D2 ${full[p.d2]||p.d2}</span><span class="tag">D3 ${full[p.d3]||p.d3}</span><span class="tag">D4 ${full[p.d4]||p.d4}</span><span class="tag ${p.d5==='无'?'':'p'}">D5 ${full[p.d5]||p.d5}</span><span class="tag ${tagClass(p.d6)}">D6 ${full[p.d6]||p.d6}</span></div>`}
+function problemRow(p, extra=''){return `<div class="row"><div class="left"><div class="title"><span class="code">${p.code}</span> ${esc(p.title)}</div><div class="desc">${p.version} · ${p.module} · ${p.situation} · ${p.level}${extra?` · ${extra}`:''}</div>${tags(p)}</div><div><button class="small-btn" onclick="openProblem('${p.code}')">查看原题</button><button class="small-btn" onclick="useAsMother('${p.code}')">作为母题</button></div></div>`}
+function populateSelect(id, arr, all='全部'){const el=$(id); el.innerHTML=`<option value="">${all}</option>`+arr.map(x=>`<option value="${esc(x)}">${esc(full[x]||x)}</option>`).join('')}
+function init(){populateSelect('libVersion',versions);populateSelect('libD1',D1);populateSelect('libD2',D2);populateSelect('libD6',D6);populateSelect('intVersion',versions,'请选择');populateSelect('intModule',D2,'请选择');$('intVersion').value='人教版';$('intModule').value='相互';renderHomeMetrics();renderLibrary();renderAnalysis();renderTraffic();renderIntegrationCases();initExtension();initIntegrationComposer();}
+function renderHomeMetrics(){const n=P.length, v=versions.length, l3=P.filter(p=>p.d6==='Ⅲ').length, imgs=P.reduce((a,p)=>a+(p.images?.length||0),0);$('homeMetrics').innerHTML=[['95','原题样本'],[v,'教材版本'],[l3,'层级Ⅲ例题'],[imgs,'原题截图页']].map(x=>`<div class="metric"><div class="num">${x[0]}</div><div class="lab">${x[1]}</div></div>`).join('')}
+function renderLibrary(){let q=$('libSearch').value.trim().toLowerCase(), ver=$('libVersion').value, d1=$('libD1').value, d2=$('libD2').value, d6=$('libD6').value;let arr=P.filter(p=>(!q||(p.code+p.title+p.version).toLowerCase().includes(q))&&(!ver||p.version===ver)&&(!d1||p.d1===d1)&&(!d2||p.d2===d2)&&(!d6||p.d6===d6));$('libCount').textContent=`共 ${arr.length} 道匹配题目`;$('libraryList').innerHTML=arr.map(p=>problemRow(p)).join('')||'<div class="empty">暂无匹配题目</div>'}
+function resetLibrary(){['libSearch','libVersion','libD1','libD2','libD6'].forEach(id=>$(id).value='');renderLibrary()}
+function count(filter){return P.filter(filter).length}
+function renderStack(elId, dim, vals, titlePrefix){const html=versions.map(ver=>{let total=count(p=>p.version===ver);let segs=vals.map(v=>{let n=count(p=>p.version===ver&&p[dim]===v);let w=total?n/total*100:0;return `<div class="seg" title="${ver} · ${full[v]||v} · ${n}题" style="width:${w}%;background:${colors[v]||'#64748b'}" onclick="showFiltered('${titlePrefix}：${ver} · ${full[v]||v}', p=>p.version==='${ver}'&&p.${dim}==='${v}')">${n? n:''}</div>`}).join('');return `<div class="stack-row"><div class="stack-label">${ver}</div><div class="stack">${segs}</div></div>`}).join('');$(elId).innerHTML=html}
+function renderHeatmap(){let max=Math.max(...D2.flatMap(m=>D1.map(s=>count(p=>p.d2===m&&p.d1===s))));let html=`<div class="heat-row"><div></div>${D1.map(s=>`<div class="heat-head">${full[s]}</div>`).join('')}</div>`+D2.map(m=>`<div class="heat-row"><div class="heat-head">${full[m]}</div>${D1.map(s=>{let n=count(p=>p.d2===m&&p.d1===s);let alpha=.15+.75*(n/max||0);return `<div class="heat-cell" style="background:rgba(49,86,212,${alpha});color:${alpha>.48?'#fff':'#172554'}" onclick="showFiltered('热力图：${full[m]} × ${full[s]}', p=>p.d2==='${m}'&&p.d1==='${s}')">${n}</div>`}).join('')}</div>`).join('');$('heatmap').innerHTML=`<div class="heatmap">${html}</div>`}
+function renderPyramid(){let totals=D6.map(l=>[l,count(p=>p.d6===l)]);let max=Math.max(...totals.map(x=>x[1]));$('pyramid').innerHTML=totals.reverse().map(([l,n],i)=>`<div class="pyr" style="width:${35+n/max*55}%;background:${colors[l]}" onclick="showFiltered('认知层级：${full[l]}', p=>p.d6==='${l}')">${full[l]} · ${n}题</div>`).join('')}
+function renderAnalysis(){renderStack('d1Stack','d1',D1,'情境类型');renderStack('d6Stack','d6',D6,'认知层级');renderHeatmap();renderPyramid();showFiltered('全样本 95 道例题',p=>true, false)}
+function showFiltered(title, predicate, scroll=true){let arr=P.filter(predicate);$('analysisTitle').textContent=title;$('analysisSub').textContent=`共 ${arr.length} 道；点击题目可查看原题截图，也可设为变式母题。`;$('analysisList').innerHTML=arr.map(p=>problemRow(p)).join('')||'<div class="empty">暂无例题</div>';if(scroll) $('analysisTitle').scrollIntoView({behavior:'smooth',block:'start'});}
+function renderTraffic(){const levels=['Ⅰ','Ⅱ','Ⅲ'];let html=`<div class="head">层级 / 版本</div>`+versions.map(v=>`<div class="head">${v}</div>`).join('');levels.forEach(l=>{html+=`<div class="level">${full[l]}</div>`;versions.forEach(ver=>{let arr=P.filter(p=>p.isTraffic&&p.version===ver&&p.d6===l);html+=`<div class="cell">${arr.map(p=>`<span class="chip" onclick="openProblem('${p.code}')">${p.code}</span>`).join('')||'<span class="meta">—</span>'}</div>`})});$('trafficMatrix').innerHTML=html;let arr=P.filter(p=>p.isTraffic);$('trafficList').innerHTML=arr.map(p=>problemRow(p,p.trafficTask||'')).join('')}
+function openProblem(code){let p=problem(code); if(!p)return; $('modalTitle').textContent=`${p.code} ${p.title}`;$('modalSub').textContent=`${p.version} · ${p.module} · ${p.situation} · ${p.figure} · ${p.structure} · ${p.support} · ${p.level}`;let imgs=(p.images||[]).map(src=>`<img class="problem-img" src="${src}" alt="${p.code} 原题截图">`).join('') || '<div class="empty">该题暂无截图。</div>';let task=p.trafficTask?`<div class="variant-text"><b>横向切片认知任务：</b>${esc(p.trafficTask)}</div>`:'';$('modalBody').innerHTML=`${tags(p)}${task}<div class="img-wrap">${imgs}</div>`;$('modal').classList.add('active')}
+function closeModal(e){if(e&&e.target!==$('modal'))return;$('modal').classList.remove('active')}
+function scoreBetter(p,dim){let s=0;if(dim==='d1'&&['工程','探究'].includes(p.d1))s+=4;if(dim==='d3'&&p.d3.includes('复合'))s+=4;if(dim==='d4'&&p.d4==='闭环')s+=4;if(dim==='d5'&&p.d5!=='无')s+=4;if(dim==='d6')s+=p.d6==='Ⅲ'?5:p.d6==='Ⅱ'?3:1;if(p.d5!=='无')s++;if(p.d3.includes('复合'))s++;return s}
+function runIntegrationDecision(){let ver=$('intVersion').value||'人教版', mod=$('intModule').value||'相互', dim=$('intDimension').value, stu=$('intStudent').value;let main=P.filter(p=>p.version===ver&&p.d2===mod);let others=P.filter(p=>p.version!==ver&&p.d2===mod);let studentNote=stu==='weak'?'基础较弱：优先保留层级Ⅰ/Ⅱ入口，层级Ⅲ作为选学或课后延伸。':stu==='strong'?'基础较强：可完整加入层级Ⅲ裁决、方法比较或开放探究任务。':'普通班级：建议保留主干例题，补入 1–2 道功能互补题即可。';let html='';if(main.length){let fusion=others.filter(p=>scoreBetter(p,dim)>=4).sort((a,b)=>scoreBetter(b,dim)-scoreBetter(a,dim)).slice(0,4);let supplement=others.filter(p=>!main.some(m=>m.d1===p.d1&&m.d6===p.d6)).sort((a,b)=>scoreBetter(b,dim)-scoreBetter(a,dim)).slice(0,5);let replace=others.filter(p=>main.some(m=>m.d6===p.d6)&&scoreBetter(p,dim)>=3).slice(0,3);html+=`<div class="path-banner"><h3>判断结果：情形一 · 主用版本已有例题</h3><p class="meta">${ver} 在 ${full[mod]} 模块共有 ${main.length} 道例题，整合应以主用版本原题为起点，按“融合→补充→替换”的改动强度递进。</p></div>`;html+=`<div class="step"><b>① 主用例题</b><div class="list" style="margin-top:10px">${main.map(p=>problemRow(p)).join('')}</div></div>`;html+=`<div class="step"><b>② 融合路径</b><p class="meta">不改变主用例题物理结构，只移植他版在 ${dLabel[dim]} 上更强的处理。</p><div class="list" style="margin-top:10px">${fusion.map(p=>problemRow(p)).join('')||'<div class="empty">暂无强匹配融合对象，可考虑补充路径。</div>'}</div></div>`;html+=`<div class="step"><b>③ 补充路径</b><p class="meta">保留主用例题，再补入功能互补题，形成情境覆盖或认知梯度。</p><div class="list" style="margin-top:10px">${supplement.map(p=>problemRow(p)).join('')||'<div class="empty">暂无明显互补题。</div>'}</div></div>`;html+=`<div class="step"><b>④ 替换路径</b><p class="meta">仅当他版同构例题在图示、结构或助学支架上明显更强时使用；替换前需检查知识链铺垫。</p><div class="list" style="margin-top:10px">${replace.map(p=>problemRow(p)).join('')||'<div class="empty">不建议优先替换。</div>'}</div></div>`;}else{let cand=others.sort((a,b)=>scoreBetter(b,dim)-scoreBetter(a,dim)).slice(0,8);html+=`<div class="path-banner"><h3>判断结果：情形二 · 主用版本无例题</h3><p class="meta">${ver} 在 ${full[mod]} 模块下未检索到主用例题，应从其他版本执行“筛选判断 + 定位判断”。</p></div>`;html+=`<div class="step"><b>① 四项筛选判断</b><div class="principles"><div class="principle"><b>知识内容一致</b><span class="meta">候选题须属于 ${full[mod]}</span></div><div class="principle"><b>情境类型适切</b><span class="meta">服务本课目标而非只追求新颖</span></div><div class="principle"><b>认知层级匹配</b><span class="meta">新授课慎用过高层级</span></div><div class="principle"><b>呈现系统兼容</b><span class="meta">图示、结构和栏目能接入主用教材</span></div></div></div>`;html+=`<div class="step"><b>② 候选例题</b><div class="list" style="margin-top:10px">${cand.map(p=>problemRow(p)).join('')||'<div class="empty">其他版本也无对应例题，应转入拓展策略。</div>'}</div></div>`;html+=`<div class="step"><b>③ 定位建议</b><p class="meta">可定位为：新授课应用示范、课时末整合训练、下一课时复习引入、复习课综合应用。若六版均无可调资源，则不再属于整合，应进入“六维变式拓展”。</p></div>`}
+html+=`<div class="path-banner"><h3>四项原则复核</h3><div class="principles"><div class="principle"><b>互补性</b><span class="meta">是否填补主用版本缺口，而非同类堆叠？</span></div><div class="principle"><b>课标一致性</b><span class="meta">是否覆盖物理观念、科学思维、探究与责任？</span></div><div class="principle"><b>认知梯度</b><span class="meta">是否形成 Ⅰ→Ⅱ→Ⅲ 或适合课型的梯度？</span></div><div class="principle"><b>学情适切性</b><span class="meta">${studentNote}</span></div></div></div>`;$('integrationResult').innerHTML=html;}
+function renderIntegrationCases(){$('integrationCases').innerHTML=DATA.integrationCases.map(c=>`<div class="card"><h3>${esc(c.title)}</h3><div class="tags"><span class="tag">${c.path}</span><span class="tag g">基底：${c.base}</span><span class="tag o">${full[c.module]||c.module}</span></div><p class="meta">${esc(c.summary)}</p><div class="tags">${c.codes.map(code=>`<span class="chip" onclick="openProblem('${code}')">${code}</span>`).join('')}</div><button class="small-btn" onclick="showCase('${c.id}')">展开操作路径</button><div id="case-${c.id}" style="display:none;margin-top:12px">${c.steps.map(s=>`<div class="step"><b>${s.op}</b><p class="meta">${esc(s.text)}</p><div>${s.codes.map(code=>`<span class="chip" onclick="openProblem('${code}')">${code}</span>`).join('')}</div></div>`).join('')}</div></div>`).join('')}
+function showCase(id){let el=$('case-'+id);el.style.display=el.style.display==='none'?'block':'none'}
+let selectedDim='d1';
+function initExtension(){renderMotherOptions(); renderDimGrid(); selectMother();}
+function renderMotherOptions(){let q=($('motherSearch')?.value||'').trim().toLowerCase();let arr=P.filter(p=>!q||(p.code+p.title+p.version).toLowerCase().includes(q)).slice(0,50);let sel=$('motherSelect');let old=sel.value;sel.innerHTML=arr.map(p=>`<option value="${p.code}">${p.code} ${p.title} · ${p.version}</option>`).join('');if(arr.some(p=>p.code===old)) sel.value=old; selectMother(false)}
+function getMother(){return problem($('motherSelect').value)||P[0]}
+function selectMother(update=true){let p=getMother();if(!p)return;$('motherCard').innerHTML=`<h3><span class="code">${p.code}</span> ${esc(p.title)}</h3><div class="meta">${p.version} · ${p.module} · ${p.situation} · ${p.level}</div>${tags(p)}`;if(update)generateVariant();else generateVariant()}
+function useAsMother(code){showPage('extension');setTimeout(()=>{ $('motherSearch').value=code; renderMotherOptions(); $('motherSelect').value=code; selectMother();},50)}
+function renderDimGrid(){const dims=[['d1','D1 情境类型','生活化/工程化/探究化/纯模型化'],['d2','D2 知识模块','单模块巩固或跨模块联结'],['d3','D3 图示类型','无图、示意图、复合图重构'],['d4','D4 呈现结构','二段、三段、闭环式升级'],['d5','D5 助学栏目','规范、方法、反思支架'],['d6','D6 认知层级','Ⅰ→Ⅱ→Ⅲ 层级提升']];$('dimGrid').innerHTML=dims.map(d=>`<div class="dim-card ${d[0]===selectedDim?'active':''}" onclick="selectedDim='${d[0]}';renderDimGrid();updateTargetOptions();generateVariant()"><b>${d[1]}</b><span>${d[2]}</span></div>`).join('');updateTargetOptions()}
+function updateTargetOptions(){let p=getMother();let options={d1:D1,d2:D2,d3:D3,d4:D4,d5:D5,d6:D6}[selectedDim];$('variantTarget').innerHTML=options.map(x=>`<option value="${x}" ${p&&p[selectedDim]===x?'disabled':''}>${full[x]||x}${p&&p[selectedDim]===x?'（原编码）':''}</option>`).join('');let first=options.find(x=>!p||p[selectedDim]!==x);if(first)$('variantTarget').value=first;}
+function variantCore(p, dim, target){let newCode={d1:p.d1,d2:p.d2,d3:p.d3,d4:p.d4,d5:p.d5,d6:p.d6};newCode[dim]=target;let title=`${p.title}的${dLabel[dim]}变式`;let stem='', qs=[], note='', use='';
+if(dim==='d1'){let ctx={生活:'将问题改写为学生熟悉的日常生活场景，如校园、交通、体育或家庭劳动。',工程:'将母题迁移到工程技术场景，如桥梁、起重机、传送带、航天或交通安全系统。',探究:'把题目改造成含数据处理、实验判断、方法论反思或科学史证据的探究任务。',纯模:'去掉真实情境包装，保留研究对象、几何关系和物理量，突出模型分析。'}[target];stem=`以“${p.title}”的物理结构为母题，${ctx}保持核心知识点不变，重新给出必要数据。`;qs=['提取新情境中的研究对象与关键物理量。','建立与原题相同或相近的物理模型并完成求解。','说明新情境与原题在物理本质上的相同点和差异点。'];note='情境拓展的关键是不改变核心物理结构，而是改变知识应用背景与社会功能取向。';use='适合导入、情境迁移或章节末应用拓展。'}
+if(dim==='d2'){let ctx={运动:'弱化受力分析，直接给出运动学条件，训练位移、速度、加速度关系。',相互:'让研究对象处于平衡状态，突出受力分析、力的合成分解或平衡条件。',牛顿:'加入力与加速度的因果关系，由受力分析求加速度，再联系运动过程。'}[target];stem=`以“${p.title}”为母题进行跨模块改造：${ctx}`;qs=['写出新题中涉及的核心物理量。','判断应使用的知识模块与模型。','比较该变式与原题在求解路径上的变化。'];note='模块拓展用于把单一知识点转化为前后知识的联结。';use='适合复习课、专题课或大章综合训练。'}
+if(dim==='d3'){let ctx={实景:'增加真实照片或高仿真情境图，先让学生识别物理场景。',示意:'将文字条件转化为几何图、受力图或运动过程示意图。',复合:'采用“实景图 + 模型示意图”的复合呈现，显化从情境到模型的转化。',无图:'去掉图示，让学生根据文字自主画图，训练信息提取与图景建构。'}[target];stem=`以“${p.title}”为母题进行图示改造：${ctx}`;qs=['请学生先描述图示中的研究对象。','补画或解释关键物理量、力或运动过程。','说明图示如何帮助建立模型。'];note='图示变式主要改变认知支架，不必改变原题物理内容。';use='适合板书、课件演示、学案留白或学生画图训练。'}
+if(dim==='d4'){let ctx={二段:'压缩为“题目 + 解答/分析”的简洁形式，让学生补全中间推理。',三段:'整理为“题目陈述—分析—解答”的规范示范。',闭环:'在完整解答后增加方法总结、迁移追问或情境回扣，形成案例闭环。'}[target];stem=`以“${p.title}”为母题进行呈现结构改造：${ctx}`;qs=['完成基本求解。','归纳本题所属模型和一般处理步骤。','设计一个条件改变后的迁移问题。'];note='结构变式关注例题文本如何组织，而不是单纯增加难度。';use='二段式适合诊断，三段式适合新授示范，闭环式适合方法迁移。'}
+if(dim==='d5'){let ctx={无:'撤去显性提示，让学生独立完成分析。',规范提醒:'加入单位换算、正方向、符号、受力图等规范提示。',方法策略:'加入可迁移的方法步骤或模型识别提示。',反思评价:'加入比较、判断、评价或开放讨论问题。'}[target];stem=`以“${p.title}”为母题补充助学栏目：${ctx}`;qs=target==='规范提醒'?['先统一单位并规定正方向。','画出必要的示意图或受力图。','检查结果单位与方向是否合理。']:target==='方法策略'?['本题属于哪一类物理模型？','解决这类问题的一般步骤是什么？','条件改变时哪些步骤保持不变？']:target==='反思评价'?['结果是否符合实际情境？','是否存在另一种解法？','如果条件改变，结论是否仍成立？']:['独立完成并说明自己的思路。'];note='助学栏目变式适合把原题变成可用于课堂提问或学案支架的材料。';use='适合分层教学：弱班加规范提醒，强班加反思评价。'}
+if(dim==='d6'){let ctx={'Ⅰ':'降低为程序性应用：减少情境干扰，给出直接可代入的数据。','Ⅱ':'升级为分析性建模：加入阶段边界、临界条件、逆向推理或多变量耦合。','Ⅲ':'升级为批判性推理：加入安全标准、法规、方案评价、方法比较或证明任务。'}[target];stem=`以“${p.title}”为母题进行认知层级变式：${ctx}`;qs=target==='Ⅰ'?['列出已知量和未知量。','选择唯一适用公式并代入求解。']:target==='Ⅱ'?['判断是否存在阶段边界或隐含条件。','建立分步模型或联立关系。','解释为什么不能直接套用单一公式。']:['完成必要计算。','将计算结果与外部准则或方法标准比较。','作出判断、评价或证明，并说明依据。'];note='层级提升不是简单多算一步，而是改变学生需要完成的认知操作。';use='适合构建 Ⅰ→Ⅱ→Ⅲ 的变式链或课堂压轴讨论。'}
+return {newCode,title,stem,qs,note,use};}
+function generateVariant(){let p=getMother();if(!p)return;let target=$('variantTarget').value||({d1:D1,d2:D2,d3:D3,d4:D4,d5:D5,d6:D6}[selectedDim]||[]).find(x=>x!==p[selectedDim]);let v=variantCore(p,selectedDim,target);let oldTags=['d1','d2','d3','d4','d5','d6'].map(k=>`<span class="tag ${tagClass(p[k])}">${k.toUpperCase()} ${full[p[k]]||p[k]}</span>`).join('');let newTags=['d1','d2','d3','d4','d5','d6'].map(k=>`<span class="tag ${k===selectedDim?'r':tagClass(v.newCode[k])}">${k.toUpperCase()} ${full[v.newCode[k]]||v.newCode[k]}</span>`).join('');let text=`【母题】${p.code} ${p.title}\n【改造维度】${dLabel[selectedDim]}：${full[p[selectedDim]]||p[selectedDim]} → ${full[target]||target}\n【变式题干】${v.stem}\n【变式设问】\n${v.qs.map((q,i)=>`(${i+1}) ${q}`).join('\n')}\n【教学说明】${v.note}\n【适用建议】${v.use}`;$('variantResult').dataset.text=text;$('variantResult').innerHTML=`<div class="coding-change"><div class="coding-box"><b>原题编码</b><div class="tags">${oldTags}</div></div><div class="arrow-big">→</div><div class="coding-box"><b>变式后编码</b><div class="tags">${newTags}</div></div></div><div class="variant-text"><h3>${esc(v.title)}</h3><p><b>变式题干：</b>${esc(v.stem)}</p><p><b>变式设问：</b></p><ol style="padding-left:22px">${v.qs.map(q=>`<li>${esc(q)}</li>`).join('')}</ol><p><b>改造说明：</b>${esc(v.note)}</p><p><b>适用建议：</b>${esc(v.use)}</p></div>`;renderVariantTimeline(p)}
+function copyVariantText(){let text=$('variantResult').dataset.text||'';navigator.clipboard?.writeText(text);alert('变式文本已复制到剪贴板')}
+function renderVariantTimeline(p){let steps=[['基础变式','保留原模型，减少干扰量，形成层级Ⅰ入口。'],['情境变式','改变 D1 情境类型，将知识迁移到生活、工程或探究场景。'],['图示变式','改变 D3 图示类型，用实景图、示意图或复合图支撑建模。'],['方法变式','改变 D4/D5，增加方法总结、策略提示或反思追问。'],['高阶变式','改变 D6，加入外部标准、方案评价或方法比较。'],['开放探究','综合改造多个维度，形成项目化或小论文任务。']];$('variantTimeline').innerHTML=steps.map((s,i)=>`<div class="timeline-item"><div class="time-badge">S${i+1}</div><div class="timeline-card"><h3>${s[0]}</h3><p class="meta">以 <span class="code">${p.code}</span> ${esc(p.title)} 为母题：${s[1]}</p></div></div>`).join('')}
+
+// ===== v4: 题干要素抽取、母题语义化变式、题干要素组合整合 =====
+function inferElements(p){
+ const t=(p.title||'');
+ const code=p.code||'';
+ const base={scenario:t, object:'研究对象', process:'物理过程', known:['题干给出的物理量'], unknown:['待求物理量或判断结论'], model:p.module||'物理模型', operation:'根据题意建立模型并求解', family:'general'};
+ const specific={
+  'RJ-04':{scenario:'马拉雪橇匀速前进',object:'雪橇',process:'粗糙水平面上的匀速直线运动',known:['质量 m','动摩擦因数 μ','匀速状态'],unknown:['拉力大小','摩擦力大小'],model:'滑动摩擦力 + 二力平衡',operation:'由 f=μN 与 F=f 求拉力',family:'friction'},
+  'LK-05':{scenario:'狗拉雪橇匀速运动',object:'雪橇',process:'粗糙水平面上的匀速运动',known:['质量 m','动摩擦因数 μ','匀速状态'],unknown:['狗对雪橇的拉力'],model:'摩擦力模型 + 平衡条件',operation:'抓主要因素，忽略次要因素；由平衡条件求拉力',family:'friction'},
+  'HK-06':{scenario:'木块压在竖直墙面上',object:'木块',process:'竖直墙面上的静/动摩擦变化',known:['压力或外力变化','重力','接触状态'],unknown:['摩擦力大小和方向','是否发生相对滑动'],model:'静摩擦力自调节 + 滑动摩擦力',operation:'先判动静，再定方向和大小',family:'friction'},
+  'YJ-08':{scenario:'推书桌并判断书柜能否被拉动',object:'书桌/书柜',process:'粗糙水平面上的拖动与临界判断',known:['匀速条件','拉力','重力或质量'],unknown:['动摩擦因数 μ','能否被拉动'],model:'摩擦力 + 平衡/临界判断',operation:'逆向求 μ，再正向判断运动状态',family:'friction'},
+  'RJ-06':{scenario:'滑梯设计中的受力平衡',object:'滑梯上的人或物体',process:'斜面上的共点力平衡',known:['重力','角度或几何关系','平衡状态'],unknown:['支持力/摩擦力/相关力的大小'],model:'共点力平衡 + 正交分解',operation:'选择研究对象，画受力图，列平衡方程',family:'balance'},
+  'RJ-07':{scenario:'悬挂重物的平衡',object:'重物与绳',process:'多力作用下静止平衡',known:['重力','绳与方向的夹角'],unknown:['绳的拉力或分力'],model:'三力平衡/力的分解',operation:'用力的合成分解或平衡方程求解',family:'balance'},
+  'LK-08':{scenario:'鸟笼悬挂',object:'鸟笼及悬绳',process:'两绳或多力作用下的静力平衡',known:['重力','绳的方向或夹角'],unknown:['各绳拉力'],model:'共点力平衡 + 力的分解',operation:'选择研究对象→受力分析→坐标分解→列方程',family:'balance'},
+  'HK-09':{scenario:'斜面木块与弹簧测力计',object:'斜面上的木块',process:'斜面方向的平衡与受力分解',known:['重力','斜面角度','弹簧测力计示数'],unknown:['分力或摩擦/支持力关系'],model:'斜面受力分析 + 平衡条件',operation:'沿斜面和垂直斜面分解',family:'balance'},
+  'HK-10':{scenario:'风力仪原理推导',object:'悬挂小球/风力仪',process:'水平风力作用下小球偏转并达到平衡',known:['小球重力或质量','偏角 θ'],unknown:['风力大小或风速相关量'],model:'三力平衡 + tanθ 关系',operation:'由受力图推导 F=mg·tanθ',family:'balance'},
+  'YJ-12':{scenario:'光滑挡板上的平衡',object:'小球或物体',process:'接触力与重力作用下平衡',known:['重力','几何角度','光滑条件'],unknown:['弹力或绳拉力'],model:'共点力平衡',operation:'画受力图并由几何关系求解',family:'balance'},
+  'HKJ-13':{scenario:'两根细绳悬挂电灯',object:'电灯与细绳',process:'两绳拉力与重力平衡',known:['电灯重力','绳的夹角'],unknown:['绳中拉力'],model:'三力平衡',operation:'用平衡方程或三角形法求拉力',family:'balance'},
+  'HKJ-14':{scenario:'风力仪测重力原理',object:'风力仪小球',process:'风力作用下偏转平衡',known:['偏角','风力或重力中的一个量'],unknown:['重力或风力'],model:'三力平衡 + 比值关系',operation:'依据 tanθ 建立关系式',family:'balance'},
+  'RJ-01':{scenario:'汽车加速后紧急制动',object:'汽车',process:'先加速后制动的两阶段直线运动',known:['初速度','加速时间','加速度','制动加速度'],unknown:['阶段末速度','制动时间/位移'],model:'匀变速直线运动分段模型',operation:'先求加速段末速度，再作为制动段初速度',family:'traffic'},
+  'RJ-03':{scenario:'动车进站里程碑减速',object:'动车',process:'由位置变化反推减速运动',known:['里程碑位置或距离','速度/时间信息'],unknown:['减速过程中的速度或时间'],model:'匀变速直线运动逆向分析',operation:'由位移关系反推运动量',family:'traffic'},
+  'YJ-05':{scenario:'高速公路紧急制动安全判断',object:'汽车',process:'发现障碍后制动停车',known:['初速度','制动加速度','安全距离'],unknown:['制动距离','能否安全停车'],model:'匀减速直线运动 + 安全准则比较',operation:'计算制动距离并与安全距离比较',family:'traffic'},
+  'YJ-06':{scenario:'含反应时间的汽车制动',object:'汽车和驾驶员',process:'反应段匀速 + 制动段匀减速',known:['反应时间','初速度','制动加速度','安全距离'],unknown:['总停车距离','是否安全'],model:'两阶段运动 + 安全裁决',operation:'反应距离与制动距离相加后比较',family:'traffic'},
+  'YJ-16':{scenario:'交警依据车痕测速',object:'汽车',process:'由制动痕迹反推制动前速度',known:['车痕长度','制动加速度或摩擦条件','限速标准'],unknown:['制动前速度','是否超速'],model:'逆向运动学 + 法规裁决',operation:'由位移反推速度，再与限速比较',family:'traffic'},
+  'HK-04':{scenario:'高速公路安全距离判断',object:'汽车',process:'紧急制动到停止',known:['初速度','制动加速度','安全距离'],unknown:['制动距离','能否安全停车'],model:'匀减速运动 + 外部标准比较',operation:'计算→比较→裁决',family:'traffic'},
+  'HKJ-03':{scenario:'汽车制动避让小动物',object:'汽车',process:'速度变化过程',known:['初末速度','时间'],unknown:['加速度'],model:'加速度定义式',operation:'直接代入 a=Δv/Δt',family:'traffic'},
+  'HKJ-07':{scenario:'学校门口超速判定',object:'汽车',process:'由车痕反推初速度',known:['制动距离','减速度或摩擦条件','校门口限速'],unknown:['是否超速'],model:'逆向运动学 + 法规裁决',operation:'反推速度并与限速比较',family:'traffic'},
+  'HKJ-17':{scenario:'冰面与普通路面制动距离对比',object:'汽车',process:'不同路面上制动距离变化',known:['速度','摩擦因数或比例关系'],unknown:['不同路面的制动距离或安全风险'],model:'变量关系重组',operation:'用比例关系分析制动距离变化',family:'traffic'},
+  'JK-18':{scenario:'量纲检验公式合理性',object:'物理公式',process:'利用量纲判断关系式是否可能成立',known:['公式中各物理量的量纲'],unknown:['公式是否合理'],model:'量纲分析方法',operation:'比较等式两边量纲一致性',family:'inquiry'}
+ };
+ if(specific[code]) return {...base,...specific[code]};
+ if(/[刹制]车|安全|超速|车距|里程碑|红灯|追尾/.test(t)) return {...base,scenario:t,object:'交通工具',process:'直线运动中的制动、减速或安全距离判断',known:['速度','时间或距离','加速度/减速度'],unknown:['制动距离、速度、时间或安全结论'],model:'匀变速直线运动模型',operation:'建立运动过程，必要时与安全准则比较',family:'traffic'};
+ if(/雪橇|摩擦|书桌|木块|木箱|传送带|行李/.test(t)) return {...base,scenario:t,object:'接触物体',process:'粗糙接触面上的受力或运动状态判断',known:['重力/质量','接触面条件','外力或运动状态'],unknown:['摩擦力、拉力或能否运动'],model:'摩擦力模型',operation:'先判动静，再选用平衡条件或牛顿第二定律',family:'friction'};
+ if(/风力仪|悬|绳|吊|斜面|平衡|支架|挡板|鸟笼|电灯/.test(t)) return {...base,scenario:t,object:'受多力作用的物体',process:'静止或匀速状态下的共点力平衡',known:['重力','角度/几何关系','部分力'],unknown:['未知力或分力'],model:'共点力平衡模型',operation:'画受力图，选择分解方向，列平衡方程',family:'balance'};
+ if(/火箭|神舟|飞机|航母|舰载机|跑道|C919|长征/.test(t)) return {...base,scenario:t,object:'工程装置或交通工具',process:'工程技术情境中的运动或受力过程',known:['速度/加速度/力/质量等工程参数'],unknown:['运动量或力学量'],model:p.module+'应用模型',operation:'提取工程参数并转化为物理模型',family:'engineering'};
+ return base;
+}
+function elementHTML(p){const e=inferElements(p);return `<div class="element-grid"><div class="element-box"><b>情境/对象</b><span>${esc(e.scenario)}；研究对象：${esc(e.object)}</span></div><div class="element-box"><b>物理过程</b><span>${esc(e.process)}</span></div><div class="element-box"><b>已知量</b><span>${e.known.map(esc).join('、')}</span></div><div class="element-box"><b>未知量/任务</b><span>${e.unknown.map(esc).join('、')}</span></div><div class="element-box"><b>核心模型</b><span>${esc(e.model)}</span></div><div class="element-box"><b>求解路径</b><span>${esc(e.operation)}</span></div></div>`}
+// 覆盖原 selectMother：母题卡片加入题干要素抽取
+function selectMother(update=true){let p=getMother();if(!p)return;$('motherCard').innerHTML=`<h3><span class="code">${p.code}</span> ${esc(p.title)}</h3><div class="meta">${p.version} · ${p.module} · ${p.situation} · ${p.level}</div>${tags(p)}<div class="semantic-note">题干要素抽取：从母题中先识别情境、对象、过程、已知量、未知量与模型，再据此改编设问。</div>${elementHTML(p)}`;generateVariant()}
+// 语义化覆盖原 variantCore：设问跟随母题要素变化
+function variantCore(p, dim, target){
+ let e=inferElements(p); let newCode={d1:p.d1,d2:p.d2,d3:p.d3,d4:p.d4,d5:p.d5,d6:p.d6};newCode[dim]=target;
+ let title=`${p.title}的${dLabel[dim]}要素化变式`; let stem='', qs=[], note='', use='';
+ const keep=`保留母题的核心模型“${e.model}”与研究对象分析思路，将原题中的“${e.scenario}”重新组织为新的教学任务。`;
+ if(dim==='d1'){
+   const scenario={生活:`校园或日常生活中的${e.object}问题`,工程:`工程技术系统中的${e.object}问题，如交通安全、桥梁/传送装置或航天设备`,探究:`围绕${e.process}设计实验数据、图像或科学方法判断`,纯模:`去掉真实背景，仅保留${e.object}、几何关系和物理量`}[target]||`新的${full[target]||target}情境`;
+   stem=`将母题“${e.scenario}”改写为“${scenario}”。${keep}题干中应重新给出与${e.known.join('、')}对应的数据，并保持待求任务指向${e.unknown.join('、')}。`;
+   qs=[`从新情境中提取研究对象“${e.object}”及关键已知量。`,`建立与母题一致的“${e.model}”，完成${e.unknown[0]||'目标量'}的求解或判断。`,`比较新情境与母题在物理过程“${e.process}”上的相同点与差异。`];
+   note=`D1 变式改变的是情境外壳，不应破坏母题的核心模型。`;use='适合导入、情境迁移、STSE 拓展或工程化补足。';
+ }
+ if(dim==='d2'){
+   const map={运动:`把任务重心转向运动描述：直接给出或要求求出速度、位移、时间、加速度等运动量。`,相互:`把任务重心转向受力和平衡：让${e.object}处于静止或匀速状态，突出力的合成、分解或平衡条件。`,牛顿:`加入力与加速度的因果链：先由受力分析求加速度，再联系${e.process}中的运动量。`};
+   stem=`以“${e.scenario}”为母题进行 D2 模块联结。${map[target]||'改变知识模块重心。'}原题要素中保留研究对象“${e.object}”，但重新安排已知量，使求解路径从“${e.operation}”转向新的模块模型。`;
+   qs=[`列出新题中保留的母题要素：对象、过程和已知量。`,`判断新题主要调用${full[target]||target}中的哪个模型，并说明理由。`,`完成求解后，比较变式与原题在求解路径上的变化。`];
+   note='D2 变式不是换皮，而是把单一知识点转化为前后知识之间的联系。';use='适合复习课、专题课和大章综合训练。';
+ }
+ if(dim==='d3'){
+   const map={实景:`增加“${e.scenario}”的真实或仿真实景图，让学生先识别对象和过程。`,示意:`把题干转化为${e.model}所需的示意图，如受力图、运动过程图或几何关系图。`,复合:`采用“真实情境图 + 模型示意图”的复合图，显化从${e.scenario}到${e.model}的建模过程。`,无图:`去掉图示，只保留文字条件，要求学生根据${e.process}自主画图。`};
+   stem=`以“${e.scenario}”为母题进行 D3 图示重构：${map[target]||'调整图示类型。'}题目数据不必大改，重点是让图示服务于“${e.operation}”。`;
+   qs=[`依据图示指出研究对象“${e.object}”。`,`在图中标出${e.known.slice(0,3).join('、')}等关键量。`,`说明该图示如何帮助完成“${e.model}”建模。`];
+   note='D3 变式主要改变视觉支架，适合把图片从装饰转化为建模工具。';use='适合课件演示、板书分层、学案留白和学生画图训练。';
+ }
+ if(dim==='d4'){
+   const map={二段:'压缩为“题目+解答/分析”，让学生补全中间推理。',三段:'整理为“题目陈述—分析—解答”的规范示范。',闭环:'在解答后加入方法归纳、迁移追问或情境回扣，形成案例闭环。'};
+   stem=`以“${e.scenario}”为母题进行 D4 结构改造：${map[target]||'调整呈现结构。'}围绕“${e.object}—${e.process}—${e.model}”重排题干、分析与设问。`;
+   qs=[`完成母题核心任务：${e.unknown.join('、')}。`,`归纳“${e.model}”类问题的一般处理步骤。`,`设计一个改变${e.known[0]||'条件'}后的迁移追问，并判断解法是否改变。`];
+   note='D4 变式关注例题文本组织方式，使原题从“做完”走向“会迁移”。';use='二段式适合诊断，三段式适合新授，闭环式适合方法提升。';
+ }
+ if(dim==='d5'){
+   const map={无:'撤去提示，让学生独立完成。',规范提醒:`提醒学生先处理${e.known.join('、')}中的单位、方向或图示规范。`,方法策略:`给出“${e.operation}”的可迁移步骤。`,反思评价:`围绕结果合理性、方法选择或实际意义追加评价问题。`};
+   stem=`以“${e.scenario}”为母题补充 D5 助学栏目：${map[target]||'调整助学支架。'}栏目不改变原题主体，只改变学生进入“${e.model}”的支架方式。`;
+   if(target==='规范提醒') qs=[`先统一题中${e.known.join('、')}的单位或方向。`,`画出必要的图示后再列式。`,`检查${e.unknown[0]||'结果'}的单位、方向和数量级。`];
+   else if(target==='方法策略') qs=[`本题为什么属于“${e.model}”？`,`解决这类题的一般步骤是否可以概括为：${e.operation}？`,`若${e.known[0]||'某一条件'}改变，哪些步骤保持不变？`];
+   else if(target==='反思评价') qs=[`计算结果是否符合“${e.scenario}”的实际意义？`,`是否存在另一种解法或更简洁的模型？`,`如果用于真实教学或工程判断，还需要补充哪些条件？`];
+   else qs=[`不提供提示，要求学生独立提取${e.object}、${e.process}和${e.model}。`];
+   note='D5 变式使同一道题能够服务不同基础的学生。';use='弱班加规范提醒，普通班加方法策略，强班加反思评价。';
+ }
+ if(dim==='d6'){
+   if(target==='Ⅰ'){
+     stem=`将母题“${e.scenario}”降低为层级Ⅰ：减少多余情境，只保留${e.known.slice(0,3).join('、')}等直接可用条件，使学生按唯一公式或唯一平衡关系求${e.unknown[0]||'目标量'}。`;
+     qs=[`列出已知量和未知量。`,`选择唯一适用的公式或关系式。`,`代入计算并写出单位。`];
+   }else if(target==='Ⅱ'){
+     stem=`将母题“${e.scenario}”升级为层级Ⅱ：在${e.process}中加入阶段边界、临界条件、逆向推理或多变量耦合，使学生不能直接套公式。`;
+     qs=[`判断题中是否存在阶段分界、临界状态或隐含条件。`,`把${e.object}的物理过程分解为若干子问题。`,`建立“${e.model}”并说明为什么不能直接套用单一路径。`];
+   }else{
+     const extra=e.family==='traffic'?'加入安全距离、限速法规或交通责任标准':e.family==='friction'?'加入能否满足工程防滑要求或方案合理性评价':e.family==='balance'?'加入结构是否安全、两种方法优劣或方案选择评价':'加入外部准则、方法比较或方案评价';
+     stem=`将母题“${e.scenario}”升级为层级Ⅲ：在原有求解后${extra}，使任务从“求出${e.unknown[0]||'结果'}”转向“依据结果作出判断或评价”。`;
+     qs=[`完成原题所需的基本计算或推导。`,`把计算结果与给定外部准则、方法标准或实际要求进行比较。`,`作出明确裁决，并说明依据是否充分。`];
+   }
+   note='D6 变式的关键不是多算一步，而是改变认知操作：Ⅰ重程序执行，Ⅱ重分析建模，Ⅲ重评价裁决。';use='适合构建“基础—进阶—高阶”的变式链。';
+ }
+ return {newCode,title,stem,qs,note,use};
+}
+function initIntegrationComposer(){let s=$('comboBase'); if(!s) return; s.innerHTML=P.map(p=>`<option value="${p.code}">${p.code} ${p.title} · ${p.version}</option>`).join(''); s.value='RJ-04'; autoFillCombo();}
+function autoFillCombo(){let base=problem($('comboBase').value)||P[0]; let e=inferElements(base); let rec=[]; if(e.family==='friction') rec=['LK-05','HK-06','YJ-08']; else if(e.family==='traffic') rec=['LK-02','YJ-05','YJ-16','HKJ-07']; else if(e.family==='balance') rec=['LK-08','HK-09','HK-10','HKJ-13']; else rec=P.filter(p=>p.code!==base.code&&p.d2===base.d2).slice(0,3).map(p=>p.code); $('comboCodes').value=rec.join(','); generateElementCombo();}
+function generateElementCombo(){let base=problem($('comboBase').value)||P[0];let codes=($('comboCodes').value||'').split(/[,，\s]+/).map(x=>x.trim()).filter(Boolean);let arr=codes.map(problem).filter(Boolean);let all=[base,...arr];let rows=all.map(p=>{let e=inferElements(p);return `<tr><td><span class="code">${p.code}</span><br>${esc(p.title)}</td><td>${esc(e.scenario)}<br><span class="meta">对象：${esc(e.object)}</span></td><td>${esc(e.model)}</td><td>${esc(e.operation)}</td><td>${tags(p)}</td></tr>`}).join('');
+ let be=inferElements(base);let fusion=arr[0]?inferElements(arr[0]):null;let supplements=arr.slice(1).map(inferElements);let combinedStem=`以 ${base.code}《${base.title}》为基底，保留其核心对象“${be.object}”与模型“${be.model}”。${fusion?`融合 ${arr[0].code}《${arr[0].title}》中的“${fusion.operation}”或助学支架，`:''}${supplements.length?`再补入 ${arr.slice(1).map(p=>p.code).join('、')} 的情境/层级要素，形成由基础到进阶的例题序列。`:''}`;
+ let combinedQs=[`比较各题的研究对象、已知量和待求量，指出可以共用的物理模型。`,`保留基底题的主干设问，选择一题的情境或图示要素进行融合。`,`从补充题中选取一个新的判断节点，形成进阶设问。`,`说明整合后序列如何体现互补性与认知梯度。`];
+ $('comboOutput').innerHTML=`<h3 style="color:var(--p2)">题干要素对照表</h3><table class="element-table"><thead><tr><th>例题</th><th>情境与对象</th><th>核心模型</th><th>求解路径/可借鉴要素</th><th>六维编码</th></tr></thead><tbody>${rows}</tbody></table><div class="combo-output" style="margin-top:14px"><h3>组合整合草案</h3><p><b>整合题干主线：</b>${esc(combinedStem)}</p><p><b>整合设问：</b></p><ol style="padding-left:22px">${combinedQs.map(q=>`<li>${esc(q)}</li>`).join('')}</ol><p><b>操作判断：</b>若只吸收图示、栏目或问法，属于“融合”；若保留基底题并加入其他题形成序列，属于“补充”；若用同构但支架更强的题替代基底题，才属于“替换”。</p></div>`;}
+
+init();
+</script>
+
+<script>
+// ===== v5: 浏览器端物理题 OCR + OCR 文本驱动要素抽取 =====
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  const OCR_PREFIX='physics_example_ocr_';
+  function cleanOCRText(t){return (t||'').replace(/\r/g,'').replace(/[ \t]+/g,' ').replace(/\n{3,}/g,'\n\n').trim();}
+  function ocrKey(code){return OCR_PREFIX+code;}
+  window.getSavedOCR=function(code){try{return localStorage.getItem(ocrKey(code))||'';}catch(e){return ''}}
+  window.setSavedOCR=function(code,text){try{localStorage.setItem(ocrKey(code), cleanOCRText(text));}catch(e){console.warn(e)}}
+  window.removeSavedOCR=function(code){try{localStorage.removeItem(ocrKey(code));}catch(e){}}
+
+  function getCurrentProblem(){try{return window.getMother?getMother():null}catch(e){return null}}
+  function imageForProblem(p){return p && p.images && p.images.length ? p.images[0] : ''}
+  function setStatus(msg){const el=document.getElementById('ocrStatus'); if(el) el.textContent=msg;}
+  function refreshOCRPanel(){
+    const p=getCurrentProblem(); if(!p) return;
+    const img=imageForProblem(p); const saved=window.getSavedOCR(p.code);
+    const preview=document.getElementById('ocrPreview'); if(preview) preview.innerHTML=img?`<img src="${img}" alt="${p.code}原题截图">`:'<div class="empty">当前母题没有可识别截图。</div>';
+    const textarea=document.getElementById('ocrText'); if(textarea) textarea.value=saved;
+    const badges=document.getElementById('ocrBadges');
+    if(badges) badges.innerHTML=saved?`<span class="ocr-badge">已保存 OCR 题干</span><span class="ocr-badge">${p.code}</span><span class="ocr-badge">约 ${saved.length} 字</span>`:`<span class="ocr-badge warn">未识别</span><span class="ocr-badge">${p.code}</span>`;
+    setStatus(saved?'已读取本题保存的 OCR 文本，可继续校对或直接生成变式。':'未识别。点击“识别当前母题截图”开始。');
+  }
+
+  function loadImage(src){return new Promise((resolve,reject)=>{const img=new Image(); img.onload=()=>resolve(img); img.onerror=reject; img.src=src;});}
+  async function prepareOCRCanvas(src){
+    const img=await loadImage(src); const scale=Math.min(3, Math.max(1.6, 2200/Math.max(img.width,img.height)));
+    const canvas=document.createElement('canvas'); canvas.width=Math.round(img.width*scale); canvas.height=Math.round(img.height*scale);
+    const ctx=canvas.getContext('2d',{willReadFrequently:true}); ctx.imageSmoothingEnabled=true; ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    const data=ctx.getImageData(0,0,canvas.width,canvas.height); const d=data.data;
+    // 灰度 + 自适应阈值，增强教材截图中文字对比度
+    let sum=0; for(let i=0;i<d.length;i+=4){const g=0.299*d[i]+0.587*d[i+1]+0.114*d[i+2]; sum+=g; d[i]=d[i+1]=d[i+2]=g;}
+    const avg=sum/(d.length/4); const threshold=Math.max(145, Math.min(205, avg*0.92));
+    for(let i=0;i<d.length;i+=4){const v=d[i]<threshold?0:255; d[i]=d[i+1]=d[i+2]=v; d[i+3]=255;}
+    ctx.putImageData(data,0,0); return canvas;
+  }
+
+  window.runMotherOCR=async function(){
+    const p=getCurrentProblem(); if(!p){alert('请先选择母题');return;} const src=imageForProblem(p); if(!src){alert('当前母题没有截图');return;}
+    if(!window.Tesseract){setStatus('未加载 OCR 引擎。请检查网络是否能访问 Tesseract.js CDN。'); alert('OCR 引擎未加载，可能是网络或浏览器拦截 CDN。'); return;}
+    try{
+      setStatus('正在预处理图片：放大、灰度化、增强文字对比度……');
+      const canvas=await prepareOCRCanvas(src);
+      setStatus('正在识别中文与英文/单位符号，首次使用会下载语言包，请稍等……');
+      const result=await Tesseract.recognize(canvas,'chi_sim+eng',{
+        logger:m=>{ if(m.status){ const pct=m.progress?` ${Math.round(m.progress*100)}%`:''; setStatus('OCR：'+m.status+pct); } },
+        tessedit_pageseg_mode:'6'
+      });
+      const text=cleanOCRText(result && result.data ? result.data.text : '');
+      const textarea=document.getElementById('ocrText'); if(textarea) textarea.value=text;
+      window.setSavedOCR(p.code,text); refreshOCRPanel();
+      setStatus(`识别完成：已保存 ${text.length} 字。请校对单位、公式和序号后再生成变式。`);
+      if(window.selectMother) window.selectMother();
+    }catch(err){console.error(err); setStatus('OCR 识别失败：'+(err && err.message ? err.message : err));}
+  }
+  window.applyEditedOCR=function(){
+    const p=getCurrentProblem(); if(!p)return; const textarea=document.getElementById('ocrText'); const text=textarea?textarea.value:'';
+    window.setSavedOCR(p.code,text); refreshOCRPanel(); if(window.selectMother) window.selectMother(); if(window.generateVariant) window.generateVariant();
+    setStatus('已保存校对后的 OCR 题干，并用于题干要素抽取与变式生成。');
+  }
+  window.clearMotherOCR=function(){
+    const p=getCurrentProblem(); if(!p)return; window.removeSavedOCR(p.code); const textarea=document.getElementById('ocrText'); if(textarea) textarea.value=''; refreshOCRPanel(); if(window.selectMother) window.selectMother(); if(window.generateVariant) window.generateVariant();
+  }
+
+  const oldInfer=window.inferElements;
+  function inferFromOCR(p,text,base){
+    const s=cleanOCRText(text); const oneLine=s.replace(/\n+/g,' ');
+    const sentences=oneLine.split(/[。；;!?！？]/).map(x=>x.trim()).filter(Boolean);
+    const scenario=(sentences.find(x=>x.length>12)||oneLine.slice(0,90)||base.scenario);
+    const objectPatterns=['汽车','无人机','电梯','舰载机','飞机','列车','火箭','小球','物块','木块','木箱','雪橇','书桌','书柜','鸟笼','电灯','斜面','弹簧测力计','风力仪','传送带','行李箱','物体'];
+    const object=objectPatterns.find(w=>oneLine.includes(w)) || base.object;
+    const qty=[...oneLine.matchAll(/[-+]?\d+(?:\.\d+)?\s*(?:m\/s²|m\/s2|m\/s\^2|m·s-2|m\s*\/\s*s|km\/h|cm\/s|m|cm|s|N|kg|g|Hz|°|度|rad)/g)].map(m=>m[0].replace(/\s+/g,''));
+    const varNames=[...new Set([...(oneLine.match(/[vV][₀0]?|a|t|x|s|F|N|G|m|μ|θ|g/g)||[])])];
+    const known=[...new Set([...qty.slice(0,8),...varNames.slice(0,6)])];
+    const questionParts=[];
+    const qRegex=/(?:求|问|试求|计算|判断|证明|画出|比较)[^。；;!?！？\n]{2,60}/g; let m;
+    while((m=qRegex.exec(oneLine)) && questionParts.length<5) questionParts.push(m[0]);
+    const unknown=questionParts.length?questionParts:[base.unknown&&base.unknown[0]?base.unknown[0]:'待求物理量或判断结论'];
+    let family=base.family||'general', model=base.model, process=base.process, operation=base.operation;
+    if(/刹车|制动|安全距离|超速|车距|红灯|追尾|里程碑|减速/.test(oneLine)){family='traffic';model='匀变速直线运动/交通制动安全模型';process='交通工具的加速、减速、制动或安全距离判断';operation='分阶段建立运动方程，必要时与安全距离或限速标准比较';}
+    else if(/摩擦|粗糙|动摩擦|静摩擦|拉力|推力|雪橇|书桌|木箱|木块/.test(oneLine)){family='friction';model='摩擦力与受力分析模型';process='接触物体在外力作用下的平衡、滑动或临界状态判断';operation='先判断动静摩擦，再结合平衡条件或牛顿第二定律求解';}
+    else if(/平衡|绳|悬|风力仪|鸟笼|电灯|斜面|挡板|支架|分解/.test(oneLine)){family='balance';model='共点力平衡/力的分解模型';process='物体在多个共点力作用下保持平衡';operation='画受力图，选择分解方向，列平衡方程并利用几何关系求解';}
+    else if(/火箭|神舟|航母|舰载机|C919|跑道|工程|桥|传送带/.test(oneLine)){family='engineering';model=(p.module||base.model)+'工程应用模型';process='工程技术情境中的运动或受力过程';operation='从工程参数中抽取物理量并转化为模型求解';}
+    else if(/实验|探究|数据|图像|量纲|证明|伽利略|频闪/.test(oneLine)){family='inquiry';model='科学探究与方法论模型';process='基于数据、图像、实验或推导进行方法判断';operation='整理证据，建立关系，进行推导、检验或评价';}
+    return {...base, scenario, object, process, known: known.length?known:base.known, unknown, model, operation, family, ocrText:s};
+  }
+  if(oldInfer){
+    window.inferElements=function(p){
+      const base=oldInfer(p); const text=window.getSavedOCR(p.code);
+      if(text && text.trim().length>20) return inferFromOCR(p,text,base);
+      return base;
+    }
+  }
+
+  // 覆盖母题选择函数：在题干要素处标注 OCR 来源，同时刷新 OCR 面板
+  const oldSelect=window.selectMother;
+  if(oldSelect){
+    window.selectMother=function(update=true){
+      oldSelect(update); const p=getCurrentProblem(); const saved=p?window.getSavedOCR(p.code):'';
+      if(saved){ const card=document.getElementById('motherCard'); if(card && !card.querySelector('.ocr-element-source')) card.insertAdjacentHTML('beforeend',`<div class="ocr-element-source">已启用 OCR 题干全文参与要素抽取：${saved.length} 字。变式设问将优先依据识别文本生成。</div>`); }
+      refreshOCRPanel();
+    }
+  }
+
+  ready(()=>{ refreshOCRPanel(); if(window.selectMother) window.selectMother(); });
+})();
+</script>
+
+
+<script>
+// ===== v6 增强层：物理模型知识库 + 可编辑要素 + 第三章整合工作台 + 语义化六维变式 =====
+(function(){
+'use strict';
+/* ---------- 0. 基础工具与本地存储（localStorage 失败时退回内存） ---------- */
+const MEM = {};
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return MEM[k]??null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){ MEM[k]=v; } }
+function lsDel(k){ try{ localStorage.removeItem(k); }catch(e){ delete MEM[k]; } }
+const EL_PREFIX='physics_example_elements_';
+function loadManualEl(code){ const raw=lsGet(EL_PREFIX+code); if(!raw) return null; try{ return JSON.parse(raw); }catch(e){ return null; } }
+function saveManualEl(code,obj){ lsSet(EL_PREFIX+code, JSON.stringify(obj)); }
+function clearManualEl(code){ lsDel(EL_PREFIX+code); }
+
+/* ---------- 1. 物理模型知识库（按模型族组织的拓展素材） ---------- */
+const KB = {
+ traffic:{
+  name:'交通制动安全模型',
+  swaps:{
+   生活:['校车驶近校门口减速避让放学学生','电动自行车在小区道路上紧急刹车','地铁列车进站的匀减速过程'],
+   工程:['高铁自动驾驶系统的进站制动程序设计','机场跑道上飞机中断起飞后的刹车过程','港口无人集卡在限速区内的制动控制'],
+   探究:['由频闪照片（或打点计时器纸带）的数据分析一次真实刹车过程','由行车记录仪导出的 v-t 图像研究制动全过程'],
+   纯模:['一质点以初速度 v₀ 做匀减速直线运动直至停止']
+  },
+  d2:{
+   相互:{stem:'补充车轮与路面间的动摩擦因数 μ 与整车质量 m，先对车进行受力分析，指出制动阶段滑动摩擦力是使车减速的合外力。',
+        qs:['画出制动阶段汽车的受力示意图，指出各力的施力物体。','写出滑动摩擦力的表达式 f=μmg，说明 μ 减小（如雨天）对制动的影响。']},
+   牛顿:{stem:'给出整车质量 m 与轮胎-路面动摩擦因数 μ，要求先由 f=μmg 与牛顿第二定律求出制动加速度，再代入运动学公式求制动距离与时间。',
+        qs:['对汽车进行受力分析，由 F=ma 求制动加速度 a 的大小。','由 v²=v₀²−2as 求制动距离，并与原题直接给 a 的解法比较多了哪一步推理。']},
+   运动:{stem:'隐去受力来源，直接给出制动加速度大小，把任务收缩为匀变速直线运动公式的应用。',
+        qs:['选定正方向，列出本题适用的运动学公式。','代入数据求出待求量并检验单位。']}
+  },
+  d5:{
+   规范提醒:['速度单位先统一：km/h 换算为 m/s 须除以 3.6。','区分"反应时间内的匀速段"与"制动段"，两段位移要分别计算。','刹车类问题先求停止时间，再判断题目所问时刻是否已超过停止时间（刹车陷阱）。'],
+   方法策略:['分阶段建模：反应段按匀速、制动段按匀减速分别列式，再求总位移。','匀减速到停的过程可逆向看作初速度为零的匀加速，常可简化计算。'],
+   反思评价:['若路面结冰使 μ 减小一半，制动距离将如何变化？原结论是否反转？','计算得到的安全车距与你乘车经验、交通法规的建议值是否一致？差异可能来自哪些被忽略的因素？']
+  },
+  d6:{
+   toII:['叠加驾驶员反应时间 t₀（如 0.5 s），总位移＝反应段匀速位移＋制动段位移，需识别阶段边界。','设置"刹车陷阱"：先求停止时间，判断所求时刻是否在停止之后。','改为逆向任务：由路面刹车痕迹长度反推制动前的初速度。'],
+   toIII:[{c:'前方障碍物距离（如 80 m）',q:'计算制动总位移后，判断该车能否在距障碍物 80 m 前安全停下，并说明判断依据。'},
+          {c:'路段限速标准（如校门口 40 km/h）',q:'由刹车痕迹反推初速度，判断该车是否超过限速 40 km/h，给出裁决及理由。'},
+          {c:'安全车距规范',q:'将计算所得最小安全车距与道路安全规范的建议值比较，评价该跟车距离是否安全。'}]
+  },
+  figures:['第一层 情境图：道路、车辆与障碍物的相对位置，服务情境感知。','第二层 过程图：沿运动方向标出反应段与制动段的位移分段，服务阶段建模。','第三层 v-t 图：以图线下面积表示各段位移，服务定量求解与检验。']
+ },
+ friction:{
+  name:'摩擦力与受力分析模型',
+  swaps:{
+   生活:['沿水平地面匀速推动课桌','在机场大厅匀速拖行行李箱'],
+   工程:['救援物资箱被钢索水平拖过粗糙地面','机场行李传送带上货物随带匀速运动','码头牵引车匀速拖动集装箱'],
+   探究:['设计实验：用弹簧测力计测量木块与桌面间的动摩擦因数','由拉力传感器数据图像判断物体由静到动的临界点'],
+   纯模:['质量为 m 的物块置于粗糙水平面上，受水平拉力 F 作用']
+  },
+  d2:{
+   牛顿:{stem:'把"匀速"改为"匀加速"：拉力大于摩擦力，先由 F−μmg=ma 求加速度，再结合运动学公式求末速度或位移。',
+        qs:['对物体受力分析，列出沿运动方向的牛顿第二定律方程。','求出加速度后，计算经过时间 t 后的速度与位移。','比较"匀速"与"匀加速"两问的求解路径差异。']},
+   运动:{stem:'隐去受力分析，直接给出加速度与初速度，任务收缩为运动学量的计算。',
+        qs:['列出适用的匀变速直线运动公式。','代入求解并检查结果的物理合理性。']},
+   相互:{stem:'保持平衡状态，把重心放在多力的合成、分解与平衡条件上。',
+        qs:['画出完整受力图。','建立坐标系正交分解，列平衡方程求未知力。']}
+  },
+  d5:{
+   规范提醒:['先判断物体处于静止、临界还是滑动状态，再决定用静摩擦力（由平衡求）还是 f=μN。','摩擦力方向与相对运动（或趋势）方向相反，不一定与运动方向相反。','N 不一定等于 mg：有斜向外力或斜面时须重新求压力。'],
+   方法策略:['受力分析四步：找重力→找接触弹力→判摩擦→建坐标列方程。','斜向上的拉力会减小压力 N，从而减小滑动摩擦力——抓住 N 的变化是这类题的关键。'],
+   反思评价:['若拉力方向由水平改为斜向上同样大小，物体还能保持匀速吗？为什么？','所得 μ 值是否落在常见材料（0.1～0.8）的合理范围内？']
+  },
+  d6:{
+   toII:['拉力方向改为与水平成 θ 角：压力 N 变为未知量，须与运动方程联立。','运动状态由匀速改为匀减速：需先经运动学求加速度，再进入受力方程。','拉力 F 从零逐渐增大：判断物体何时开始滑动，并讨论滑动前后摩擦力大小如何变化（静/动摩擦转换）。'],
+   toIII:[{c:'防滑工程要求',q:'给定地面防滑设计所需的最小动摩擦因数，判断当前接触面是否达标，并提出改进建议。'},
+          {c:'两种拖动方案比较',q:'比较"水平拖"与"斜向上拉（θ 角）"两种方式所需拉力的大小，证明哪种更省力并说明条件。'}]
+  },
+  figures:['第一层 情境图：真实拖拽/推动场景，服务对象识别。','第二层 受力示意图：四类力逐一标注，服务受力建模。','第三层 状态对比图：匀速与加速（或不同 θ 角）两种状态并列，服务变量关系分析。']
+ },
+ balance:{
+  name:'共点力平衡模型',
+  swaps:{
+   生活:['壁挂电视由两根斜拉绳固定','晾衣绳中点悬挂湿衣物后绳被压成一定夹角'],
+   工程:['斜拉桥钢索对桥塔的拉力分析','起重机吊臂与水平拉索的受力系统','输电塔两侧导线对绝缘子的拉力'],
+   探究:['风力仪原理：由悬线偏角 θ 测定水平风力','用三个力传感器验证共点力平衡条件'],
+   纯模:['轻绳悬挂质量为 m 的小球，受水平恒力 F 后悬线与竖直方向成 θ 角']
+  },
+  d2:{
+   牛顿:{stem:'把悬挂系统装上加速运动的载体（如列车车厢内悬球、加速电梯内吊灯）：平衡被打破，悬线偏角 θ 不再由外力决定，而由加速度决定，要求由 tanθ=a/g 反求加速度。',
+        qs:['对小球受力分析，说明此时合外力为什么不为零。','由牛顿第二定律推导 a 与 θ 的关系，并求出加速度大小。','讨论：用这个装置能否做成"加速度计"？标度应如何刻？']},
+   运动:{stem:'在平衡被破坏后让物体做匀变速运动（如剪断一根绳的瞬间），分析此后的运动过程。',
+        qs:['求剪断瞬间物体的加速度。','描述此后短时间内物体的运动性质。']},
+   相互:{stem:'保持平衡主题，改变几何条件（角度、绳长比例），深化分解与合成训练。',
+        qs:['画受力图并选择分解方向。','列平衡方程并用几何关系求解。']}
+  },
+  d5:{
+   规范提醒:['先选定研究对象并把它从系统中隔离出来，再画受力图。','受力图中每个力都应标明大小符号与方向，作用点画在同一点（共点力）。'],
+   方法策略:['共点力平衡通法：选对象→受力分析→建坐标正交分解→列 ΣFx=0、ΣFy=0→求解并检验。','合成法与正交分解法可互相检验：同一题用两种方法做，结果应一致。'],
+   反思评价:['θ 增大时，绳的拉力如何变化？结构最危险的状态出现在何时？','若悬线本身有质量、或风力方向不严格水平，由 F=mg·tanθ 测得的风力是偏大还是偏小？这对仪器设计有什么提示？']
+  },
+  d6:{
+   toII:['把直角几何改为一般角度：须用矢量三角形或正弦定理处理非直角三力平衡。','增加一个未知力（如再加一根斜绳），须两个方向联立方程。'],
+   toIII:[{c:'明确要求两种方法',q:'分别用"合成法"与"正交分解法"推导 F=mg·tanθ，比较两种方法的适用范围与简洁性，说明你更推荐哪种及理由。'},
+          {c:'结构安全准则',q:'已知绳所能承受的最大张力 T_max，判断当前悬挂方案在最大偏角下是否安全，并提出加固建议。'}]
+  },
+  figures:['第一层 情境图：真实装置（风力仪/斜拉桥/吊灯）外观，服务情境感知。','第二层 受力示意图：三力共点、方向标注，服务平衡建模。','第三层 矢量图：力的平行四边形或封闭三角形，服务几何求解。']
+ },
+ engineering:{
+  name:'工程动力学应用模型',
+  swaps:{
+   生活:['网约车从路口起步加速汇入车流','游乐园跳楼机的竖直加速段'],
+   工程:['火箭竖直加速上升段的推力分析','舰载机弹射起飞的加速过程','重载电梯启动阶段的钢缆拉力'],
+   探究:['由发射直播视频逐帧测量火箭初始上升的加速度','利用手机传感器记录电梯启动的 a-t 图像并分析'],
+   纯模:['质量为 m 的物体在恒定合外力 F 作用下由静止开始做匀加速直线运动']
+  },
+  d2:{
+   运动:{stem:'隐去推力与受力分析，直接给出加速度与时间，只考查运动学计算。',qs:['列出位移与速度公式。','代入数据求解。']},
+   相互:{stem:'取某一匀速（或静止）阶段，分析装置的受力平衡。',qs:['画出该阶段受力图。','列平衡方程求约束力。']},
+   牛顿:{stem:'给出推力、阻力与质量，由牛顿第二定律建立因果链，再衔接运动学求全过程量。',qs:['求合外力与加速度。','求指定时刻速度或指定位移所需时间。','讨论质量减小（燃料消耗）对加速度的影响。']}
+  },
+  d5:{
+   规范提醒:['工程数据常带冗余信息，先筛选与本问相关的物理量。','注意"推力"与"合外力"的区别：竖直发射时合外力=F−mg。'],
+   方法策略:['工程问题三步：从参数表提取物理量→建立理想化模型→求解后回到工程语境检验量级。'],
+   反思评价:['计算结果（加速度/时间）与公开报道的真实数据量级是否一致？模型忽略了哪些因素？']
+  },
+  d6:{
+   toII:['把单阶段改为两阶段（加速段+匀速段或减速段），须识别阶段边界并分段建模。','给出总约束（跑道总长、最大允许时间），反求最小加速度或最小推力。'],
+   toIII:[{c:'设计指标裁决',q:'给定跑道长度（或安全时间）指标，判断该方案能否满足设计要求，不满足时提出参数修改建议。'},
+          {c:'方案比较',q:'比较两种推力方案（恒推力 vs 分段推力）完成同一任务的优劣，并用计算支持你的结论。'}]
+  },
+  figures:['第一层 实景图：工程装置照片，服务情境感知。','第二层 过程图：阶段划分与关键参数标注，服务过程建模。','第三层 受力/运动图：受力示意或 v-t 图，服务定量分析。']
+ },
+ inquiry:{
+  name:'科学探究与方法论模型',
+  swaps:{
+   生活:['用手机慢动作视频验证生活中的匀变速过程','由共享单车骑行 APP 的速度记录分析一段运动'],
+   工程:['用试车场测试数据检验厂家标称的百公里加速时间','由黑匣子数据反演飞机滑跑过程'],
+   探究:['基于打点纸带原始数据完成全套处理与误差分析','对同一规律给出两种独立推导并互相检验'],
+   纯模:['给定关系式与各量量纲，仅作形式推导与检验']
+  },
+  d2:{
+   运动:{stem:'让证据指向运动学规律：由数据或图像归纳速度、位移随时间的关系。',qs:['由数据作出 v-t 图。','由图像求加速度并写出运动方程。']},
+   相互:{stem:'让证据指向力的规律：由实验数据归纳弹力或摩擦力与相关量的关系。',qs:['设计记录表格。','由数据归纳关系式并检验。']},
+   牛顿:{stem:'让证据指向因果律：控制变量探究 a 与 F、m 的定量关系。',qs:['说明如何控制变量。','由图像判断 a∝F、a∝1/m 是否成立。']}
+  },
+  d5:{
+   规范提醒:['先明确"证据—推理—结论"链条，每一步推理都要能指出依据的数据。','作图时坐标轴物理量与单位标注完整，描点后判断线型再连线。'],
+   方法策略:['图像法核心：把"求规律"转化为"求斜率/截距/面积"。','量纲检验：等式两边量纲必须一致，可快速排除错误公式。'],
+   反思评价:['两种推导（公式法与图像面积法）得到同一结论，这说明什么？哪种更具普遍性？','误差主要来源是什么？属于系统误差还是偶然误差？']
+  },
+  d6:{
+   toII:['由"验证已知规律"改为"从未整理的原始数据中归纳规律"。','在数据中混入一个异常点，要求识别并说明处理方式。'],
+   toIII:[{c:'双方法证明',q:'分别用公式推导法与 v-t 图面积法证明该结论，比较两种方法的适用条件与优劣。'},
+          {c:'量纲裁决',q:'用量纲分析判断给定关系式是否可能成立，并说明量纲一致是公式成立的必要条件还是充分条件。'}]
+  },
+  figures:['第一层 装置/数据图：实验装置或原始数据记录，服务证据感知。','第二层 处理图：描点作图或表格整理，服务数据建模。','第三层 结论图：拟合直线与关系式标注，服务规律表达。']
+ },
+ dynamics:{
+  name:'牛顿运动定律应用模型',
+  swaps:{
+   生活:['电梯启动与到站时人对地板的压力变化','公交车急刹时乘客身体前倾'],
+   工程:['火箭点火竖直加速上升','舰载机阻拦索着舰减速'],
+   探究:['站在体重秤上乘电梯，记录读数随时间的变化并解释','用手机加速度传感器记录一次乘梯全过程'],
+   纯模:['质量为 m 的物体在竖直方向受拉力 T 与重力作用做匀变速运动']
+  },
+  d2:{
+   运动:{stem:'隐去受力，直接给出加速度，仅考查运动量计算。',qs:['列运动学公式求解。','检验结果合理性。']},
+   相互:{stem:'取匀速阶段考查平衡。',qs:['画受力图。','列平衡方程。']},
+   牛顿:{stem:'保持因果链主题，改变已知-未知配置（由 a 求 F 或由 F 求 a）。',qs:['受力分析并列方程。','完成因果推理求解。']}
+  },
+  d5:{
+   规范提醒:['先规定正方向，加速向上与向下时方程符号不同。','区分"视重"（秤的读数）与"重力"。'],
+   方法策略:['超失重判断口诀：看加速度方向——向上超重、向下失重，与速度方向无关。'],
+   反思评价:['完全失重时秤的读数为零，此时重力消失了吗？','电梯加速度多大时乘客会明显不适？把你的计算与乘梯体验对照。']
+  },
+  d6:{
+   toII:['把单一阶段改为"加速—匀速—减速"三阶段全过程，要求画出 N-t 或 v-t 图。','给出秤的读数变化，逆向反推电梯的运动状态。'],
+   toIII:[{c:'舒适性/安全限值',q:'给定乘客舒适加速度限值，判断该电梯运行方案是否达标，并提出运行曲线优化建议。'},
+          {c:'两种解释比较',q:'分别在地面参考系与电梯参考系（引入惯性力）解释超重现象，比较两种表述的适用范围。'}]
+  },
+  figures:['第一层 情境图：电梯/车辆真实场景，服务情境感知。','第二层 受力图：分阶段受力对比，服务因果建模。','第三层 图像：N-t 或 v-t 图，服务过程综合。']
+ },
+ kinematics:{
+  name:'匀变速直线运动模型',
+  swaps:{
+   生活:['百米运动员起跑后的加速阶段','滑板少年沿直道滑行减速'],
+   工程:['高铁出站的匀加速过程','无人机沿直线巡检的变速飞行'],
+   探究:['由频闪照片测量相邻间隔位移并求加速度','由 x-t 数据判断运动性质'],
+   纯模:['质点沿直线做匀变速运动，已知初速度与加速度']
+  },
+  d2:{
+   相互:{stem:'补出加速度的来源：增加受力背景，先平衡或受力分析再回到运动。',qs:['受力分析说明加速度来源。','完成原运动学求解。']},
+   牛顿:{stem:'给出质量与外力，由 F=ma 先求加速度再求运动量，建立完整因果链。',qs:['求合外力与加速度。','求指定运动量并比较与原题的路径差异。']},
+   运动:{stem:'在运动学内部变换已知-未知配置（如由中间时刻速度反求边界量）。',qs:['选择合适公式或推论。','求解并检验。']}
+  },
+  d5:{
+   规范提醒:['先选定正方向，减速运动的加速度代入负值。','匀变速公式适用前提是 a 恒定，分段运动须分段使用。'],
+   方法策略:['公式选择策略：缺哪个量就用不含该量的公式（四式互补）。','平均速度推论 v̄=(v₀+v)/2 常可一步求位移。'],
+   反思评价:['同一问题用基本公式与推论分别求解，比较步骤数量。','结果数量级是否符合该情境的常识？']
+  },
+  d6:{
+   toII:['改为两阶段运动（加速+减速），须先求阶段交界处的速度。','给出不相邻时段的位移，须设未知数联立求解。'],
+   toIII:[{c:'双方法证明',q:'用公式法与 v-t 图面积法两种方法证明中间时刻速度等于平均速度，比较其普遍性。'},
+          {c:'指标判断',q:'将计算所得加速度与厂家标称值比较，评价标称数据是否可信。'}]
+  },
+  figures:['第一层 情境图：运动场景与起止位置，服务过程感知。','第二层 过程线段图：位移分段与速度标注，服务建模。','第三层 v-t 图：斜率与面积的物理意义，服务求解检验。']
+ },
+ freefall:{
+  name:'自由落体运动模型',
+  swaps:{
+   生活:['椰子从树上自由落下','屋檐水滴下落过程'],
+   工程:['高空作业坠物的安全防护计算','跳楼机自由下落段的设计'],
+   探究:['用手机连拍/传感器测量重力加速度','重现伽利略对落体问题的推理'],
+   纯模:['物体由静止从高度 h 处自由下落']
+  },
+  d2:{
+   相互:{stem:'引入空气阻力讨论：分析雨滴下落后期受力趋于平衡（收尾状态）。',qs:['画出下落过程不同阶段受力图。','解释为何最终趋于匀速。']},
+   牛顿:{stem:'由"忽略阻力"改为"恒定阻力 f"：先由 mg−f=ma 求实际加速度再求运动量。',qs:['求实际下落加速度。','与理想自由落体结果比较差异来源。']},
+   运动:{stem:'保持运动学主题，变换求解目标（落地速度、分段位移、最后一秒位移等）。',qs:['选择公式求目标量。','检验结果。']}
+  },
+  d5:{
+   规范提醒:['自由落体取 v₀=0、a=g，方向竖直向下为正。','题目未注明时 g 取 9.8 m/s²（估算可取 10 m/s²），要写明取值。'],
+   方法策略:['连续相等时间内位移比 1:3:5… 可快速处理分段问题。'],
+   反思评价:['不同质量物体同时落地与生活直觉矛盾吗？如何用实验说服同学？']
+  },
+  d6:{
+   toII:['改求"最后 1 s 内的位移"，须先求总时间再作差。','两物体先后释放，分析二者间距随时间的变化。'],
+   toIII:[{c:'安全标准',q:'给定安全帽可承受的最大冲击速度，判断该楼层高度坠物是否超过安全限值，并给出防护建议。'},
+          {c:'方法证明',q:'不用现成公式，从 v-t 图出发证明 h=½gt²，并说明该方法的普遍意义。'}]
+  },
+  figures:['第一层 情境图：下落场景，服务感知。','第二层 频闪示意图：等时间隔位置点，服务规律发现。','第三层 v-t 图：直线斜率为 g，服务定量表达。']
+ },
+ general:{
+  name:'通用物理模型',
+  swaps:{生活:['贴近校园与日常经验的同结构问题'],工程:['迁移到工程装置或技术系统的同结构问题'],探究:['改造为基于数据、图像或推导的探究任务'],纯模:['剥离情境只保留对象与几何/物理关系']},
+  d2:{运动:{stem:'将任务重心转向运动量的描述与计算。',qs:['提取运动量。','建立运动学关系求解。']},相互:{stem:'将任务重心转向受力与平衡分析。',qs:['画受力图。','列平衡方程。']},牛顿:{stem:'建立力与运动的因果链。',qs:['受力分析求加速度。','衔接运动学求全过程量。']}},
+  d5:{规范提醒:['统一单位、规定正方向、画图后再列式。'],方法策略:['先识别模型类型，再调用该类问题的通法。'],反思评价:['结果是否符合情境常识？是否存在更简解法？']},
+  d6:{toII:['加入阶段判断、临界条件或逆向推理，使路径不再唯一。'],toIII:[{c:'外部准则',q:'将计算结果与给定标准比较并作出裁决。'},{c:'方法比较',q:'用两种方法完成并比较优劣。'}]},
+  figures:['情境图：服务感知。','示意图：服务建模。','关系图：服务求解。']
+ }
+};
+function getKB(fam){ return KB[fam]||KB.general; }
+
+/* ---------- 2. 关键例题预置要素（v6 扩充，OCR 校对文本优先于此） ---------- */
+const V6_SPECIFIC = {
+ 'HK-10':{scenario:'风力仪：悬线小球在水平风力作用下偏转 θ 角',object:'悬挂小球',process:'重力、绳拉力、水平风力三力平衡',known:['小球质量 m','悬线偏角 θ','重力加速度 g'],unknown:['风力 F 与偏角的关系 F=mg·tanθ'],model:'共点力平衡（悬线偏角 tanθ 模型）',operation:'对小球受力分析→正交分解→消去绳拉力→得 F=mg·tanθ',family:'balance'},
+ 'HKJ-14':{scenario:'风力仪测重力原理：由偏角反求悬挂物重力',object:'悬挂小球',process:'三力平衡下偏角与各力的几何关系',known:['水平风力 F','悬线偏角 θ'],unknown:['悬挂物重力 G=F/tanθ'],model:'共点力平衡（悬线偏角 tanθ 模型）',operation:'受力分析→正交分解→由 tanθ=F/G 反解重力',family:'balance'},
+ 'YJ-13':{scenario:'风力仪：小球受水平风力偏转测风力',object:'悬挂小球',process:'三力平衡',known:['小球质量 m','偏角 θ'],unknown:['风力大小'],model:'共点力平衡（悬线偏角 tanθ 模型）',operation:'正交分解列平衡方程求 F=mg·tanθ',family:'balance'},
+ 'RJ-09':{scenario:'匀加速车厢内悬线小球向后偏 θ 角（列车悬球）',object:'悬挂小球',process:'随车厢一起匀加速，合外力水平指向加速方向',known:['偏角 θ','重力加速度 g'],unknown:['车厢加速度 a=g·tanθ（要求用两种方法推导）'],model:'牛顿第二定律 + 悬线偏角模型',operation:'方法一正交分解、方法二矢量三角形，均得 a=g·tanθ，比较两法',family:'balance'},
+ 'RJ-07':{scenario:'水平横梁与斜绳共同悬挂重物',object:'结点（或重物）',process:'三力平衡，教材并列给出两种解法示范',known:['重物重力 G','绳与梁的夹角'],unknown:['梁的支持力与绳的拉力'],model:'共点力平衡',operation:'合成法与正交分解法并列示范',family:'balance'},
+ 'JK-15':{scenario:'三角形支架/绳索结构悬挂重物（多解示范）',object:'结点',process:'三力平衡',known:['重力 G','几何角度'],unknown:['杆与绳中的力'],model:'共点力平衡',operation:'多种分解方案并列比较',family:'balance'},
+ 'LK-08':{scenario:'两根不对称细绳悬挂鸟笼',object:'鸟笼（结点）',process:'非对称两绳悬挂的三力平衡',known:['鸟笼重力 G','两绳与竖直方向的不同夹角'],unknown:['两绳拉力'],model:'共点力平衡（非对称两绳）',operation:'正交分解列两方向方程联立求解',family:'balance'},
+ 'HKJ-13':{scenario:'两根细绳悬挂电灯',object:'电灯（结点）',process:'三力平衡',known:['电灯重力','两绳夹角'],unknown:['两绳拉力'],model:'共点力平衡',operation:'受力分析→分解→平衡方程',family:'balance'},
+ 'HKJ-11':{scenario:'斜拉桥对称钢索对桥塔的合力',object:'桥塔顶端结点',process:'对称两索拉力的合成',known:['单索拉力 F','两索夹角 2θ'],unknown:['合力大小与方向'],model:'力的合成（平行四边形定则）',operation:'对称性分析→合力沿对称轴=2Fcosθ',family:'balance'},
+ 'HKJ-12':{scenario:'斜面木箱重力分解的两种方案评价（含不对称钢索情境）',object:'斜面上的木箱',process:'重力沿不同方向分解的方案比较',known:['木箱重力 G','斜面倾角'],unknown:['哪种分解方案更合理及依据'],model:'力的分解（方案评价）',operation:'按实际效果分解→比较方案→作出评价',family:'balance'},
+ 'RJ-04':{scenario:'马拉雪橇在水平雪地上匀速前进',object:'雪橇',process:'粗糙水平面上的匀速直线运动（二力平衡视角）',known:['雪橇质量 m','动摩擦因数 μ','匀速状态'],unknown:['水平拉力大小'],model:'滑动摩擦力 + 二力平衡',operation:'由 N=mg、f=μN、匀速时 F=f 求拉力',family:'friction'},
+ 'LK-05':{scenario:'狗拉雪橇匀速前进（配策略提炼栏目）',object:'雪橇',process:'粗糙水平面匀速直线运动',known:['质量 m','动摩擦因数 μ'],unknown:['拉力大小'],model:'滑动摩擦力 + 二力平衡',operation:'f=μmg、F=f；栏目提炼"抓主要因素"策略并追问加速时摩擦力是否变化',family:'friction'},
+ 'JK-11':{scenario:'狗拉雪橇匀速前进',object:'雪橇',process:'粗糙水平面匀速直线运动',known:['质量 m','动摩擦因数 μ'],unknown:['拉力大小'],model:'滑动摩擦力 + 二力平衡',operation:'f=μmg、F=f 直接求解',family:'friction'},
+ 'JK-16':{scenario:'马拉雪橇求加速度（忽略阻力）',object:'雪橇',process:'水平恒力作用下的匀加速运动',known:['拉力 F','质量 m'],unknown:['加速度 a'],model:'牛顿第二定律（单步）',operation:'a=F/m 直接代入',family:'friction'},
+ 'LK-10':{scenario:'雪橇被斜向上的拉力拖动做匀减速运动',object:'雪橇',process:'斜拉力使压力变化的匀减速过程',known:['拉力方向 30°','初末速度与时间','质量与 μ 关系'],unknown:['拉力大小（须联立）'],model:'牛顿第二定律 + 摩擦力（多变量耦合）',operation:'先由运动学求 a→受力分析两方向列式→N 未知联立求 F',family:'friction'},
+ 'HK-06':{scenario:'用水平力把木块压在竖直墙面上',object:'木块',process:'压力变化引起的静/动摩擦转换',known:['木块重力 G','水平压力 F 可变','μ'],unknown:['不同 F 下摩擦力的大小与类型'],model:'摩擦力临界与转换',operation:'判断能否静止→静摩擦由平衡求、滑动时 f=μF→讨论 F 减小过程',family:'friction'},
+ 'YJ-08':{scenario:'推书桌：先由匀速推力求 μ，再判断书柜能否被推动',object:'书桌与书柜',process:'逆向求参数 + 正向判断的双向推理',known:['书桌质量与匀速推力','书柜质量与可用最大推力'],unknown:['μ；书柜能否被推动'],model:'滑动摩擦 + 临界判断',operation:'逆向 μ=F/(mg)→正向比较最大静摩擦与推力作判断',family:'friction'},
+ 'HKJ-08':{scenario:'桌面上两木块叠放，拉动下方木块',object:'叠放木块',process:'分层受力中法向力的逐层传递',known:['两木块质量','接触面 μ'],unknown:['拉力或层间摩擦力'],model:'叠加体摩擦分析',operation:'自上而下逐层求 N，再求各接触面摩擦力',family:'friction'},
+ 'HKJ-10':{scenario:'机场输送带上行李随带运动的受力分析',object:'行李',process:'传送带上物体的摩擦受力判断',known:['行李质量','带的运动状态'],unknown:['摩擦力方向与大小'],model:'摩擦力方向判断',operation:'比较相对运动趋势→判断摩擦力方向→由状态定大小',family:'friction'},
+ 'RJ-01':{scenario:'汽车先匀加速行驶随后制动减速',object:'汽车',process:'加速段与制动段两阶段衔接',known:['加速段加速度与时间','制动段加速度'],unknown:['制动段位移/时间'],model:'匀变速直线运动（两阶段衔接）',operation:'先求加速段末速度作为制动段初速度，再分段求解',family:'traffic'},
+ 'RJ-03':{scenario:'动车进站过程经过里程碑',object:'动车',process:'由位置序列反推匀减速过程',known:['相邻里程碑间距与对应时间'],unknown:['加速度与进站速度'],model:'匀变速直线运动（逆向重构）',operation:'由位移序列建立方程组反推 v₀ 与 a',family:'traffic'},
+ 'LK-02':{scenario:'汽车遇红灯刹车后某时刻的速度',object:'汽车',process:'匀减速至停止，含"刹车陷阱"',known:['初速度','制动加速度','所问时刻'],unknown:['该时刻速度'],model:'匀变速直线运动（停止时间判断）',operation:'先求停止时间→判断所问时刻是否已停→再代公式',family:'traffic'},
+ 'LK-03':{scenario:'刹车距离计算（含停止时间陷阱）',object:'汽车',process:'匀减速至停止后求位移',known:['初速度','加速度','所问时间'],unknown:['位移'],model:'匀变速直线运动（停止时间判断）',operation:'先判停止时间，再按有效时间求位移',family:'traffic'},
+ 'JK-03':{scenario:'汽车出站加速与进站制动两段',object:'汽车',process:'两独立阶段分别计算',known:['各段初末速度与时间'],unknown:['各段加速度'],model:'加速度定义式应用',operation:'a=Δv/Δt 分段直接代入',family:'traffic'},
+ 'JK-08':{scenario:'飞机中断起飞在剩余跑道内刹车',object:'飞机',process:'隐含约束（可用跑道=总长−已用）下的减速',known:['跑道总长','中断时速度','已滑跑距离'],unknown:['最小减速度'],model:'匀减速直线运动（隐含约束）',operation:'求可用距离→由 v²=2as 反解最小 a',family:'traffic'},
+ 'JK-22':{scenario:'由制动测试数据反推汽车所受阻力',object:'汽车',process:'由运动数据逆向求力',known:['质量','初速度','制动距离或时间'],unknown:['阻力大小'],model:'牛顿第二定律（逆向）',operation:'由运动学求 a→F=ma 求阻力',family:'traffic'},
+ 'HK-04':{scenario:'高速公路前方事故，紧急制动判断能否避免相撞',object:'汽车',process:'制动距离与安全距离（100 m）的比较裁决',known:['初速度','制动加速度','前方距离 100 m'],unknown:['能否安全停下（裁决）'],model:'匀变速直线运动 + 安全裁决',operation:'由 v²=2as 求制动距离→与 100 m 比较→作出裁决',family:'traffic'},
+ 'YJ-05':{scenario:'高速公路前方 80 m 处事故，判断紧急制动是否安全',object:'汽车',process:'制动距离（60 m）与 80 m 的比较',known:['初速度','制动加速度','前方距离 80 m'],unknown:['能否安全停下'],model:'匀变速直线运动 + 安全裁决',operation:'求制动距离 60 m<80 m→裁决安全',family:'traffic'},
+ 'YJ-06':{scenario:'在 YJ-05 基础上叠加 0.5 s 驾驶员反应时间',object:'汽车',process:'反应段匀速 + 制动段减速，总位移与 80 m 比较',known:['初速度','反应时间 0.5 s','制动加速度'],unknown:['总位移；是否仍安全（结论反转）'],model:'两阶段运动 + 安全裁决',operation:'匀速段+制动段求总位移→与 80 m 比较→裁决不安全',family:'traffic'},
+ 'YJ-07':{scenario:'酒驾使反应时间延长：由总距离反推实际反应时间',object:'汽车',process:'由总位移逆向分解出反应段',known:['总位移','初速度','制动加速度'],unknown:['实际反应时间及延长量'],model:'两阶段运动（逆向推理）',operation:'总位移−制动段位移=匀速段位移→反求反应时间',family:'traffic'},
+ 'YJ-16':{scenario:'交警由路面车痕判断车辆是否超速',object:'肇事汽车',process:'由摩擦求 a→由车痕反推初速度→与限速比较',known:['车痕长度','μ','限速标准'],unknown:['初速度；是否超速（法律裁决）'],model:'牛顿定律 + 运动学 + 法规裁决',operation:'a=μg→v₀=√(2as)→与限速比较→裁决',family:'traffic'},
+ 'HKJ-03':{scenario:'汽车制动避让突然出现的小动物',object:'汽车',process:'单段匀减速',known:['初速度','制动时间'],unknown:['加速度'],model:'加速度定义式',operation:'a=Δv/Δt 直接代入',family:'traffic'},
+ 'HKJ-06':{scenario:'高速公路上判断安全跟车距离避免追尾',object:'前后两车',process:'双车运动的距离协调',known:['两车速度','制动加速度','反应时间'],unknown:['最小安全车距'],model:'双对象运动协调',operation:'分别求两车位移→作差得最小车距',family:'traffic'},
+ 'HKJ-07':{scenario:'校门口由刹车痕迹判断是否超过限速 40 km/h',object:'汽车',process:'由车痕反推初速度并与限速比较',known:['车痕长度','制动加速度（或 μ）','限速 40 km/h'],unknown:['初速度；是否超速'],model:'匀减速逆推 + 法规裁决',operation:'v₀=√(2as)→换算单位→与 40 km/h 比较→裁决',family:'traffic'},
+ 'HKJ-17':{scenario:'同速行驶在普通路面与冰面上制动距离对比',object:'汽车',process:'μ 不同导致制动距离变化',known:['初速度相同','两种路面 μ'],unknown:['制动距离之比'],model:'变量关系重组（s∝1/μ）',operation:'由 v²=2μgs 得 s∝1/μ→求比值',family:'traffic'},
+ 'RJ-13':{scenario:'乘电梯时人对地板压力变化（超重）',object:'电梯中的人',process:'竖直方向变速运动中的视重变化',known:['人的质量','电梯加速度'],unknown:['人对地板的压力'],model:'牛顿第二定律（超失重）',operation:'N−mg=ma→N=m(g+a)',family:'dynamics'},
+ 'LK-12':{scenario:'电梯下楼全过程的受力与运动分析',object:'电梯中的人或物',process:'加速—匀速—减速三阶段',known:['各阶段加速度'],unknown:['各阶段视重'],model:'牛顿第二定律（分阶段）',operation:'分阶段受力分析列式',family:'dynamics'},
+ 'JK-04':{scenario:'证明匀变速运动中间时刻速度等于平均速度',object:'匀变速质点',process:'一般性命题的推导证明',known:['匀变速运动基本公式','v-t 图'],unknown:['v(t/2)=(v₀+v)/2 的证明'],model:'方法性证明（创造型）',operation:'公式法或 v-t 图法推导普遍结论',family:'inquiry'},
+ 'JK-06':{scenario:'用 v-t 图面积法证明位移公式',object:'匀变速质点',process:'图像面积与位移关系的论证',known:['v-t 图像'],unknown:['x=v₀t+½at² 的证明'],model:'方法性证明（面积法）',operation:'梯形面积分解→推得位移公式',family:'inquiry'},
+ 'JK-18':{scenario:'用量纲检验给定公式是否可能成立',object:'物理关系式',process:'量纲一致性判断',known:['公式中各量的量纲'],unknown:['公式是否可能成立'],model:'量纲分析',operation:'比较等式两边量纲→作出裁决',family:'inquiry'},
+ 'HK-02':{scenario:'游乐园跳楼机的自由下落段',object:'座舱',process:'自由落体',known:['下落高度或时间'],unknown:['落地速度或下落时间'],model:'自由落体',operation:'h=½gt²、v=gt 直接求解',family:'freefall'},
+ 'YJ-04':{scenario:'椰子从树上自由落下',object:'椰子',process:'自由落体',known:['下落高度'],unknown:['落地时间与速度'],model:'自由落体',operation:'由 h=½gt² 求 t，再求 v',family:'freefall'},
+ 'HKJ-05':{scenario:'比萨斜塔落体问题的讨论',object:'下落物体',process:'落体规律的历史探究',known:['塔高'],unknown:['下落时间；轻重物体是否同时落地'],model:'自由落体（科学史）',operation:'计算并联系伽利略推理',family:'freefall'},
+ 'RJ-05':{scenario:'两个互成直角的力求合力',object:'受力质点',process:'正交两力合成',known:['两个分力大小'],unknown:['合力大小与方向'],model:'力的合成（勾股）',operation:'F=√(F₁²+F₂²)，方向由 tan 求',family:'balance'},
+ 'JK-12':{scenario:'互成直角的两个力求合力',object:'受力质点',process:'正交合成',known:['两分力'],unknown:['合力'],model:'力的合成',operation:'勾股定理直接求',family:'balance'},
+ 'YJ-11':{scenario:'斜面上物体重力的分解',object:'斜面物体',process:'重力按效果分解',known:['重力 G','倾角 θ'],unknown:['沿面分力与垂直面分力'],model:'力的分解',operation:'G·sinθ 与 G·cosθ',family:'balance'},
+ 'HK-08':{scenario:'斜面木箱重力分解',object:'木箱',process:'重力按效果分解',known:['G','θ'],unknown:['两分力'],model:'力的分解',operation:'按效果取方向分解',family:'balance'},
+ 'JK-13':{scenario:'斜面木块重力分解',object:'木块',process:'重力分解',known:['G','θ'],unknown:['分力'],model:'力的分解',operation:'Gsinθ、Gcosθ',family:'balance'}
+};
+
+/* ---------- 3. 增强 OCR 语义抽取 + 要素合并链 ---------- */
+function v6ParseOCR(text){
+  const one=(text||'').replace(/\s+/g,' ');
+  const out={};
+  // 赋值式物理量：v0=15m/s、μ=0.5、θ=37°、m=2kg、a=2 m/s² 等
+  const assigns=[...one.matchAll(/([vVaFmgstxNGTμθf]['′₀0１1２2]?)\s*[=＝为是约]+\s*([-+]?\d+(?:\.\d+)?)\s*(m\/s²|m\/s2|m\/s\^2|m\/s|km\/h|m|cm|km|s|N|kg|g|°|度|rad)?/g)]
+    .map(m=>`${m[1]}=${m[2]}${m[3]||''}`);
+  // 裸数字+单位
+  const qtys=[...one.matchAll(/[-+]?\d+(?:\.\d+)?\s*(?:m\/s²|m\/s2|m\/s\^2|km\/h|m\/s|cm|km|kg|m|s|N|g|°|度)/g)].map(m=>m[0].replace(/\s+/g,''));
+  if(assigns.length||qtys.length) out.known=[...new Set([...assigns,...qtys])].slice(0,10);
+  // 分小问：(1)(2)(3) / ①②③ / 1. 2.
+  const subQ=[...one.matchAll(/(?:[（(]\s*\d\s*[)）]|[①②③④⑤])\s*([^（(①②③④⑤]{4,80}?)(?=[（(]\s*\d\s*[)）]|[①②③④⑤]|$)/g)].map(m=>m[1].trim());
+  const askQ=[...one.matchAll(/(?:求|试求|计算|判断|证明|画出|比较|分析|说明)[^。；;!?！？]{2,60}/g)].map(m=>m[0]);
+  const unknown=(subQ.length?subQ:askQ).slice(0,5);
+  if(unknown.length) out.unknown=unknown;
+  // 情境句：第一句较长的叙述
+  const sent=one.split(/[。！？!?]/).map(s=>s.trim()).filter(s=>s.length>=10);
+  if(sent[0]) out.scenario=sent[0].slice(0,80);
+  return out;
+}
+function guessFam(p){
+  if(p.d2==='牛顿') return 'dynamics';
+  if(p.d2==='相互') return 'balance';
+  if(/落体|下落|椰子|斜塔|跳楼机/.test(p.title)) return 'freefall';
+  if(p.d1==='工程') return 'engineering';
+  if(p.d1==='探究') return 'inquiry';
+  return 'kinematics';
+}
+const prevInfer = window.inferElements;
+window.inferElements = function(p){
+  let e = prevInfer ? prevInfer(p) : {scenario:p.title,object:'研究对象',process:'物理过程',known:[],unknown:[],model:p.module,operation:'建立模型求解',family:'general'};
+  const ocr = (window.getSavedOCR && window.getSavedOCR(p.code)) || '';
+  const hasOCR = ocr && ocr.trim().length>20;
+  if(!hasOCR && V6_SPECIFIC[p.code]) e = {...e, ...V6_SPECIFIC[p.code]};
+  if(hasOCR){
+    if(V6_SPECIFIC[p.code]) e = {...V6_SPECIFIC[p.code], ...e}; // 预置兜底，OCR 链结果优先
+    const parsed = v6ParseOCR(ocr);
+    e = {...e, ...parsed, ocrText: ocr};
+  }
+  const manual = loadManualEl(p.code);
+  if(manual){ e = {...e, ...manual, manual:true}; }
+  if(!e.family || e.family==='general') e.family = guessFam(p);
+  e.kbName = getKB(e.family).name;
+  return e;
+};
+
+/* ---------- 4. 母题卡：可编辑要素面板 ---------- */
+const EL_FIELDS=[['scenario','情境背景'],['object','研究对象'],['process','物理过程'],['known','已知量（顿号分隔）'],['unknown','未知量/任务（顿号分隔）'],['model','核心模型'],['operation','求解路径']];
+function elSourceBadge(e){
+  if(e.manual) return '<span class="ocr-badge">要素来源：人工校对</span>';
+  if(e.ocrText) return '<span class="ocr-badge">要素来源：OCR 题干抽取</span>';
+  return '<span class="ocr-badge warn">要素来源：编码与题名推断（可手动修正）</span>';
+}
+function v6ElementEditor(p){
+  const e=window.inferElements(p);
+  const rows=EL_FIELDS.map(([k,lab])=>{
+    const val=Array.isArray(e[k])?e[k].join('、'):(e[k]||'');
+    return `<div class="v6-el-row"><label>${lab}</label><input data-elk="${k}" value="${esc(val)}"></div>`;
+  }).join('');
+  return `<div class="v6-el-editor" data-code="${p.code}">
+    <div style="margin:8px 0 4px">${elSourceBadge(e)}<span class="ocr-badge">${esc(e.kbName)}</span></div>
+    ${rows}
+    <div class="ocr-toolbar">
+      <button class="small-btn" onclick="v6SaveElements('${p.code}')">保存要素（用于变式与整合）</button>
+      <button class="small-btn" onclick="v6ResetElements('${p.code}')">恢复自动抽取</button>
+    </div>
+  </div>`;
+}
+function v6SaveElements(code){
+  const box=document.querySelector(`.v6-el-editor[data-code="${code}"]`); if(!box) return;
+  const obj={};
+  box.querySelectorAll('input[data-elk]').forEach(inp=>{
+    const k=inp.dataset.elk, v=inp.value.trim();
+    if(!v) return;
+    obj[k]=(k==='known'||k==='unknown')?v.split(/[、,，;；]/).map(s=>s.trim()).filter(Boolean):v;
+  });
+  saveManualEl(code,obj);
+  if(window.selectMother) window.selectMother();
+  if(window.generateVariant) window.generateVariant();
+};
+function v6ResetElements(code){
+  clearManualEl(code);
+  if(window.selectMother) window.selectMother();
+  if(window.generateVariant) window.generateVariant();
+};
+const prevSelect = window.selectMother;
+window.selectMother=function(update=true){
+  if(prevSelect) prevSelect(update);
+  const p=(typeof getMother==='function'?getMother():null); if(!p) return;
+  const card=document.getElementById('motherCard'); if(!card) return;
+  const grid=card.querySelector('.element-grid');
+  const editor=v6ElementEditor(p);
+  if(grid) grid.outerHTML=editor;
+  else if(!card.querySelector('.v6-el-editor')) card.insertAdjacentHTML('beforeend',editor);
+};
+/* ---------- 5. 语义化六维变式引擎（覆盖 variantCore / generateVariant / 变式链） ---------- */
+function levelName(l){ return ({'Ⅰ':'层级Ⅰ 程序性应用','Ⅱ':'层级Ⅱ 分析性建模','Ⅲ':'层级Ⅲ 批判性推理'})[l]||l; }
+function pickCriterion(kb,e){
+  const list=kb.d6.toIII||[];
+  // 若母题要素里已含明确外部准则（如 80 m、限速 40 km/h），优先沿用
+  const knownStr=(e.known||[]).join(' ')+' '+(e.scenario||'');
+  const hit=list.find(x=>knownStr.includes('80')&&x.c.includes('80'))||list.find(x=>/限速|40/.test(knownStr)&&/限速/.test(x.c));
+  return hit||list[0]||{c:'给定外部标准',q:'将计算结果与给定标准比较并作出裁决。'};
+}
+function lessonType(dim,target){
+  if(dim==='d6') return target==='Ⅰ'?'新授课入门 / 学情诊断':target==='Ⅱ'?'习题课 / 方法课':'专题课 / 复习课压轴';
+  if(dim==='d1') return target==='探究'?'探究课 / 实验衔接课':target==='工程'?'STSE 拓展课 / 单元应用课':'新授课导入 / 应用课';
+  if(dim==='d4') return target==='闭环'?'方法提升课':'新授示范课';
+  if(dim==='d5') return '分层教学 / 学案设计';
+  if(dim==='d2') return '复习课 / 跨模块专题课';
+  return '常规习题课';
+}
+function studentFit(dim,target){
+  if(dim==='d6') return target==='Ⅰ'?'基础较弱学生的入口任务':target==='Ⅱ'?'普通班主体训练':'基础较强学生或小组深究任务';
+  if(dim==='d5') return target==='规范提醒'?'基础较弱班':target==='反思评价'?'基础较强班':'普通班';
+  return '各层次均可，按设问深度调节';
+}
+function variantCore(p,dim,target){
+  const e=window.inferElements(p);
+  const kb=getKB(e.family);
+  const newCode={d1:p.d1,d2:p.d2,d3:p.d3,d4:p.d4,d5:p.d5,d6:p.d6}; newCode[dim]=target;
+  const knownStr=(e.known||[]).slice(0,4).join('、')||'题给条件';
+  const goal=(e.unknown&&e.unknown[0])||'目标物理量';
+  let title=`${p.code}《${p.title}》的 ${dLabel[dim]} 变式`;
+  let stem='',qs=[],note='',contrast=[],use='',advice='';
+  const srcQuote = e.ocrText ? `（已依据校对题干生成，原题干节选："${esc(e.ocrText.replace(/\n+/g,' ').slice(0,70))}…"）` : '';
+
+  if(dim==='d1'){
+    const shells=kb.swaps[target]||['同结构新情境'];
+    const shell=shells[0];
+    stem=`【变式题干】${shell}。沿用母题的核心模型"${e.model}"与研究对象类型（${e.object}），按新情境重新给出与"${knownStr}"对应的数据，待求任务仍指向"${goal}"。${srcQuote}`;
+    qs=[`从"${shell}"中识别研究对象与关键已知量，对应母题中的 ${knownStr}。`,
+        `建立"${e.model}"，完成 ${goal} 的求解。`,
+        `比较新情境与母题"${e.scenario}"在物理过程（${e.process}）上的相同点与差异。`];
+    if(shells[1]) qs.push(`课后迁移：把同一模型再迁移到"${shells[1]}"，自行编制数据并求解。`);
+    note=`情境外壳由"${full[p.d1]}"换为"${full[target]}"，核心模型与求解路径（${e.operation}）不变。备选情境：${shells.join('；')}。`;
+    contrast=[['情境外壳',e.scenario,shell],['核心模型',e.model,e.model+'（不变）'],['认知任务',goal,goal+'（任务同构）']];
+    advice='情境替换后注意重新核对数据的真实合理性（速度、质量、角度应符合新情境量级）。';
+  }
+  if(dim==='d2'){
+    const bridge=(kb.d2&&kb.d2[target])||KB.general.d2[target];
+    stem=`【变式题干】以"${e.scenario}"为基础进行跨模块联结：${bridge.stem} 研究对象仍为${e.object}，原有已知量（${knownStr}）保留并按需补充。${srcQuote}`;
+    qs=[...bridge.qs];
+    qs.push(`对比说明：变式后的求解路径与母题路径"${e.operation}"相比，多了（或少了）哪一段推理？`);
+    note=`知识模块由"${full[p.d2]}"联结至"${full[target]}"——不是换题，而是把同一物理事件中原本被隐去的另一段因果链显性化。`;
+    contrast=[['知识重心',full[p.d2],full[target]],['求解路径',e.operation,bridge.stem.slice(0,40)+'…'],['已知量配置',knownStr,'按新模块需要增补（如 m、μ、F）']];
+    advice='跨模块变式适合在后置模块学完后回扣使用，可直接作为单元综合题。';
+  }
+  if(dim==='d3'){
+    const figs=kb.figures||KB.general.figures;
+    const map={实景:`为本题增配"${e.scenario}"的实景照片或高仿真图，建模信息仍由文字承担。`,
+               示意:`将题干信息转化为服务"${e.model}"的示意图（受力图/过程图/几何图），剥离真实场景元素。`,
+               复合:`采用三层图示链：${figs.join(' ')}`,
+               无图:`撤去全部图示，仅保留文字条件，要求学生依据"${e.process}"自主画出分析图。`};
+    stem=`【图示改造方案】${map[target]||'调整图示配置。'}题目数据与设问可不变，改造目标是让图示从"装饰"转为"建模工具"，直接服务于求解路径"${e.operation}"。`;
+    qs= target==='无图'
+      ? [`通读题干后，先画出你认为必要的分析图，再开始列式。`,`同桌互查：对方的图中是否漏画了关键力或关键阶段？`,`完成求解：${goal}。`]
+      : [`指出图示第一层对应的真实对象（${e.object}）。`,`在模型图层标出 ${knownStr} 等关键量。`,`说明哪一层图示直接支撑了"${e.model}"的建立，为什么。`];
+    note=`图示类型由"${full[p.d3]}"改为"${full[target]}"。每一层图服务的认知任务已在方案中说明。`;
+    contrast=[['图示配置',full[p.d3],full[target]],['建模支架',p.d3==='无图'?'学生自建图景':'教材供图',target==='无图'?'学生自建图景（训练信息提取）':'分层图示引导建模']];
+    advice=target==='无图'?'无图变式认知负荷较高，建议用于已完成同型有图题训练之后。':'复合图制作可由"教材实景截图 + 教师手绘示意"拼合，成本低且效果直观。';
+  }
+  if(dim==='d4'){
+    if(target==='闭环'){
+      const m=(kb.d5&&kb.d5.方法策略&&kb.d5.方法策略[0])||'归纳本类问题通法';
+      const r=(kb.d5&&kb.d5.反思评价&&kb.d5.反思评价[0])||'条件改变后结论是否仍成立？';
+      stem=`【结构升级方案】把母题重排为六段闭环结构——①题目陈述：${e.scenario}，给出 ${knownStr}；②信息提取：圈出对象（${e.object}）、过程（${e.process}）与待求量；③模型建立：说明本题属于"${e.model}"及判断依据；④规范解答：按"${e.operation}"完整呈现；⑤方法总结：${m}；⑥迁移追问：${r}`;
+      qs=[`按②完成信息提取清单。`,`按③说明模型判断依据。`,`按⑤用自己的话概括本类题通法。`,`按⑥回答迁移追问并说明理由。`];
+    }else if(target==='二段'){
+      stem=`【结构精简方案】压缩为"题目＋解答"两段：保留题干（${e.scenario}，已知 ${knownStr}）与最终解答，删去分析段，由学生在留白处补全"${e.operation}"的中间推理。`;
+      qs=[`补全被省略的分析过程。`,`标注每一步推理依据的物理规律。`];
+    }else{
+      stem=`【结构规范方案】整理为标准三段式——题目陈述（${e.scenario}）→分析（识别 ${e.process}，选定"${e.model}"）→解答（按"${e.operation}"分步呈现并检验）。`;
+      qs=[`完成核心任务：${goal}。`,`检查解答三要素：公式依据、代入过程、结果单位。`];
+    }
+    note=`呈现结构由"${full[p.d4]}"改为"${full[target]}"：${target==='闭环'?'从"做完一道题"走向"理解一类题"':target==='二段'?'适合诊断与限时训练':'适合新授示范'}。`;
+    contrast=[['文本结构',full[p.d4],full[target]],['学生角色',p.d4==='二段'?'补全推理':'跟随示范',target==='闭环'?'概括与迁移':target==='二段'?'补全推理':'模仿规范']];
+    advice='结构变式不改变物理内容，最适合同一道题在不同课型中复用。';
+  }
+  if(dim==='d5'){
+    const cols=kb.d5||KB.general.d5;
+    if(target==='无'){
+      stem=`【栏目方案】撤去全部提示栏目，让学生独立完成"${e.scenario}"的分析，作为支架移除后的检测。`;
+      qs=[`独立完成求解：${goal}。`,`完成后自评：哪一步最容易出错？原先的提示栏目对应的正是哪一步？`];
+    }else{
+      const items=cols[target]||['（按题意补充）'];
+      stem=`【栏目方案】为母题增配"${full[target]}"栏目，内容依据本题模型族（${kb.name}）定制：${items.map((x,i)=>`（${i+1}）${x}`).join(' ')}`;
+      qs= target==='规范提醒'
+        ? [`按提示先完成规范步骤，再求 ${goal}。`,`说明提示（1）若被忽略，会导致什么错误。`]
+        : target==='方法策略'
+        ? [`完成求解后，对照栏目把本题通法写成 3–4 步流程。`,`用该流程再解一道同型题，检验流程是否可迁移。`]
+        : [`完成求解：${goal}。`,`回答栏目中的反思问题，并给出依据。`,`提出一个你自己的追问。`];
+    }
+    note=`助学栏目由"${full[p.d5]}"调整为"${full[target]}"，栏目内容来自"${kb.name}"的专属支架库，而非通用话术。`;
+    contrast=[['支架配置',full[p.d5],full[target]],['服务对象',studentFit('d5',p.d5),studentFit('d5',target)]];
+    advice='同一道题配三套栏目即可实现分层：弱班用规范提醒、普通班用方法策略、强班用反思评价。';
+  }
+  if(dim==='d6'){
+    if(target==='Ⅰ'){
+      stem=`【降阶方案】把"${e.scenario}"化简为程序性应用：删去多余情境与判断节点，直接给出 ${knownStr}，使解题路径唯一（${e.operation} 的最短链）。`;
+      qs=[`列出已知量与未知量。`,`选择唯一适用的公式或平衡关系。`,`代入求 ${goal} 并写明单位。`];
+      note='降阶用于入口诊断或弱班铺垫：删除认知分叉，只保留程序执行。';
+    }else if(target==='Ⅱ'){
+      const ups=kb.d6.toII||KB.general.d6.toII;
+      stem=`【升阶方案 Ⅰ→Ⅱ】在"${e.scenario}"中注入分析性判断节点（任选其一改造）：${ups.map((x,i)=>`（${i+1}）${x}`).join(' ')}`;
+      qs=[`指出变式后新增的判断节点，并说明为什么不能直接套公式。`,`把过程分解为子问题并逐段建模。`,`完成求解：${goal}。`];
+      note='Ⅰ→Ⅱ 的关键是制造"非平凡判断"：阶段边界、临界条件、逆向推理或多变量耦合。';
+    }else{
+      const cr=pickCriterion(kb,e);
+      stem=`【升阶方案 Ⅱ→Ⅲ】在完成原有计算后，引入外部准则——${cr.c}。设问示例：${cr.q}`;
+      qs=[`完成原题所需的基本计算（${goal}）。`,cr.q,`说明你的裁决依据是否充分：还需要哪些信息才能让结论更可靠？`];
+      const alt=(kb.d6.toIII||[])[1];
+      if(alt) qs.push(`拓展：${alt.q}`);
+      note=`Ⅱ→Ⅲ 的关键不是多算一步，而是把任务终点从"求出${goal}"改为"依据结果作出裁决/证明"。本模型族可用准则：${(kb.d6.toIII||[]).map(x=>x.c).join('；')}。`;
+    }
+    contrast=[['认知层级',levelName(p.d6),levelName(target)],['任务终点',goal,target==='Ⅲ'?'规范性裁决或方法证明':target==='Ⅱ'?'含判断节点的建模求解':'单路径程序计算'],['认知操作',p.d6==='Ⅰ'?'程序执行':p.d6==='Ⅱ'?'分析建模':'评价裁决',target==='Ⅰ'?'程序执行':target==='Ⅱ'?'分析建模':'评价裁决']];
+    advice='层级变式建议成链使用：同一情境内 Ⅰ→Ⅱ→Ⅲ 递进（一境多级），降低情境切换负荷。';
+  }
+  use=lessonType(dim,target);
+  return {newCode,title,stem,qs,note,use,contrast,advice,fit:studentFit(dim,target),e};
+};
+
+function generateVariant(){
+  const p=getMother(); if(!p) return;
+  const target=$('variantTarget').value||({d1:D1,d2:D2,d3:D3,d4:D4,d5:D5,d6:D6}[selectedDim]||[]).find(x=>x!==p[selectedDim]);
+  const v=window.variantCore(p,selectedDim,target);
+  const oldTags=['d1','d2','d3','d4','d5','d6'].map(k=>`<span class="tag ${tagClass(p[k])}">${k.toUpperCase()} ${full[p[k]]||p[k]}</span>`).join('');
+  const newTags=['d1','d2','d3','d4','d5','d6'].map(k=>`<span class="tag ${k===selectedDim?'r':tagClass(v.newCode[k])}">${k.toUpperCase()} ${full[v.newCode[k]]||v.newCode[k]}</span>`).join('');
+  const contrastRows=v.contrast.map(r=>`<tr><th>${esc(r[0])}</th><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('');
+  const stemBody=v.stem.replace(/^【[^】]+】/,'');
+  const text=`【母题】${p.code} ${p.title}\n【改造维度】${dLabel[selectedDim]}：${full[p[selectedDim]]||p[selectedDim]} → ${full[target]||target}\n【原题编码】D1${p.d1}/D2${p.d2}/D3${p.d3}/D4${p.d4}/D5${p.d5}/D6${p.d6}\n【变式后编码】D1${v.newCode.d1}/D2${v.newCode.d2}/D3${v.newCode.d3}/D4${v.newCode.d4}/D5${v.newCode.d5}/D6${v.newCode.d6}\n【变式题干】${stemBody}\n【变式设问】\n${v.qs.map((q,i)=>`(${i+1}) ${q}`).join('\n')}\n【改造说明】${v.note}\n【改造前后对比】\n${v.contrast.map(r=>`${r[0]}：${r[1]} → ${r[2]}`).join('\n')}\n【适用课型】${v.use}\n【适合学生层次】${v.fit}\n【教学使用建议】${v.advice}`;
+  $('variantResult').dataset.text=text;
+  $('variantResult').innerHTML=`
+   <div class="coding-change"><div class="coding-box"><b>原题编码</b><div class="tags">${oldTags}</div></div><div class="arrow-big">→</div><div class="coding-box"><b>变式后编码</b><div class="tags">${newTags}</div></div></div>
+   <div class="variant-text">
+     <h3>${esc(v.title)}</h3>
+     ${v.e.ocrText?'<div class="ocr-element-source">本变式优先依据已校对的 OCR 题干全文生成。</div>':''}
+     <p>${esc(v.stem)}</p>
+     <p><b>变式设问：</b></p><ol style="padding-left:22px">${v.qs.map(q=>`<li>${esc(q)}</li>`).join('')}</ol>
+     <p><b>改造说明：</b>${esc(v.note)}</p>
+     <table class="element-table"><thead><tr><th>对比项</th><th>改造前</th><th>改造后</th></tr></thead><tbody>${contrastRows}</tbody></table>
+     <div class="element-grid" style="margin-top:12px">
+       <div class="element-box"><b>适用课型</b><span>${esc(v.use)}</span></div>
+       <div class="element-box"><b>适合学生层次</b><span>${esc(v.fit)}</span></div>
+     </div>
+     <p style="margin-top:10px"><b>教学使用建议：</b>${esc(v.advice)}</p>
+   </div>`;
+  if(window.renderVariantTimeline) renderVariantTimeline(p);
+};
+
+/* 变式链：基于母题要素生成具体链条（覆盖原静态时间轴） */
+function renderVariantTimeline(p){
+  const e=window.inferElements(p), kb=getKB(e.family);
+  const cr=pickCriterion(kb,e);
+  const steps=[
+    ['Ⅰ 基础入口',`化简为单路径程序题：直接给出 ${ (e.known||[]).slice(0,3).join('、')||'必要数据' }，求 ${ (e.unknown&&e.unknown[0])||'目标量' }。`],
+    ['D1 情境迁移',`换壳保模："${(kb.swaps.工程||kb.swaps.生活||[''])[0]}"，模型仍为 ${e.model}。`],
+    ['D3 图示支架',`配三层图示链：${(kb.figures||[])[0]||''}`],
+    ['D5 方法支架',`加方法策略栏目：${(kb.d5&&kb.d5.方法策略&&kb.d5.方法策略[0])||'归纳通法'}`],
+    ['Ⅱ 判断节点',`${(kb.d6.toII||[''])[0]}`],
+    ['Ⅲ 裁决出口',`引入${cr.c}：${cr.q}`]
+  ];
+  $('variantTimeline').innerHTML=steps.map((s,i)=>`<div class="timeline-item"><div class="time-badge">S${i+1}</div><div class="timeline-card"><h3>${s[0]}</h3><p class="meta">以 <span class="code">${p.code}</span>《${esc(p.title)}》为母题：${esc(s[1])}</p></div></div>`).join('');
+};
+/* ---------- 6. 第三章整合决策工作台 ---------- */
+const LV={'Ⅰ':1,'Ⅱ':2,'Ⅲ':3};
+const NEEDS=[['d1工程','补工程技术情境'],['d1探究','补科学探究情境'],['d3','补图示支架'],['d4','补闭环结构'],['d5方法','补方法策略栏目'],['d5反思','补反思评价栏目'],['d6','补认知层级（高阶出口）']];
+const POSITIONS=['新授课应用示范','课时末整合训练','下一课时复习引入','复习课综合应用'];
+const W={ver:'人教版',mod:'相互',kw:'',need:'d6',stu:'normal',baseCode:null,plan:[],mode:1,position:POSITIONS[1]};
+window.V6STATE=W;
+function v6SetBase(code){ W.baseCode=code; window.v6Scan(); };
+function v6SetPos(v){ W.position=v; renderPlanCol(); };
+
+function elOf(code){ const p=problem(code); return p?window.inferElements(p):null; }
+function sameFamily(a,b){ const ea=elOf(a),eb=elOf(b); return ea&&eb&&ea.family===eb.family; }
+
+/* 候选题相对基底能"借出"什么 */
+function lendings(p,base){
+  const out=[];
+  if(!base) return out;
+  if(p.d1!==base.d1&&(p.d1==='工程'||p.d1==='探究')) out.push({k:'d1',t:`情境：${full[p.d1]}`});
+  if(p.d3==='复合'&&base.d3!=='复合') out.push({k:'d3',t:'图示：复合图建模链'});
+  if(p.d4==='闭环'&&base.d4!=='闭环') out.push({k:'d4',t:'结构：案例闭环式'});
+  if(p.d5!=='无'&&p.d5!==base.d5) out.push({k:'d5',t:`栏目：${full[p.d5]}`});
+  if(LV[p.d6]>LV[base.d6]) out.push({k:'d6',t:`层级：${base.d6}→${p.d6} 出口`});
+  if(LV[p.d6]<LV[base.d6]) out.push({k:'d6low',t:`层级：${p.d6} 入口铺垫`});
+  return out;
+}
+function needScore(p,base){
+  let s=0; const ls=lendings(p,base);
+  const map={'d1工程':l=>l.k==='d1'&&l.t.includes('工程'),'d1探究':l=>l.k==='d1'&&l.t.includes('探究'),'d3':l=>l.k==='d3','d4':l=>l.k==='d4','d5方法':l=>l.k==='d5'&&l.t.includes('方法'),'d5反思':l=>l.k==='d5'&&l.t.includes('反思'),'d6':l=>l.k==='d6'};
+  if(ls.some(map[W.need]||(()=>false))) s+=6;
+  s+=ls.length;
+  if(sameFamily(p,base)) s+=2;
+  return s;
+}
+function kwMatch(p){
+  if(!W.kw) return true;
+  const e=window.inferElements(p);
+  const hay=(p.code+p.title+e.scenario+e.model+(e.ocrText||'')).toLowerCase();
+  return W.kw.toLowerCase().split(/\s+/).every(k=>hay.includes(k));
+}
+
+function v6Init(){
+  const sv=$('v6Ver'),sm=$('v6Mod'),sn=$('v6Need'),ss=$('v6Stu'),sp=$('v6Pos');
+  if(!sv) return;
+  sv.innerHTML=versions.map(v=>`<option>${v}</option>`).join(''); sv.value=W.ver;
+  sm.innerHTML=D2.map(m=>`<option value="${m}">${full[m]}</option>`).join(''); sm.value=W.mod;
+  sn.innerHTML=NEEDS.map(n=>`<option value="${n[0]}">${n[1]}</option>`).join(''); sn.value=W.need;
+  sp.innerHTML=POSITIONS.map(x=>`<option>${x}</option>`).join('');
+  v6Scan();
+};
+function v6Apply(){
+  W.ver=$('v6Ver').value; W.mod=$('v6Mod').value; W.kw=$('v6Kw').value.trim();
+  W.need=$('v6Need').value; W.stu=$('v6Stu').value; W.position=$('v6Pos').value;
+  W.baseCode=null; W.plan=[];
+  v6Scan();
+};
+function v6Scan(){
+  const mine=P.filter(p=>p.version===W.ver&&p.d2===W.mod&&kwMatch(p));
+  W.mode=mine.length?1:2;
+  if(W.mode===1&&(!W.baseCode||!mine.some(p=>p.code===W.baseCode))) W.baseCode=mine[0].code;
+  if(W.mode===2) W.baseCode=null;
+  renderBaseCol(mine); renderCandCol(); renderPlanCol();
+};
+function renderBaseCol(mine){
+  const box=$('v6BaseCol'); if(!box) return;
+  if(W.mode===2){
+    box.innerHTML=`<div class="path-banner"><b>情形二 · 主用版本无例题</b><p class="meta">${W.ver}在「${full[W.mod]}」${W.kw?`（关键词"${esc(W.kw)}"）`:''}下未检索到例题。转入"筛选判断＋定位判断"：从右侧候选中直接选题组建序列，每题附四项筛选结果。</p></div>
+    <div class="field" style="margin-top:10px"><label>教学定位（定位判断）</label><select onchange="v6SetPos(this.value)">${POSITIONS.map(x=>`<option ${x===W.position?'selected':''}>${x}</option>`).join('')}</select></div>`;
+    return;
+  }
+  box.innerHTML=`<div class="path-banner"><b>情形一 · 主用版本已有例题</b><p class="meta">共 ${mine.length} 道，点选其一作为整合基底。</p></div>`+
+   mine.map(p=>{
+    const e=window.inferElements(p);
+    const on=p.code===W.baseCode;
+    return `<div class="card v6-base ${on?'v6-on':''}" onclick="v6SetBase('${p.code}')">
+      <h3><span class="code">${p.code}</span> ${esc(p.title)} ${on?'<span class="tag g">基底</span>':''}</h3>
+      <div class="meta">模型：${esc(e.model)} ｜ ${full[p.d1]} · ${full[p.d6]}</div>${tags(p)}
+      <div class="meta">主干可提供：对象「${esc(e.object)}」、过程「${esc(e.process)}」、求解路径「${esc(e.operation)}」</div>
+      <button class="small-btn" onclick="event.stopPropagation();openProblem('${p.code}')">查看原题</button>
+    </div>`;
+   }).join('');
+}
+function renderCandCol(){
+  const box=$('v6CandCol'); if(!box) return;
+  const base=W.baseCode?problem(W.baseCode):null;
+  let cands=P.filter(p=>p.version!==W.ver&&p.d2===W.mod&&p.code!==W.baseCode);
+  if(W.kw) { const kwed=cands.filter(kwMatch); if(kwed.length) cands=kwed; }
+  cands=cands.map(p=>({p,score:base?needScore(p,base):scoreBetter(p,'d6')+(kwMatch(p)?2:0)}))
+             .sort((a,b)=>b.score-a.score).slice(0,10);
+  box.innerHTML=cands.map(({p})=>{
+    const e=window.inferElements(p);
+    const inPlan=W.plan.some(x=>x.code===p.code);
+    let badges='',screen='';
+    if(base){
+      const ls=lendings(p,base);
+      const fam=sameFamily(p,base);
+      badges=ls.map(l=>`<span class="tag ${l.k==='d6'?'r':l.k==='d6low'?'g':'o'}">${l.t}</span>`).join('')||'<span class="tag">同质（慎选）</span>';
+      if(fam) badges=`<span class="tag v">同构模型</span>`+badges;
+    }else{
+      // 情形二：四项筛选判断
+      const lvOK = W.stu==='weak'?LV[p.d6]<=2:true;
+      const struct = p.d4==='闭环'?'闭环（可改写为三段接入）':'兼容';
+      screen=`<div class="v6-screen">
+        <span class="tag g">知识一致 ✓ ${full[p.d2]}</span>
+        <span class="tag ${p.d1==='工程'||p.d1==='探究'?'o':''}">情境：${full[p.d1]}</span>
+        <span class="tag ${lvOK?'g':'r'}">层级${lvOK?'匹配 ✓':'偏高 ⚠'} ${p.d6}</span>
+        <span class="tag">呈现：${struct}</span>
+      </div>`;
+    }
+    return `<div class="card">
+      <h3><span class="code">${p.code}</span> ${esc(p.title)} <span class="tag">${p.version}</span></h3>
+      ${badges?`<div class="tags">${badges}</div>`:''}${screen}
+      <div class="meta">可借鉴要素：${esc(e.model)}；${esc(e.operation)}</div>
+      <div style="margin-top:8px">
+        <button class="small-btn" onclick="v6Add('${p.code}','融合')" ${inPlan?'disabled':''}>融合要素</button>
+        <button class="small-btn" onclick="v6Add('${p.code}','补充')" ${inPlan?'disabled':''}>补入序列</button>
+        ${base?`<button class="small-btn" onclick="v6Add('${p.code}','替换')" ${inPlan?'disabled':''}>替换基底</button>`:''}
+        <button class="small-btn" onclick="openProblem('${p.code}')">原题</button>
+      </div>
+    </div>`;
+  }).join('')||'<div class="empty">六版在该条件下均无候选——整合无法解决，应转入"六维拓展"页对现有母题做变式开发。</div>';
+}
+function v6Add(code,role){
+  if(W.mode===2) role='补充';
+  if(!W.plan.some(x=>x.code===code)) W.plan.push({code,role});
+  renderCandCol(); renderPlanCol();
+};
+function v6Remove(code){ W.plan=W.plan.filter(x=>x.code!==code); renderCandCol(); renderPlanCol(); };
+
+/* 整合类型标注 */
+function planLabel(){
+  const roles=W.plan.map(x=>x.role);
+  const base=W.baseCode?problem(W.baseCode):null;
+  if(roles.includes('替换')) return '替换';
+  const hasF=roles.includes('融合'), hasS=roles.includes('补充');
+  const levelExt=base&&W.plan.some(x=>x.role==='补充'&&LV[problem(x.code).d6]>LV[base.d6]);
+  if(hasS&&levelExt&&!hasF) return '补充 + 层级拓展';
+  if(hasF&&hasS) return '融合 + 补充'+(levelExt?'（含层级拓展）':'');
+  if(hasF) return '融合';
+  if(hasS) return '补充';
+  return W.mode===2?'情形二选配':'（尚未加入候选）';
+}
+function renderPlanCol(){
+  const box=$('v6PlanCol'); if(!box) return;
+  const base=W.baseCode?problem(W.baseCode):null;
+  const seq=[...(base?[{code:base.code,role:'基底'}]:[]),...W.plan];
+  const chips=seq.map(x=>{
+    const p=problem(x.code);
+    const cls=x.role==='基底'?'g':x.role==='融合'?'o':x.role==='替换'?'r':'';
+    return `<div class="row"><div class="left"><div class="title"><span class="code">${x.code}</span> ${esc(p.title)} <span class="tag ${cls}">${x.role}</span> <span class="tag">${full[p.d6]}</span></div></div>
+    ${x.role!=='基底'?`<button class="small-btn" onclick="v6Remove('${x.code}')">移除</button>`:''}</div>`;
+  }).join('');
+  box.innerHTML=`<div class="path-banner"><b>整合类型标注：${planLabel()}</b>
+    <p class="meta">${W.mode===2?`定位：${W.position}`:`学情：${W.stu==='weak'?'基础较弱':W.stu==='strong'?'基础较强':'普通班级'}`} ｜ 方案含 ${seq.length} 题</p></div>
+   <div class="list">${chips||'<div class="empty">从中间一列加入候选题。</div>'}</div>
+   <div class="ocr-toolbar" style="margin-top:10px">
+     <button class="btn" onclick="v6Draft()">生成整合草案</button>
+     <button class="btn secondary" onclick="v6CopyPlan()">复制整合方案</button>
+   </div>`;
+  v6Audit();
+}
+
+/* 要素级整合草案 */
+function v6Draft(){
+  const wrap=$('v6Draft'); if(!wrap) return;
+  const base=W.baseCode?problem(W.baseCode):null;
+  const items=W.plan.map(x=>({...x,p:problem(x.code),e:elOf(x.code)}));
+  if(!base&&!items.length){ wrap.innerHTML='<div class="empty">请先组建方案。</div>'; return; }
+  const be=base?elOf(base.code):null;
+  const kb=getKB((be||items[0].e).family);
+
+  /* 要素抽取与组合表 */
+  const rows=[...(base?[{code:base.code,role:'基底（提供主干）',e:be,gives:`主干模型「${be.model}」；对象「${be.object}」；过程「${be.process}」；已知量 ${be.known.slice(0,3).join('、')}；求解路径「${be.operation}」`}]:[]),
+    ...items.map(x=>{
+      const ls=base?lendings(x.p,base).map(l=>l.t).join('；'):'';
+      return {code:x.code,role:x.role,e:x.e,gives:(ls?ls+'；':'')+`可借设问素材：${(x.e.unknown||[]).slice(0,2).join('；')}`};
+    })];
+  const table=`<table class="element-table"><thead><tr><th>例题</th><th>角色</th><th>向整合题供给的要素</th></tr></thead><tbody>${
+    rows.map(r=>`<tr><td><span class="code">${r.code}</span><br>${esc(problem(r.code).title)}</td><td>${esc(r.role)}</td><td>${esc(r.gives)}</td></tr>`).join('')}</tbody></table>`;
+
+  /* 保留 / 加入 / 删减 */
+  const fusion=items.filter(x=>x.role==='融合'), suppl=items.filter(x=>x.role==='补充'), repl=items.filter(x=>x.role==='替换');
+  const keep=base?`保留 ${base.code} 的核心模型「${be.model}」、研究对象与数据主干，主问保持"${(be.unknown||[])[0]||'原任务'}"。`:`以候选序列为主干（情形二，无基底保留项）。`;
+  const add=[...fusion.map(x=>`从 ${x.code} 融入：${(lendings(x.p,base)||[]).map(l=>l.t).join('、')||'设问与支架要素'}`),
+             ...suppl.map(x=>`补入 ${x.code} 作为序列环节（${full[x.p.d6]}），承担「${(x.e.unknown||[])[0]||x.e.process}」`),
+             ...repl.map(x=>`以 ${x.code} 整体替换基底（同构模型、支架更强），原基底转为课后练习`)].join('；') || '（暂无加入项）';
+  const cut=base?`删减：基底题中与新增设问重复的小问；与新情境无关的装饰性描述；${fusion.length?'被融入栏目覆盖的原旁注。':''}`:'删减：候选题中超出本课时目标的小问。';
+
+  /* 题干结构草案 */
+  const sceneDonor=items.find(x=>['工程','探究'].includes(x.p.d1))||null;
+  const figDonor=items.find(x=>x.p.d3==='复合')||null;
+  const colDonor=items.find(x=>x.p.d5!=='无')||null;
+  const stemPlan=[
+    `① 情境引入：${sceneDonor?`采用 ${sceneDonor.code} 的「${esc(sceneDonor.e.scenario)}」作为情境外壳`:base?`沿用基底「${esc(be.scenario)}」`:`采用 ${items[0].code} 的「${esc(items[0].e.scenario)}」`}；`,
+    `② 条件与数据：${base?`保留基底已知量（${be.known.slice(0,4).join('、')}）`:`按首题要素给出已知量`}，按新情境核对量级；`,
+    `③ 图示方案：${figDonor?`借 ${figDonor.code} 的复合图思路——`:''}${(kb.figures||[]).slice(0,2).join(' ')}；`,
+    `④ 栏目配置：${colDonor?`移植 ${colDonor.code} 的「${full[colDonor.p.d5]}」栏目（${(kb.d5[colDonor.p.d5==='方法策略'?'方法策略':colDonor.p.d5==='反思评价'?'反思评价':'规范提醒']||[''])[0]}）`:`按需配置（建议：${(kb.d5.方法策略||[''])[0]}）`}。`
+  ];
+
+  /* 设问结构草案：按层级排序逐题取一问 */
+  const ordered=[...(base?[{code:base.code,p:base,e:be,role:'基底'}]:[]),...items.filter(x=>x.role!=='替换')]
+    .sort((a,b)=>LV[(a.p||a).d6]-LV[(b.p||b).d6]);
+  let qn=0;
+  const qPlan=ordered.map(x=>{
+    const pp=x.p||problem(x.code), ee=x.e||elOf(x.code); qn++;
+    let q=(ee.unknown&&ee.unknown[0])||ee.process;
+    const verby=/^(求|试|计算|判断|证明|画|比较|分析|说明|完成|由|依据|写出|讨论|推导|设计|能否)/;
+    const parts=q.split(/[;；]/).map(t=>t.trim()).filter(Boolean);
+    if(parts.length>=2){
+      const a=verby.test(parts[0])?parts[0]:`求出${parts[0]}`;
+      const b=/^(是否|能否)/.test(parts[1])?`判断${parts[1]}`:(verby.test(parts[1])?parts[1]:`判断${parts[1]}`);
+      q=`先${a}，再${b}`;
+    } else if(!verby.test(q)) q=`求出${q}`;
+    return `（${qn}）〔源 ${x.code} · ${full[pp.d6]}〕${q}${/[。？]$/.test(q)?'':'。'}`;
+  });
+  const maxLv=Math.max(...ordered.map(x=>LV[(x.p||x).d6]),0);
+  if(maxLv<3&&W.stu!=='weak'){ const cr=pickCriterion(kb,be||items[0].e); qn++; qPlan.push(`（${qn}）〔层级Ⅲ 拓展问〕${cr.q}`); }
+
+  wrap.innerHTML=`<div class="section-title" style="margin-top:6px"><h2>整合草案 · ${planLabel()}</h2><p>题干要素抽取与组合 → 保留/加入/删减 → 题干结构 → 设问结构。可直接复制进教案。</p></div>
+   <h3 style="color:var(--p2)">一、题干要素抽取与组合</h3>${table}
+   <div class="element-grid" style="margin-top:12px">
+     <div class="element-box"><b>保留</b><p>${esc(keep)}</p></div>
+     <div class="element-box"><b>加入</b><p>${esc(add)}</p></div>
+     <div class="element-box" style="grid-column:1/-1"><b>删减</b><p>${esc(cut)}</p></div>
+   </div>
+   <h3 style="color:var(--p2);margin-top:14px">二、整合后题干结构</h3>
+   <div class="variant-text">${stemPlan.map(s=>`<p>${s}</p>`).join('')}</div>
+   <h3 style="color:var(--p2);margin-top:14px">三、整合后设问结构（按认知梯度排列）</h3>
+   <div class="variant-text">${qPlan.map(q=>`<p>${esc(q)}</p>`).join('')}
+     ${W.mode===2?`<p class="meta">教学定位：${W.position}——${W.position.includes('新授')?'只保留前两问作课堂示范':W.position.includes('复习')?'可整体作为综合题组':'建议置于课时末 8–10 分钟'}。</p>`:''}
+   </div>`;
+  wrap.dataset.text=
+`【整合类型】${planLabel()}
+【方案序列】${[...(base?[base.code+'(基底)']:[]),...W.plan.map(x=>`${x.code}(${x.role})`)].join(' + ')}
+【保留】${keep}
+【加入】${add}
+【${cut}】
+【题干结构】
+${stemPlan.map(s=>s.replace(/<[^>]+>/g,'')).join('\n')}
+【设问结构】
+${qPlan.join('\n')}`;
+  wrap.scrollIntoView({behavior:'smooth',block:'start'});
+};
+function v6CopyPlan(){
+  if(!$('v6Draft').dataset.text) v6Draft();
+  navigator.clipboard?.writeText($('v6Draft').dataset.text||'');
+  alert('整合方案已复制到剪贴板');
+};
+
+/* 四项原则复核（自动取证） */
+function v6Audit(){
+  const box=$('v6Audit'); if(!box) return;
+  const base=W.baseCode?problem(W.baseCode):null;
+  const seq=[...(base?[base]:[]),...W.plan.map(x=>problem(x.code))];
+  if(seq.length<2){ box.innerHTML=''; return; }
+  const baseSet=base?P.filter(p=>p.version===W.ver&&p.d2===W.mod):[];
+  const newD1=[...new Set(W.plan.map(x=>problem(x.code).d1))].filter(d=>!baseSet.some(p=>p.d1===d));
+  const newD5=[...new Set(W.plan.map(x=>problem(x.code).d5))].filter(d=>d!=='无'&&!baseSet.some(p=>p.d5===d));
+  const lvs=seq.map(p=>LV[p.d6]).sort((a,b)=>a-b);
+  const gradOK=lvs[0]<=2&&lvs[lvs.length-1]>=2&&new Set(lvs).size>=2;
+  const cover={探究:seq.some(p=>p.d1==='探究'),工程:seq.some(p=>p.d1==='工程'),Ⅲ:seq.some(p=>p.d6==='Ⅲ'),反思:seq.some(p=>p.d5==='反思评价'||p.d4==='闭环')};
+  const stuMax=W.stu==='weak'?2:3, over=lvs[lvs.length-1]>stuMax;
+  const card=(ok,t,ev)=>`<div class="principle" style="border-left:5px solid ${ok?'#10b981':'#f59e0b'}"><b>${ok?'✓':'⚠'} ${t}</b><span class="meta">${ev}</span></div>`;
+  box.innerHTML=`<div class="path-banner" style="margin-top:16px"><h3>四项原则复核（自动取证，最终由教师裁定）</h3><div class="principles">
+   ${card(newD1.length+newD5.length>0||W.plan.some(x=>LV[problem(x.code).d6]>(base?LV[base.d6]:0)),'互补性原则',
+     newD1.length?`新增情境：${newD1.map(d=>full[d]).join('、')}；`:''+(newD5.length?`新增栏目：${newD5.map(d=>full[d]).join('、')}；`:'')||'通过层级/支架差异形成互补'+(newD1.length+newD5.length===0?'（若各题六维全同则为同类堆叠，建议调整）':''))}
+   ${card(cover.探究||cover.工程||cover.Ⅲ||cover.反思,'课标一致性原则',
+     `素养覆盖——科学探究：${cover.探究?'✓':'✗'}；技术应用：${cover.工程?'✓':'✗'}；高阶思维（Ⅲ/反思）：${cover.Ⅲ||cover.反思?'✓':'✗'}`)}
+   ${card(gradOK,'认知梯度原则',
+     `序列层级（建议教学顺序）：${seq.slice().sort((a,b)=>LV[a.d6]-LV[b.d6]).map(p=>p.d6).join('→')}${gradOK?'，形成有效梯度':'，建议补层级Ⅰ/Ⅱ入口或调整顺序'}`)}
+   ${card(!over,'学情适切性原则',
+     W.stu==='weak'?(over?'含层级Ⅲ任务——建议改为选学或课后小组任务':'层级范围适合基础较弱班级'):W.stu==='strong'?'基础较强班级可完整使用，并启用拓展问':'普通班级建议主干Ⅰ/Ⅱ＋1 道Ⅲ出口')}
+  </div></div>`;
+};
+
+/* 预设演示组合 */
+function v6Preset(name){
+  if(name==='friction'){ Object.assign(W,{ver:'人教版',mod:'相互',kw:'',need:'d5方法',baseCode:'RJ-04',plan:[{code:'LK-05',role:'融合'},{code:'HK-06',role:'补充'},{code:'YJ-08',role:'补充'}]}); }
+  if(name==='traffic'){ Object.assign(W,{ver:'人教版',mod:'运动',kw:'',need:'d6',baseCode:'RJ-01',plan:[{code:'HKJ-03',role:'补充'},{code:'LK-02',role:'补充'},{code:'YJ-05',role:'补充'},{code:'YJ-16',role:'补充'}]}); }
+  if(name==='windvane'){ Object.assign(W,{ver:'沪科版',mod:'相互',kw:'',need:'d6',baseCode:'HK-10',plan:[{code:'YJ-13',role:'融合'},{code:'RJ-09',role:'补充'}]}); }
+  $('v6Ver').value=W.ver; $('v6Mod').value=W.mod; $('v6Kw').value=''; $('v6Need').value=W.need;
+  const mine=P.filter(p=>p.version===W.ver&&p.d2===W.mod); W.mode=mine.length?1:2;
+  renderBaseCol(mine); renderCandCol(); renderPlanCol(); v6Draft();
+};
+
+Object.assign(window,{v6Init,v6Apply,v6Scan,v6Add,v6Remove,v6Draft,v6CopyPlan,v6Audit,v6Preset,v6SetBase,v6SetPos,v6SaveElements,v6ResetElements,variantCore,generateVariant,renderVariantTimeline});
+
+/* ---------- 7. 挂载与页面钩子 ---------- */
+const prevShow=window.showPage;
+window.showPage=function(id){ prevShow(id); if(id==='integration'){ if(!$('v6Ver').options.length) window.v6Init(); } };
+function v6Ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+v6Ready(function(){
+  try{ window.v6Init(); }catch(e){ console.warn('v6 init',e); }
+  try{ if(window.selectMother) window.selectMother(false); }catch(e){}
+});
+})();
+
+</script>
+</body>
+</html>
