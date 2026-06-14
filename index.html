@@ -16,6 +16,116 @@
 .ocr-panel{margin-top:14px;background:#f8fbff;border:1px dashed #b8c7e6;border-radius:18px;padding:14px;box-shadow:0 10px 28px rgba(15,23,42,.04)}
 .ocr-panel h3{font-size:16px;color:var(--p2);margin-bottom:6px}.ocr-panel .ocr-help{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px}.ocr-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}.ocr-toolbar .btn{padding:8px 12px;border-radius:12px}.ocr-status{min-height:22px;font-size:13px;color:#3156d4;font-weight:700;margin:8px 0}.ocr-textarea{width:100%;min-height:190px;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:14px;line-height:1.75;resize:vertical;background:white;color:var(--ink)}.ocr-preview{max-height:140px;overflow:auto;border-radius:12px;background:white;border:1px solid var(--line);padding:8px;margin-top:8px}.ocr-preview img{max-width:100%;border-radius:10px;display:block}.ocr-mini{font-size:12px;color:#64748b;line-height:1.65;margin-top:8px}.ocr-badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:#e0f2fe;color:#075985;padding:4px 10px;font-size:12px;font-weight:800;margin:4px 4px 4px 0}.ocr-badge.warn{background:#fff7ed;color:#9a3412}.ocr-element-source{margin-top:8px;padding:8px 10px;border-radius:12px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-size:12px;font-weight:800}
 
+/* ============================================================
+   v7 视觉打磨层 · 仅样式与排版
+   原则：专业 · 克制 · 研究感（坐标纸 / 学术工具气质）
+   严格不改任何 JS 逻辑、数据、统计数字与语义识别色
+   （六版本识别色、认知层级Ⅲ 红色等均由 JS 控制，未触碰）。
+   本层位于样式表末尾，仅通过同等或更高优先级安全覆盖外观。
+   ============================================================ */
+
+/* 1. 设计令牌微调：收敛圆角与阴影，弱化营销感、强化研究感 */
+:root{
+  --radius:18px;
+  --shadow:0 12px 30px rgba(15,23,42,.07);
+  --shadow-soft:0 4px 14px rgba(15,23,42,.05);
+  --line:#d8e2f1;
+  --grid:rgba(49,86,212,.055);
+  --grid-strong:rgba(49,86,212,.09);
+}
+
+/* 2. 坐标纸网格底纹：替换偏营销的彩色径向光斑，呼应物理研究语境 */
+body{
+  background:
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 26px 26px,
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 26px 26px,
+    linear-gradient(var(--grid-strong) 1px, transparent 1px) 0 0 / 130px 130px,
+    linear-gradient(90deg, var(--grid-strong) 1px, transparent 1px) 0 0 / 130px 130px,
+    radial-gradient(circle at 50% -8%, rgba(6,182,212,.10), transparent 42%),
+    linear-gradient(180deg,#f7faff,#eef3fb 62%,#f6f9fe);
+  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed;
+}
+
+/* 3. 卡片 / 面板：更克制的描边与柔和阴影，hover 收敛位移 */
+.hero-card,.panel{box-shadow:var(--shadow);border-color:var(--line)}
+.card,.metric,.timeline-card,.step{box-shadow:var(--shadow-soft)}
+.card{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(49,86,212,.12)}
+.metric{position:relative;overflow:hidden}
+.metric::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--p),var(--a))}
+.metric .num,.code,.seg,.heat-cell,.pyr,.element-table td{font-variant-numeric:tabular-nums}
+
+/* 4. 章节标题：加研究报告式的左侧色条，强化信息层级 */
+.section-title h2{position:relative;padding-left:14px}
+.section-title h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:5px;border-radius:3px;background:linear-gradient(180deg,var(--p),var(--a))}
+
+/* 5. 头部与导航：维持深蓝研究感，细化分隔与选中态 */
+header{border-bottom:1px solid rgba(255,255,255,.08)}
+nav button{transition:background .18s ease,color .18s ease,transform .18s ease}
+nav button.active{box-shadow:0 6px 16px rgba(6,182,212,.22)}
+
+/* 6. 表单可达性：清晰的聚焦态，利于键盘操作与答辩演示 */
+select:focus,input:focus,textarea:focus,.ocr-textarea:focus{
+  border-color:var(--p);box-shadow:0 0 0 3px rgba(49,86,212,.14)
+}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--p);outline-offset:2px
+}
+select,input{transition:border-color .15s ease, box-shadow .15s ease}
+
+/* 7. 列表行与芯片：更稳的悬停反馈 */
+.row{transition:border-color .15s ease, background .15s ease, transform .15s ease}
+.row:hover{transform:translateX(2px)}
+.chip,.combo-chip,.small-btn{transition:background .15s ease, transform .12s ease}
+.chip:active,.combo-chip:active,.small-btn:active{transform:scale(.96)}
+
+/* 8. 模态框：更柔和的入场，原图查看更聚焦 */
+.modal{backdrop-filter:blur(3px)}
+.modal.active .modal-card{animation:modalIn .26s cubic-bezier(.2,.7,.3,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+.problem-img{box-shadow:var(--shadow-soft)}
+
+/* 9. 文本选区与滚动条：统一研究蓝调 */
+::selection{background:rgba(49,86,212,.18)}
+*{scrollbar-width:thin;scrollbar-color:#c6d4ec transparent}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#cdd9ee;border-radius:999px;border:2px solid transparent;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:#b3c4e0}
+
+/* 10. 回到顶部按钮（纯样式，行为由文末独立脚本提供，不触碰既有逻辑） */
+#toTop{position:fixed;right:22px;bottom:24px;z-index:150;width:46px;height:46px;border:0;border-radius:50%;
+  background:linear-gradient(135deg,var(--p),var(--a));color:#fff;font-size:20px;font-weight:900;cursor:pointer;
+  box-shadow:0 12px 26px rgba(49,86,212,.30);opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .25s ease, transform .25s ease, visibility .25s}
+#toTop.show{opacity:1;visibility:visible;transform:none}
+#toTop:hover{transform:translateY(-2px)}
+
+/* 11. 降低动效偏好：尊重系统设置 */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .card:hover,.btn:hover,.row:hover,nav button:hover,#toTop:hover{transform:none}
+}
+
+/* 12. 打印 / 导出 PDF：面向答辩材料，去除界面 chrome，保留内容与截图 */
+@media print{
+  body{background:#fff}
+  header{position:static;background:#fff;color:#000;box-shadow:none;border-bottom:1px solid #ccc}
+  .brand,.brand *{color:#000!important}
+  nav,.hero-actions,.toolbar,.ocr-toolbar,.small-btn,.btn,.close,#toTop{display:none!important}
+  main{padding:0}
+  .page{display:none!important}
+  .page.active{display:block!important}
+  .hero-card,.panel,.card,.metric,.step,.timeline-card{box-shadow:none;border:1px solid #cbd5e1;break-inside:avoid}
+  .modal{display:none!important}
+  .problem-img{break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
+
+/* 13. 移动端细化：小屏下回到顶部按钮缩小、留白收敛 */
+@media(max-width:640px){
+  #toTop{right:14px;bottom:16px;width:42px;height:42px}
+  .hero-card{padding:24px}
+}
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
@@ -1215,6 +1325,22 @@ v6Ready(function(){
   try{ window.v6Init(); }catch(e){ console.warn('v6 init',e); }
   try{ if(window.selectMother) window.selectMother(false); }catch(e){}
 });
+})();
+
+/* v7 回到顶部按钮：完全独立的 IIFE，仅监听滚动、不引用任何既有全局，
+   不参与原有数据/统计/交互逻辑，可安全移除。 */
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    var btn=document.createElement('button');
+    btn.id='toTop'; btn.type='button'; btn.setAttribute('aria-label','回到顶部'); btn.title='回到顶部'; btn.textContent='↑';
+    btn.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+    document.body.appendChild(btn);
+    var ticking=false;
+    function update(){ btn.classList.toggle('show', window.scrollY>420); ticking=false; }
+    window.addEventListener('scroll',function(){ if(!ticking){ window.requestAnimationFrame(update); ticking=true; } }, {passive:true});
+    update();
+  });
 })();
 
 </script>
