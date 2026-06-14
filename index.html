@@ -176,6 +176,14 @@ nav button.active::after{content:"";position:absolute;left:14px;right:14px;botto
   .section-title{flex-direction:column;align-items:flex-start;gap:6px}
   #library .toolbar{position:static}
 }
+
+/* ============================================================
+   v7.2 图表色例（文本分析页）· 仅展示，颜色取自 JS 的 colors 映射 */
+.chart-legend{display:flex;flex-wrap:wrap;gap:9px 14px;align-items:center;margin:2px 0 14px}
+.chart-legend .lg-item{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--muted)}
+.chart-legend .lg-item i{width:12px;height:12px;border-radius:4px;display:inline-block;box-shadow:inset 0 0 0 1px rgba(15,23,42,.10)}
+.chart-legend .lg-item i.lg-grad{width:56px;border-radius:6px;background:linear-gradient(90deg,rgba(49,86,212,.16),rgba(49,86,212,.92))}
+.chart-legend .lg-note{font-size:11px;color:#b91c1c;font-weight:800;margin-left:auto}
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
@@ -1390,6 +1398,37 @@ v6Ready(function(){
     function update(){ btn.classList.toggle('show', window.scrollY>420); ticking=false; }
     window.addEventListener('scroll',function(){ if(!ticking){ window.requestAnimationFrame(update); ticking=true; } }, {passive:true});
     update();
+  });
+})();
+
+/* v7.2 图表色例：把每张图的颜色含义显式标出，颜色直接取自既有
+   colors / full / D1 / D6 映射（单一数据源），不改任何渲染逻辑。 */
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    if(typeof colors==='undefined'||typeof full==='undefined') return;
+    function chip(v){ return '<span class="lg-item"><i style="background:'+(colors[v]||'#94a3b8')+'"></i>'+(full[v]||v)+'</span>'; }
+    function addLegend(chartId, vals, note){
+      var chart=document.getElementById(chartId); if(!chart) return;
+      var prev=chart.previousElementSibling;
+      if(prev && prev.classList && prev.classList.contains('chart-legend')) return; // 防重复
+      var lg=document.createElement('div'); lg.className='chart-legend';
+      lg.innerHTML = vals.map(chip).join('') + (note?'<span class="lg-note">'+note+'</span>':'');
+      chart.parentElement.insertBefore(lg, chart);
+    }
+    try{
+      addLegend('d1Stack', D1);
+      addLegend('d6Stack', D6, '层级Ⅲ＝红色（批判性推理）');
+      addLegend('pyramid', D6);
+      var hm=document.getElementById('heatmap');
+      if(hm){ var p=hm.previousElementSibling;
+        if(!(p && p.classList && p.classList.contains('chart-legend'))){
+          var lg=document.createElement('div'); lg.className='chart-legend';
+          lg.innerHTML='<span class="lg-item"><i class="lg-grad"></i>颜色越深＝该「模块 × 情境」例题数越多</span>';
+          hm.parentElement.insertBefore(lg, hm);
+        }
+      }
+    }catch(e){ console.warn('legend', e); }
   });
 })();
 
