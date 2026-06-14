@@ -1710,6 +1710,41 @@ v6Ready(function(){
   });
 })();
 
+/* v7.4-f 拓展页母题/维度/目标写入 URL：可分享“某道母题的变式工作台”。
+   写：包裹 generateVariant（每次变更后都会被调用）→ 当前状态写回 URL。
+   读：深链/前进后退时回填母题、改造维度与目标类别。不改既有函数。 */
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  function pageOf(){ return location.hash.slice(1).split('?')[0]; }
+  function parseParams(){ var raw=location.hash.split('?')[1]||'', out={}; raw.split('&').forEach(function(kv){ if(!kv) return; var i=kv.indexOf('='),k=i<0?kv:kv.slice(0,i),v=i<0?'':kv.slice(i+1); try{ out[k]=decodeURIComponent(v); }catch(e){ out[k]=v; } }); return out; }
+  function hasOption(sel,val){ return !!(sel && Array.prototype.some.call(sel.options,function(o){return o.value===val;})); }
+  function writeExtToHash(){
+    if(pageOf()!=='extension') return;
+    var parts=[];
+    try{ var m=window.getMother&&getMother(); if(m&&m.code) parts.push('m='+encodeURIComponent(m.code)); }catch(e){}
+    try{ if(selectedDim) parts.push('d='+selectedDim); }catch(e){}
+    var t=document.getElementById('variantTarget'); if(t&&t.value) parts.push('t='+encodeURIComponent(t.value));
+    try{ history.replaceState(null,'','#extension'+(parts.length?'?'+parts.join('&'):'')); }catch(e){}
+  }
+  function applyExtFromHash(){
+    if(pageOf()!=='extension') return;
+    var p=parseParams(); if(!p.m && !p.d && !p.t) return;
+    try{
+      if(p.m){ var ms=document.getElementById('motherSearch'); if(ms) ms.value=''; if(window.renderMotherOptions) renderMotherOptions(); var sel=document.getElementById('motherSelect'); if(hasOption(sel,p.m)) sel.value=p.m; }
+      if(p.d && /^d[1-6]$/.test(p.d)) selectedDim=p.d;
+      if(window.renderDimGrid) renderDimGrid();
+      if(window.updateTargetOptions) updateTargetOptions();
+      if(p.t){ var tt=document.getElementById('variantTarget'); if(hasOption(tt,p.t)) tt.value=p.t; }
+      if(window.selectMother) selectMother(); else if(window.generateVariant) generateVariant();
+    }catch(e){ console.warn('ext route', e); }
+  }
+  ready(function(){
+    if(typeof window.generateVariant==='function'){ var _gv=window.generateVariant; window.generateVariant=function(){ var r=_gv.apply(this,arguments); writeExtToHash(); return r; }; }
+    applyExtFromHash();
+    window.addEventListener('hashchange', applyExtFromHash);
+  });
+})();
+
 </script>
 </body>
 </html>
