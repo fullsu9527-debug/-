@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="多版本高中物理例题资源研究平台：对六版必修一全部 95 道例题做六维全样本编码，发现认知层级与情境配置的结构性失衡，并提供原题库、文本分析、横向切片、整合与拓展工具。" />
+<meta name="author" content="物理例题资源研究" />
+<meta name="theme-color" content="#172554" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="多版本高中物理例题资源研究平台" />
+<meta property="og:description" content="95 道例题 · 六维编码 · 文本分析 · 整合与拓展策略工作台" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23172554'/><g stroke='%2360a5fa' stroke-width='3' fill='none'><ellipse cx='32' cy='32' rx='22' ry='9'/><ellipse cx='32' cy='32' rx='22' ry='9' transform='rotate(60 32 32)'/><ellipse cx='32' cy='32' rx='22' ry='9' transform='rotate(120 32 32)'/></g><circle cx='32' cy='32' r='5.5' fill='%2322d3ee'/></svg>" />
 <title>多版本高中物理例题资源研究平台 · v6 整合决策与语义变式版</title>
 <style>
 :root{--p:#3156d4;--p2:#172554;--a:#06b6d4;--g:#10b981;--o:#f59e0b;--r:#ef4444;--v:#8b5cf6;--pink:#ec4899;--ink:#142033;--muted:#64748b;--line:#dce6f3;--soft:#f8fbff;--card:#fff;--bg:#eef5ff;--shadow:0 18px 45px rgba(15,23,42,.10);--radius:22px}
@@ -235,11 +243,42 @@ nav button.active::after{content:"";position:absolute;left:14px;right:14px;botto
   .rl-step::after{display:none}
 }
 @media print{ .page-next,.research-line{display:none!important} }
+
+/* ============================================================
+   v7.4 “真正的网页”增强：移动端导航 / 站点页脚 / 路由由文末脚本驱动
+   ============================================================ */
+
+/* 汉堡按钮：仅移动端出现 */
+.nav-toggle{display:none;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10);color:#fff;width:44px;height:44px;border-radius:12px;font-size:20px;line-height:1;cursor:pointer;transition:background .15s ease}
+.nav-toggle:hover{background:rgba(255,255,255,.20)}
+
+@media(max-width:640px){
+  .topbar{position:relative}
+  .nav-toggle{display:inline-grid;place-items:center}
+  /* 覆盖原本 nav{display:none}：改为可展开的下拉菜单 */
+  nav#nav{display:none!important;position:absolute;top:62px;right:8px;left:8px;flex-direction:column;gap:6px;background:rgba(23,37,84,.98);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:10px;box-shadow:0 24px 50px rgba(15,23,42,.42);z-index:95}
+  nav#nav.open{display:flex!important}
+  nav#nav button{width:100%;text-align:left;padding:12px 14px;font-size:15px}
+}
+
+/* 站点页脚 */
+.site-footer{margin-top:10px;background:linear-gradient(180deg,#172554,#101b3f);color:rgba(255,255,255,.86);padding:30px 0 26px}
+.footer-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.footer-brand{display:flex;align-items:center;gap:12px;min-width:0}
+.footer-brand .logo{width:40px;height:40px;border-radius:12px;flex:0 0 auto}
+.footer-brand-text b{display:block;font-size:16px;color:#fff;font-weight:900}
+.footer-brand-text span{font-size:12.5px;color:rgba(255,255,255,.66)}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px}
+.footer-links button{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:rgba(255,255,255,.84);border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700;font-size:13px;transition:background .15s ease,color .15s ease,transform .15s ease}
+.footer-links button:hover{background:#fff;color:var(--p2);transform:translateY(-1px)}
+.footer-meta{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;line-height:1.75;color:rgba(255,255,255,.6)}
+@media(max-width:640px){.footer-inner{flex-direction:column;align-items:flex-start}}
+@media print{.site-footer{display:none!important}.nav-toggle{display:none!important}}
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
 <body>
-<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="library">原题库</button><button data-page="analysis">文本分析</button><button data-page="slice">横向切片</button><button data-page="integration">整合策略</button><button data-page="extension">拓展策略</button></nav></div></header>
+<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="library">原题库</button><button data-page="analysis">文本分析</button><button data-page="slice">横向切片</button><button data-page="integration">整合策略</button><button data-page="extension">拓展策略</button></nav></div></header>
 <main class="container">
 <section id="home" class="page active"><div class="home-lead"><div class="eyebrow">RESEARCH OVERVIEW · 研究总览</div><h1 class="home-headline">本研究对六版必修一全部 95 道例题做六维全样本编码，发现例题资源在认知层级与情境配置上的结构性失衡，并据此提出整合与拓展两条对策。</h1></div><div class="metrics home-metricbar" id="homeMetrics"></div><div class="home-findings"><button type="button" class="finding-main" onclick="showPage('analysis')"><div class="finding-tag">核心发现 · 点击进入文本分析</div><div class="finding-head">全样本层级Ⅲ仅占 <b>10.5%</b>（10/95）</div><p>而且其中约 60% 集中在运动学，相互作用模块只有 1 道——高阶思维训练严重不足，且在知识模块间分布失衡。</p><span class="finding-go">进入文本分析 →</span></button><div class="finding-side"><button type="button" class="finding-card" onclick="showPage('analysis')"><span class="fc-num">发现 01 · 情境配置</span><span class="fc-text">相互作用与力模块中，“工程技术”情境的例题，全六版加起来只有 1 道。</span><span class="fc-go">查看文本分析 →</span></button><button type="button" class="finding-card" onclick="showPage('slice')"><span class="fc-num">发现 02 · 设计取向</span><span class="fc-text">鲁科版 100% 案例闭环式，沪科版 100% 标准三段式；粤教版层级Ⅲ占 18.8%、中间层却仅 31.2%——版本差异不在数量而在设计取向。</span><span class="fc-go">查看横向切片 →</span></button><button type="button" class="finding-card" onclick="showPage('slice')"><span class="fc-num">发现 03 · 模型密度</span><span class="fc-text">“交通制动安全”模型共 16 道，层级Ⅲ密度高达 31.3%，是全样本 10.5% 的三倍。</span><span class="fc-go">查看横向切片 →</span></button></div></div><div class="section-title"><h2>研究主线</h2><p>素材 → 发现 → 聚焦 → 对策一 → 对策二，点击任一环节进入对应页面，也可用页尾“下一步”顺序浏览。</p></div><div class="research-line"><div class="rl-step" onclick="showPage('library')"><b>① 原题库</b><span>素材 · 95 道</span></div><div class="rl-step" onclick="showPage('analysis')"><b>② 文本分析</b><span>发现 · 六维统计</span></div><div class="rl-step" onclick="showPage('slice')"><b>③ 横向切片</b><span>聚焦 · 交通制动</span></div><div class="rl-step" onclick="showPage('integration')"><b>④ 整合策略</b><span>对策一 · 调配</span></div><div class="rl-step" onclick="showPage('extension')"><b>⑤ 拓展策略</b><span>对策二 · 变式</span></div></div><div class="page-next"><button class="btn" onclick="showPage('library')">从第一步开始：原题库 →</button></div></section>
 
@@ -314,6 +353,20 @@ nav button.active::after{content:"";position:absolute;left:14px;right:14px;botto
   <div class="ocr-mini">建议校对重点：m/s²、km/h、N、kg、μ、θ、v₀、a、t、x、正负号、题目设问序号。OCR 文本保存在本浏览器 localStorage 中，不上传服务器。</div>
 </div></div><div class="panel variant-output"><h3 style="color:var(--p2);margin-bottom:12px">2. 选择改造维度</h3><div class="dim-grid" id="dimGrid"></div><div class="toolbar" style="margin-top:12px"><label>目标类别</label><select id="variantTarget" onchange="generateVariant()"></select><button class="btn" onclick="generateVariant()">生成六维变式</button><button class="btn secondary" onclick="copyVariantText()">复制变式文本</button></div><div id="variantResult"></div></div></div><div class="section-title"><h2>变式链条示例</h2><p>同一道母题可形成“基础变式—情境变式—图示变式—方法变式—高阶变式—开放探究变式”的连续链条。</p></div><div class="timeline" id="variantTimeline"></div><div class="page-next"><button class="btn secondary" onclick="showPage('home')">↺ 回到首页总览</button></div></section>
 </main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><div class="logo">⚛</div><div class="footer-brand-text"><b>多版本高中物理例题资源研究平台</b><span>95 道例题 · 六维全样本编码 · 整合与拓展策略工作台</span></div></div>
+    <div class="footer-links">
+      <button type="button" onclick="showPage('library')">原题库</button>
+      <button type="button" onclick="showPage('analysis')">文本分析</button>
+      <button type="button" onclick="showPage('slice')">横向切片</button>
+      <button type="button" onclick="showPage('integration')">整合策略</button>
+      <button type="button" onclick="showPage('extension')">拓展策略</button>
+    </div>
+  </div>
+  <div class="container footer-meta">数据来源：六版必修一例题六维编码总表（D1–D6）。本平台为硕士学位论文配套研究工具，所有统计基于全样本精编、非抽样。OCR 与要素校对结果仅保存在本地浏览器，不上传服务器。</div>
+</footer>
 
 <div class="modal" id="modal" onclick="closeModal(event)"><div class="modal-card" onclick="event.stopPropagation()"><div class="modal-header"><div><h2 id="modalTitle"></h2><div class="meta" id="modalSub"></div></div><button class="close" onclick="closeModal()">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
 
@@ -1481,6 +1534,46 @@ v6Ready(function(){
         }
       }
     }catch(e){ console.warn('legend', e); }
+  });
+})();
+
+/* v7.4-a 路由：让每个页面有自己的 URL（#hash），支持刷新保留、前进/后退、
+   书签分享，并更新浏览器标签标题。包裹现有 window.showPage（不改其逻辑）。 */
+(function(){
+  if(typeof window.showPage!=='function') return;
+  var titles={home:'研究总览',library:'原题库',analysis:'文本分析',slice:'横向切片',integration:'整合策略',extension:'拓展策略'};
+  var base='多版本高中物理例题资源研究平台';
+  var inner=window.showPage;
+  window.showPage=function(id){
+    inner(id);
+    try{ document.title=(titles[id]?titles[id]+' · ':'')+base; }catch(e){}
+    try{ if(location.hash.slice(1)!==id) location.hash=id; }catch(e){}
+  };
+  window.addEventListener('hashchange', function(){
+    var id=location.hash.slice(1);
+    var el=id&&document.getElementById(id);
+    if(el && titles[id] && !el.classList.contains('active')) window.showPage(id);
+  });
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    var id=location.hash.slice(1);
+    if(id && titles[id] && document.getElementById(id)) window.showPage(id);
+    else { try{ document.title='研究总览 · '+base; }catch(e){} }
+  });
+})();
+
+/* v7.4-b 移动端汉堡菜单：展开/收起导航。独立 IIFE，不触碰既有逻辑。 */
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    var toggle=document.getElementById('navToggle'), nav=document.getElementById('nav');
+    if(!toggle||!nav) return;
+    function close(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+    function open(){ nav.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
+    toggle.addEventListener('click', function(e){ e.stopPropagation(); nav.classList.contains('open')?close():open(); });
+    nav.addEventListener('click', function(e){ if(e.target.closest('button')) close(); });
+    document.addEventListener('click', function(e){ if(nav.classList.contains('open') && !nav.contains(e.target) && e.target!==toggle) close(); });
+    window.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
   });
 })();
 
