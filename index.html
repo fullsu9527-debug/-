@@ -298,12 +298,28 @@ nav button.active::after{content:"";position:absolute;left:14px;right:14px;botto
 .modal-step:disabled{opacity:.35;cursor:default}
 .modal-pos{font-size:12.5px;font-weight:900;color:var(--muted);min-width:52px;text-align:center;font-variant-numeric:tabular-nums}
 @media(max-width:640px){.modal-pos{min-width:42px}}
+
+/* v7.5 产品级收尾：跳转无障碍、图片加载态、放大加载指示 */
+.skip-link{position:fixed;left:-9999px;top:0;z-index:400;background:#fff;color:var(--p);padding:11px 18px;border-radius:0 0 14px 0;font-weight:900;box-shadow:var(--shadow)}
+.skip-link:focus{left:0;outline:2px solid var(--p);outline-offset:2px}
+#main:focus{outline:none}
+/* 截图加载占位：未加载完成时显示柔和微光，加载后还原 */
+.problem-img{min-height:140px;background:linear-gradient(110deg,#eef3fb 25%,#f8fbff 50%,#eef3fb 75%);background-size:200% 100%;animation:imgShimmer 1.4s ease-in-out infinite}
+.problem-img.is-loaded{background:#fff;animation:none;min-height:0}
+@keyframes imgShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+/* 放大查看加载指示 */
+.lightbox-stage{position:relative}
+.lightbox-stage.loading::before{content:"";position:absolute;top:50%;left:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:4px solid rgba(255,255,255,.25);border-top-color:#fff;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.problem-img{animation:none;background:#f3f7fd}.lightbox-stage.loading::before{animation:none}}
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main" onclick="event.preventDefault();var m=document.getElementById('main');if(m){m.focus();m.scrollIntoView();}">跳到主内容</a>
+<noscript><div style="margin:0;padding:14px 18px;background:#fff7ed;color:#9a3412;border-bottom:1px solid #fed7aa;font-size:14px;line-height:1.7;text-align:center">本平台为交互式研究网页，95 道例题数据、图表与工具均由 JavaScript 即时生成。请在浏览器中启用 JavaScript 后刷新本页以正常使用。</div></noscript>
 <header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="library">原题库</button><button data-page="analysis">文本分析</button><button data-page="slice">横向切片</button><button data-page="integration">整合策略</button><button data-page="extension">拓展策略</button></nav></div></header>
-<main class="container">
+<main class="container" id="main" tabindex="-1">
 <section id="home" class="page active"><div class="home-lead"><div class="eyebrow">RESEARCH OVERVIEW · 研究总览</div><h1 class="home-headline">本研究对六版必修一全部 95 道例题做六维全样本编码，发现例题资源在认知层级与情境配置上的结构性失衡，并据此提出整合与拓展两条对策。</h1></div><div class="metrics home-metricbar" id="homeMetrics"></div><div class="home-findings"><button type="button" class="finding-main" onclick="showPage('analysis')"><div class="finding-tag">核心发现 · 点击进入文本分析</div><div class="finding-head">全样本层级Ⅲ仅占 <b>10.5%</b>（10/95）</div><p>而且其中约 60% 集中在运动学，相互作用模块只有 1 道——高阶思维训练严重不足，且在知识模块间分布失衡。</p><span class="finding-go">进入文本分析 →</span></button><div class="finding-side"><button type="button" class="finding-card" onclick="showPage('analysis')"><span class="fc-num">发现 01 · 情境配置</span><span class="fc-text">相互作用与力模块中，“工程技术”情境的例题，全六版加起来只有 1 道。</span><span class="fc-go">查看文本分析 →</span></button><button type="button" class="finding-card" onclick="showPage('slice')"><span class="fc-num">发现 02 · 设计取向</span><span class="fc-text">鲁科版 100% 案例闭环式，沪科版 100% 标准三段式；粤教版层级Ⅲ占 18.8%、中间层却仅 31.2%——版本差异不在数量而在设计取向。</span><span class="fc-go">查看横向切片 →</span></button><button type="button" class="finding-card" onclick="showPage('slice')"><span class="fc-num">发现 03 · 模型密度</span><span class="fc-text">“交通制动安全”模型共 16 道，层级Ⅲ密度高达 31.3%，是全样本 10.5% 的三倍。</span><span class="fc-go">查看横向切片 →</span></button></div></div><div class="section-title"><h2>研究主线</h2><p>素材 → 发现 → 聚焦 → 对策一 → 对策二，点击任一环节进入对应页面，也可用页尾“下一步”顺序浏览。</p></div><div class="research-line"><div class="rl-step" onclick="showPage('library')"><b>① 原题库</b><span>素材 · 95 道</span></div><div class="rl-step" onclick="showPage('analysis')"><b>② 文本分析</b><span>发现 · 六维统计</span></div><div class="rl-step" onclick="showPage('slice')"><b>③ 横向切片</b><span>聚焦 · 交通制动</span></div><div class="rl-step" onclick="showPage('integration')"><b>④ 整合策略</b><span>对策一 · 调配</span></div><div class="rl-step" onclick="showPage('extension')"><b>⑤ 拓展策略</b><span>对策二 · 变式</span></div></div><div class="page-next"><button class="btn" onclick="showPage('library')">从第一步开始：原题库 →</button></div></section>
 
 <section id="library" class="page"><div class="page-intro">一切结论的源头是这 95 道真实例题，每道都经过六个维度的精细编码。</div><div class="section-title"><h2>95 道教材原题库</h2><p>每道原题均以编码总表中的 D1–D6 为准，并保留原题截图。可筛选、查看、设为拓展母题。</p></div><div class="toolbar"><label>关键词</label><input id="libSearch" placeholder="编号/题名，如 YJ-05、刹车、风力仪" oninput="renderLibrary()"><label>版本</label><select id="libVersion" onchange="renderLibrary()"></select><label>D1 情境</label><select id="libD1" onchange="renderLibrary()"></select><label>D2 模块</label><select id="libD2" onchange="renderLibrary()"></select><label>D6 层级</label><select id="libD6" onchange="renderLibrary()"></select><button class="btn secondary" onclick="resetLibrary()">清空筛选</button><button class="btn ghost" id="libShareBtn" onclick="copyShareLink(this)" title="复制带当前筛选条件的链接，可分享/收藏">🔗 复制筛选链接</button><span class="meta" id="libCount"></span></div><div class="list" id="libraryList"></div><div class="page-next"><button class="btn" onclick="showPage('analysis')">下一步：文本分析 →</button></div></section>
@@ -392,7 +408,7 @@ nav button.active::after{content:"";position:absolute;left:14px;right:14px;botto
   <div class="container footer-meta">数据来源：六版必修一例题六维编码总表（D1–D6）。本平台为硕士学位论文配套研究工具，所有统计基于全样本精编、非抽样。OCR 与要素校对结果仅保存在本地浏览器，不上传服务器。</div>
 </footer>
 
-<div class="modal" id="modal" onclick="closeModal(event)"><div class="modal-card" onclick="event.stopPropagation()"><div class="modal-header"><div class="modal-head-text"><h2 id="modalTitle"></h2><div class="meta" id="modalSub"></div></div><div class="modal-nav" id="modalNav"><button class="modal-step" id="modalPrev" type="button" aria-label="上一题">‹</button><span class="modal-pos" id="modalPos"></span><button class="modal-step" id="modalNext" type="button" aria-label="下一题">›</button></div><button class="close" onclick="closeModal()">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
+<div class="modal" id="modal" onclick="closeModal(event)" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card" onclick="event.stopPropagation()"><div class="modal-header"><div class="modal-head-text"><h2 id="modalTitle"></h2><div class="meta" id="modalSub"></div></div><div class="modal-nav" id="modalNav"><button class="modal-step" id="modalPrev" type="button" aria-label="上一题">‹</button><span class="modal-pos" id="modalPos"></span><button class="modal-step" id="modalNext" type="button" aria-label="下一题">›</button></div><button class="close" onclick="closeModal()">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
 
 <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="原题截图放大查看"><button class="lightbox-close" type="button" aria-label="关闭放大查看">×</button><div class="lightbox-stage" id="lightboxStage"><img id="lightboxImg" alt="原题截图放大"></div><div class="lightbox-hint">点击图片可切换“适应窗口 / 原始大小”，Esc 或点击空白处关闭</div></div>
 
@@ -1613,7 +1629,7 @@ v6Ready(function(){
     if(!lb) return;
     var stage=document.getElementById('lightboxStage'), img=document.getElementById('lightboxImg'),
         closeBtn=lb.querySelector('.lightbox-close');
-    function open(src,alt){ if(!src) return; img.src=src; img.alt=alt||'原题截图'; stage.classList.remove('zoomed'); stage.scrollTop=0; stage.scrollLeft=0; lb.classList.add('active'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function open(src,alt){ if(!src) return; stage.classList.add('loading'); img.onload=img.onerror=function(){ stage.classList.remove('loading'); }; img.alt=alt||'原题截图'; img.src=src; if(img.complete) stage.classList.remove('loading'); stage.classList.remove('zoomed'); stage.scrollTop=0; stage.scrollLeft=0; lb.classList.add('active'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
     function close(){ lb.classList.remove('active'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; img.removeAttribute('src'); }
     // 捕获阶段：先于模态卡片的 stopPropagation 接住截图点击
     document.addEventListener('click', function(e){
@@ -1708,6 +1724,13 @@ v6Ready(function(){
       else if(e.key==='ArrowRight'){ e.preventDefault(); go(1); }
     });
   });
+})();
+
+/* v7.5 截图加载态：图片加载完成后去掉微光占位（load 不冒泡，用捕获阶段委托）。 */
+(function(){
+  function mark(e){ var t=e.target; if(t&&t.tagName==='IMG'&&t.classList&&t.classList.contains('problem-img')) t.classList.add('is-loaded'); }
+  document.addEventListener('load', mark, true);
+  document.addEventListener('error', mark, true);
 })();
 
 /* v7.4-f 拓展页母题/维度/目标写入 URL：可分享“某道母题的变式工作台”。
