@@ -126,6 +126,56 @@ select,input{transition:border-color .15s ease, box-shadow .15s ease}
   #toTop{right:14px;bottom:16px;width:42px;height:42px}
   .hero-card{padding:24px}
 }
+
+/* ============================================================
+   v7.1 逐页细化 · 仍为纯样式覆盖，不改任何逻辑/数据/语义色
+   ============================================================ */
+
+/* 导航：当前页下方加细指示条，定位更清晰 */
+nav button{position:relative}
+nav button.active::after{content:"";position:absolute;left:14px;right:14px;bottom:-3px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--p),var(--a))}
+
+/* logo 细化 */
+.logo{box-shadow:0 8px 20px rgba(6,182,212,.30), inset 0 0 0 1px rgba(255,255,255,.25)}
+
+/* 列表编号徽章化：长列表中编号更易扫读 */
+.row .title .code{display:inline-block;background:#eef3ff;border:1px solid #d6e2fb;border-radius:8px;padding:1px 7px;margin-right:4px}
+
+/* 列表行左侧悬停强调条（圆角对齐，不裁剪按钮聚焦环） */
+.row{position:relative}
+.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;border-radius:16px 0 0 16px;background:linear-gradient(180deg,var(--p),var(--a));transition:width .15s ease}
+.row:hover::before{width:4px}
+
+/* 原题库筛选栏吸顶：95 道长列表滚动时筛选随手可及 */
+#library .toolbar{position:sticky;top:70px;z-index:45;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);box-shadow:0 6px 18px rgba(15,23,42,.06)}
+
+/* 图表数字对比度：在中等底色上加细描边提升可读性（不改语义色本身） */
+.seg,.heat-cell,.pyr{text-shadow:0 1px 2px rgba(15,23,42,.22)}
+
+/* 矩阵单元 hover（横向切片页） */
+.matrix .cell{transition:border-color .15s ease, background .15s ease}
+.matrix .cell:hover{border-color:#93c5fd;background:#f8fbff}
+
+/* 维度标签轻描边，提升整合/拓展页徽章辨识度 */
+.tag{box-shadow:inset 0 0 0 1px rgba(15,23,42,.03)}
+
+/* 空状态更柔和 */
+.empty{background:linear-gradient(180deg,#fff,#f8fbff)}
+
+/* 模态：关闭键 hover、平滑滚动 */
+.close{transition:background .15s ease, transform .15s ease}
+.close:hover{background:#cbd5e1;transform:rotate(90deg)}
+.modal-body{scroll-behavior:smooth}
+
+/* 变式前后对比：箭头轻微呼吸，提示编码改造流向 */
+.arrow-big{animation:arrowPulse 1.8s ease-in-out infinite}
+@keyframes arrowPulse{0%,100%{transform:translateX(0);opacity:.85}50%{transform:translateX(4px);opacity:1}}
+
+/* 移动端：章节标题纵向排列，吸顶筛选改为常规，避免挤压 */
+@media(max-width:640px){
+  .section-title{flex-direction:column;align-items:flex-start;gap:6px}
+  #library .toolbar{position:static}
+}
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
