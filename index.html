@@ -295,7 +295,7 @@ nav button.active::after{content:"";position:absolute;left:14px;right:14px;botto
 <main class="container">
 <section id="home" class="page active"><div class="home-lead"><div class="eyebrow">RESEARCH OVERVIEW · 研究总览</div><h1 class="home-headline">本研究对六版必修一全部 95 道例题做六维全样本编码，发现例题资源在认知层级与情境配置上的结构性失衡，并据此提出整合与拓展两条对策。</h1></div><div class="metrics home-metricbar" id="homeMetrics"></div><div class="home-findings"><button type="button" class="finding-main" onclick="showPage('analysis')"><div class="finding-tag">核心发现 · 点击进入文本分析</div><div class="finding-head">全样本层级Ⅲ仅占 <b>10.5%</b>（10/95）</div><p>而且其中约 60% 集中在运动学，相互作用模块只有 1 道——高阶思维训练严重不足，且在知识模块间分布失衡。</p><span class="finding-go">进入文本分析 →</span></button><div class="finding-side"><button type="button" class="finding-card" onclick="showPage('analysis')"><span class="fc-num">发现 01 · 情境配置</span><span class="fc-text">相互作用与力模块中，“工程技术”情境的例题，全六版加起来只有 1 道。</span><span class="fc-go">查看文本分析 →</span></button><button type="button" class="finding-card" onclick="showPage('slice')"><span class="fc-num">发现 02 · 设计取向</span><span class="fc-text">鲁科版 100% 案例闭环式，沪科版 100% 标准三段式；粤教版层级Ⅲ占 18.8%、中间层却仅 31.2%——版本差异不在数量而在设计取向。</span><span class="fc-go">查看横向切片 →</span></button><button type="button" class="finding-card" onclick="showPage('slice')"><span class="fc-num">发现 03 · 模型密度</span><span class="fc-text">“交通制动安全”模型共 16 道，层级Ⅲ密度高达 31.3%，是全样本 10.5% 的三倍。</span><span class="fc-go">查看横向切片 →</span></button></div></div><div class="section-title"><h2>研究主线</h2><p>素材 → 发现 → 聚焦 → 对策一 → 对策二，点击任一环节进入对应页面，也可用页尾“下一步”顺序浏览。</p></div><div class="research-line"><div class="rl-step" onclick="showPage('library')"><b>① 原题库</b><span>素材 · 95 道</span></div><div class="rl-step" onclick="showPage('analysis')"><b>② 文本分析</b><span>发现 · 六维统计</span></div><div class="rl-step" onclick="showPage('slice')"><b>③ 横向切片</b><span>聚焦 · 交通制动</span></div><div class="rl-step" onclick="showPage('integration')"><b>④ 整合策略</b><span>对策一 · 调配</span></div><div class="rl-step" onclick="showPage('extension')"><b>⑤ 拓展策略</b><span>对策二 · 变式</span></div></div><div class="page-next"><button class="btn" onclick="showPage('library')">从第一步开始：原题库 →</button></div></section>
 
-<section id="library" class="page"><div class="page-intro">一切结论的源头是这 95 道真实例题，每道都经过六个维度的精细编码。</div><div class="section-title"><h2>95 道教材原题库</h2><p>每道原题均以编码总表中的 D1–D6 为准，并保留原题截图。可筛选、查看、设为拓展母题。</p></div><div class="toolbar"><label>关键词</label><input id="libSearch" placeholder="编号/题名，如 YJ-05、刹车、风力仪" oninput="renderLibrary()"><label>版本</label><select id="libVersion" onchange="renderLibrary()"></select><label>D1 情境</label><select id="libD1" onchange="renderLibrary()"></select><label>D2 模块</label><select id="libD2" onchange="renderLibrary()"></select><label>D6 层级</label><select id="libD6" onchange="renderLibrary()"></select><button class="btn secondary" onclick="resetLibrary()">清空筛选</button><span class="meta" id="libCount"></span></div><div class="list" id="libraryList"></div><div class="page-next"><button class="btn" onclick="showPage('analysis')">下一步：文本分析 →</button></div></section>
+<section id="library" class="page"><div class="page-intro">一切结论的源头是这 95 道真实例题，每道都经过六个维度的精细编码。</div><div class="section-title"><h2>95 道教材原题库</h2><p>每道原题均以编码总表中的 D1–D6 为准，并保留原题截图。可筛选、查看、设为拓展母题。</p></div><div class="toolbar"><label>关键词</label><input id="libSearch" placeholder="编号/题名，如 YJ-05、刹车、风力仪" oninput="renderLibrary()"><label>版本</label><select id="libVersion" onchange="renderLibrary()"></select><label>D1 情境</label><select id="libD1" onchange="renderLibrary()"></select><label>D2 模块</label><select id="libD2" onchange="renderLibrary()"></select><label>D6 层级</label><select id="libD6" onchange="renderLibrary()"></select><button class="btn secondary" onclick="resetLibrary()">清空筛选</button><button class="btn ghost" id="libShareBtn" onclick="copyShareLink(this)" title="复制带当前筛选条件的链接，可分享/收藏">🔗 复制筛选链接</button><span class="meta" id="libCount"></span></div><div class="list" id="libraryList"></div><div class="page-next"><button class="btn" onclick="showPage('analysis')">下一步：文本分析 →</button></div></section>
 
 <section id="analysis" class="page"><div class="page-intro">对 95 道题做横向统计，六个维度逐一比较，结构性差异随即浮现。</div><div class="section-title"><h2>第二章文本分析 · 动态图表</h2><p>图表均由 95 道真实编码数据即时统计生成。点击任意图形片段，下方会列出对应例题。</p></div><div class="grid cols-2"><div class="panel chart-panel"><h3>版本 × 情境类型堆叠图</h3><div id="d1Stack"></div></div><div class="panel chart-panel"><h3>版本 × 认知层级堆叠图</h3><div id="d6Stack"></div></div><div class="panel chart-panel"><h3>知识模块 × 情境类型交叉热力图</h3><div id="heatmap"></div></div><div class="panel chart-panel"><h3>认知层级金字塔</h3><div id="pyramid"></div></div></div><div class="section-title"><h2 id="analysisTitle">图表筛选结果</h2><p id="analysisSub">点击上方图表后显示对应例题。</p></div><div class="list" id="analysisList"></div><div class="page-next"><button class="btn" onclick="showPage('slice')">下一步：横向切片 →</button></div></section>
 
@@ -1559,19 +1559,20 @@ v6Ready(function(){
   var titles={home:'研究总览',library:'原题库',analysis:'文本分析',slice:'横向切片',integration:'整合策略',extension:'拓展策略'};
   var base='多版本高中物理例题资源研究平台';
   var inner=window.showPage;
+  function pageOf(){ return location.hash.slice(1).split('?')[0]; } // 容忍 #page?params
   window.showPage=function(id){
     inner(id);
     try{ document.title=(titles[id]?titles[id]+' · ':'')+base; }catch(e){}
-    try{ if(location.hash.slice(1)!==id) location.hash=id; }catch(e){}
+    try{ if(pageOf()!==id) location.hash=id; }catch(e){} // 切页时保留同页的筛选参数
   };
   window.addEventListener('hashchange', function(){
-    var id=location.hash.slice(1);
+    var id=pageOf();
     var el=id&&document.getElementById(id);
     if(el && titles[id] && !el.classList.contains('active')) window.showPage(id);
   });
   function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
   ready(function(){
-    var id=location.hash.slice(1);
+    var id=pageOf();
     if(id && titles[id] && document.getElementById(id)) window.showPage(id);
     else { try{ document.title='研究总览 · '+base; }catch(e){} }
   });
@@ -1612,6 +1613,46 @@ v6Ready(function(){
     closeBtn.addEventListener('click', close);
     lb.addEventListener('click', function(e){ if(e.target===lb||e.target===stage) close(); });
     window.addEventListener('keydown', function(e){ if(e.key==='Escape' && lb.classList.contains('active')) close(); });
+  });
+})();
+
+/* v7.4-d 原题库筛选状态写入 URL：筛选结果可分享/收藏/刷新保留。
+   不改 renderLibrary——读 URL→设控件→调用它；筛选变动时把状态写回 URL（replaceState）。 */
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  var FIELDS=[['s','libSearch'],['v','libVersion'],['d1','libD1'],['d2','libD2'],['d6','libD6']];
+  function pageOf(){ return location.hash.slice(1).split('?')[0]; }
+  function parseParams(){
+    var raw=location.hash.split('?')[1]||'', out={};
+    raw.split('&').forEach(function(kv){ if(!kv) return; var i=kv.indexOf('='), k=i<0?kv:kv.slice(0,i), v=i<0?'':kv.slice(i+1); try{ out[k]=decodeURIComponent(v); }catch(e){ out[k]=v; } });
+    return out;
+  }
+  function applyFromHash(){
+    if(pageOf()!=='library') return;
+    var p=parseParams();
+    if(!Object.keys(p).length) return; // 无参数时保留现有控件状态，不清空
+    FIELDS.forEach(function(f){ var el=document.getElementById(f[1]); if(el) el.value=p[f[0]]||''; });
+    if(typeof window.renderLibrary==='function') window.renderLibrary();
+  }
+  function buildQuery(){
+    return FIELDS.map(function(f){ var el=document.getElementById(f[1]), v=el?el.value.trim():''; return v?f[0]+'='+encodeURIComponent(v):''; }).filter(Boolean).join('&');
+  }
+  function writeToHash(){
+    if(pageOf()!=='library') return;
+    var qs=buildQuery();
+    try{ history.replaceState(null,'','#library'+(qs?'?'+qs:'')); }catch(e){}
+  }
+  window.copyShareLink=function(btn){
+    writeToHash();
+    var url=location.href, done=function(){ if(btn){ var t=btn.textContent; btn.textContent='✓ 链接已复制'; setTimeout(function(){ btn.textContent=t; },1600); } };
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done,done); }
+    else { try{ var ta=document.createElement('textarea'); ta.value=url; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }catch(e){} done(); }
+  };
+  ready(function(){
+    FIELDS.forEach(function(f){ var el=document.getElementById(f[1]); if(el){ el.addEventListener('input',writeToHash); el.addEventListener('change',writeToHash); } });
+    if(typeof window.resetLibrary==='function'){ var _r=window.resetLibrary; window.resetLibrary=function(){ _r(); writeToHash(); }; }
+    applyFromHash();
+    window.addEventListener('hashchange', applyFromHash);
   });
 })();
 
