@@ -404,6 +404,24 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 .op-label{font-size:13px;font-weight:800;color:var(--muted);margin:24px 0 8px;letter-spacing:.02em}
 .lead-finding{font-size:16px;font-weight:800;color:var(--p2);background:linear-gradient(135deg,rgba(49,86,212,.07),rgba(6,182,212,.05));border-left:5px solid var(--p);border-radius:14px;padding:14px 18px;margin:4px 0 16px;line-height:1.7}
 .lead-finding b{color:var(--r)}
+
+/* v15 任务式入口（首页）+ 备课/研究双模式（参考 v14 想法） */
+.home-tagline{margin-top:12px;color:var(--muted);font-size:15px;font-weight:700;text-align:center}
+.task-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1120px;margin:36px auto 0}
+.task-card{appearance:none;-webkit-appearance:none;font:inherit;color:inherit;cursor:pointer;text-align:center;border:1px solid var(--line);background:#fff;border-radius:18px;padding:26px 16px;box-shadow:var(--shadow-soft);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;display:flex;flex-direction:column;align-items:center;gap:7px}
+.task-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(49,86,212,.14);border-color:#bcd0f5}
+.task-card .tc-ico{font-size:30px;line-height:1}
+.task-card b{color:var(--p2);font-size:17px}
+.task-card .tc-sub{font-size:12.5px;color:var(--muted);line-height:1.6}
+@media(max-width:980px){.task-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.task-grid{grid-template-columns:1fr}}
+/* 模式切换按钮（在导航里，用 a 而非 button，避免被 showPage 的 nav button 选择器捕获） */
+.mode-toggle{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10);color:#fff;border-radius:999px;padding:9px 13px;cursor:pointer;font-weight:800;font-size:13px;white-space:nowrap;transition:background .15s ease,transform .15s ease;margin-left:6px}
+.mode-toggle:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
+.mode-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* 备课模式：隐藏研究分析类页面入口 */
+body.teacher-mode nav#nav button[data-page="analysis"],body.teacher-mode nav#nav button[data-page="slice"]{display:none}
+@media(max-width:640px){.mode-toggle{width:100%;justify-content:center;margin:4px 0 0}}
 #analysis .chart-grid.collapsed .chart-secondary{display:none}
 #analysis .chart-grid.collapsed .chart-primary{grid-column:1 / -1}
 #ocrPanel.adv-collapsed{display:none}
@@ -414,9 +432,9 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 <body>
 <a class="skip-link" href="#main" onclick="event.preventDefault();var m=document.getElementById('main');if(m){m.focus();m.scrollIntoView();}">跳到主内容</a>
 <noscript><div style="margin:0;padding:14px 18px;background:#fff7ed;color:#9a3412;border-bottom:1px solid #fed7aa;font-size:14px;line-height:1.7;text-align:center">本平台为交互式研究网页，95 道例题数据、图表与工具均由 JavaScript 即时生成。请在浏览器中启用 JavaScript 后刷新本页以正常使用。</div></noscript>
-<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="products">成品题</button><button data-page="library">原题库</button><button data-page="analysis">文本分析</button><button data-page="slice">横向切片</button><button data-page="integration">整合策略</button><button data-page="extension">拓展策略</button></nav></div></header>
+<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="products">成品题</button><button data-page="library">原题库</button><button data-page="analysis">文本分析</button><button data-page="slice">横向切片</button><button data-page="integration">整合策略</button><button data-page="extension">拓展策略</button><a class="mode-toggle" id="modeToggle" role="button" tabindex="0">🎓 研究模式</a></nav></div></header>
 <main class="container" id="main" tabindex="-1">
-<section id="home" class="page active"><div id="homeMetrics" hidden></div><div class="home-hero"><div class="home-logo">⚛</div><h1 class="home-title">六个版本高中物理例题资源平台</h1></div><div class="home-line-wrap"><div class="rl-label">研究主线 · 点击任一环节进入</div><div class="research-line"><div class="rl-step" onclick="showPage('library')"><b>① 原题库</b><span>素材 · 95 道例题</span></div><div class="rl-step" onclick="showPage('analysis')"><b>② 文本分析</b><span>发现 · 六维统计</span></div><div class="rl-step" onclick="showPage('slice')"><b>③ 横向切片</b><span>聚焦 · 交通制动</span></div><div class="rl-step" onclick="showPage('integration')"><b>④ 整合策略</b><span>对策一 · 跨版本调配</span></div><div class="rl-step" onclick="showPage('extension')"><b>⑤ 拓展策略</b><span>对策二 · 母题变式</span></div></div></div></section>
+<section id="home" class="page active"><div id="homeMetrics" hidden></div><div class="home-hero"><div class="home-logo">⚛</div><h1 class="home-title">六个版本高中物理例题资源平台</h1><p class="home-tagline">原题库 → 六维编码 → 整合 / 变式 → 完整成品题资源包</p></div><div class="task-grid"><button type="button" class="task-card" onclick="showPage('library')"><span class="tc-ico">🔍</span><b>找例题</b><span class="tc-sub">95 道原题库 · 按版本 / 六维筛选</span></button><button type="button" class="task-card" onclick="showPage('extension')"><span class="tc-ico">✏️</span><b>改编一道题</b><span class="tc-sub">选母题 → 选方向 → 出变式成品</span></button><button type="button" class="task-card" onclick="showPage('integration')"><span class="tc-ico">🧩</span><b>整合几道题</b><span class="tc-sub">跨版本调配 · 生成整合成品</span></button><button type="button" class="task-card" onclick="showPage('products')"><span class="tc-ico">📦</span><b>现成成品题</b><span class="tc-sub">题干 + 解答 + 教学说明 · 三版本可复制</span></button></div></section>
 
 <section id="library" class="page"><div class="page-intro">一切结论的源头是这 95 道真实例题，每道都经过六个维度的精细编码。</div><div class="section-title"><h2>95 道教材原题库</h2><p>每道原题均以编码总表中的 D1–D6 为准，并保留原题截图。可筛选、查看、设为拓展母题。</p></div><div class="toolbar"><label>关键词</label><input id="libSearch" placeholder="编号/题名，如 YJ-05、刹车、风力仪" oninput="renderLibrary()"><label>版本</label><select id="libVersion" onchange="renderLibrary()"></select><label>D1 情境</label><select id="libD1" onchange="renderLibrary()"></select><label>D2 模块</label><select id="libD2" onchange="renderLibrary()"></select><label>D6 层级</label><select id="libD6" onchange="renderLibrary()"></select><button class="btn secondary" onclick="resetLibrary()">清空筛选</button><button class="btn ghost" id="libShareBtn" onclick="copyShareLink(this)" title="复制带当前筛选条件的链接，可分享/收藏">🔗 复制筛选链接</button><span class="meta" id="libCount"></span></div><div class="list" id="libraryList"></div><div class="page-next"><button class="btn" onclick="showPage('analysis')">下一步：文本分析 →</button></div></section>
 
@@ -1901,6 +1919,29 @@ v6Ready(function(){
         ocr.parentNode.insertBefore(obtn, ocr);
       }
     }catch(e){ console.warn('simplify ocr', e); }
+  });
+})();
+
+/* v15 备课/研究双模式：默认备课模式（隐藏六维分析/横向切片入口），一键切换到研究模式 */
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    var t=document.getElementById('modeToggle'); if(!t) return;
+    function apply(teacher){
+      document.body.classList.toggle('teacher-mode', teacher);
+      t.textContent = teacher ? '🎓 研究模式' : '📋 备课模式';
+      t.setAttribute('title', teacher ? '当前：备课模式（已隐藏六维分析与横向切片）。点击进入研究模式' : '当前：研究模式（显示六维分析）。点击回到备课模式');
+    }
+    var saved=null; try{ saved=localStorage.getItem('pmode'); }catch(e){}
+    var teacher = saved ? saved==='teacher' : true; // 默认备课模式
+    apply(teacher);
+    function toggle(){
+      teacher=!teacher; apply(teacher);
+      try{ localStorage.setItem('pmode', teacher?'teacher':'research'); }catch(e){}
+      if(teacher){ var cur=document.querySelector('.page.active'); if(cur&&(cur.id==='analysis'||cur.id==='slice')&&window.showPage) window.showPage('home'); }
+    }
+    t.addEventListener('click', toggle);
+    t.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
   });
 })();
 
