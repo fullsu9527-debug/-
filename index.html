@@ -392,6 +392,11 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 .check-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
 .check-list li{color:#047857;font-weight:700;font-size:12.5px;background:#ecfdf5;border:1px solid #bbf7d0;border-radius:10px;padding:6px 10px}
 .solution-box{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.product-inline{padding:0;overflow:hidden;margin-bottom:14px;border-color:#bcd0f5}
+.pi-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:13px 18px;background:#eef6ff;border-bottom:1px solid var(--line)}
+.pi-head h3{color:var(--p2);font-size:17px;margin:0;flex-basis:100%}
+.product-inline .product-body{padding:16px 18px}
+.product-inline .product-actions{padding:0 18px 14px}
 @media(max-width:700px){.ba{grid-template-columns:1fr}.ba-arrow{display:none}.check-list{grid-template-columns:1fr}.product-head{flex-direction:column}}
 
 /* v7.10 默认精简：文本分析只突出一张核心图、其余按需展开；OCR 实验默认折叠 */
@@ -1967,7 +1972,7 @@ v6Ready(function(){
       var wb=ext?ext.querySelector('.variant-workbench'):null;
       var vr=document.getElementById('variantResult');
       if(wb&&vr&&vr.closest('.variant-workbench')){
-        var rLab=document.createElement('div'); rLab.className='op-label'; rLab.style.margin='4px 0 8px'; rLab.textContent='变式成品（示例 · 随母题 / 维度实时更新）';
+        var rLab=document.createElement('div'); rLab.className='op-label'; rLab.style.margin='18px 0 8px'; rLab.textContent='② 工具生成的变式（题干 + 设问框架；完整解答见上方成品）';
         var oLab=document.createElement('div'); oLab.className='op-label'; oLab.textContent='想换母题或改造维度？在下方调整';
         wb.parentNode.insertBefore(rLab, wb);
         wb.parentNode.insertBefore(vr, wb);
@@ -2164,7 +2169,101 @@ function copyProduct(id){
   else { try{ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }catch(e){} }
   try{ alert('已复制「'+p.title+'」'+VERNAME[ver]+'文本'); }catch(e){}
 }
-(function(){ function r(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); } r(renderProducts); })();
+/* 两道完整「变式成品」（含解答），供拓展页与成品题页直接展示 */
+PRODUCTS.push(
+  {
+    id:'friction-incline', type:'变式题', title:'斜面匀速下滑求动摩擦因数（摩擦力变式）', module:'相互', level:'Ⅱ',
+    scenario:'一质量 m = 2.0 kg 的木块放在倾角 θ = 30° 的固定斜面上，由静止释放后恰好沿斜面匀速下滑。（取 g = 10 m/s²，sin30° = 0.5，cos30° ≈ 0.87）',
+    keyData:['质量 2.0 kg','倾角 30°','恰好匀速下滑','g = 10 m/s²'],
+    sources:[{code:'RJ-04',role:'情境模型',note:'由水平拉动摩擦迁移到斜面'},{code:'LK-05',role:'物理过程',note:'平衡条件下的摩擦力分析'},{code:'YJ-08',role:'高阶方法',note:'受力分解与平衡方程'}],
+    questions:[{tag:'Ⅰ',q:'对木块受力分析，画出受力图。'},{tag:'Ⅱ',q:'求木块与斜面间的动摩擦因数 μ。'},{tag:'Ⅱ',q:'若把木块换成 4.0 kg，μ 会改变吗？为什么？'}],
+    solution:[
+      '受力分析：重力 mg（竖直向下）、支持力 N（垂直斜面向上）、滑动摩擦力 f（沿斜面向上，因为相对斜面向下滑）。',
+      '沿斜面方向（匀速，合力为 0）：mg·sinθ = f。',
+      '垂直斜面方向：N = mg·cosθ。',
+      '滑动摩擦：f = μN = μ·mg·cosθ。',
+      '联立：mg·sinθ = μ·mg·cosθ → μ = sinθ ÷ cosθ = tanθ = tan30° ≈ 0.58。',
+      '换成 4.0 kg：μ = tanθ 与质量无关，μ 不变（仍约 0.58）。',
+      '最终结论：μ = tan30° ≈ 0.58，且与物体质量无关。'
+    ],
+    pitfalls:['忘记"匀速"意味着合力为零，错误引入加速度。','把摩擦力方向画成沿斜面向下（下滑时摩擦力沿斜面向上）。','误以为 μ 与质量有关。'],
+    teacherFollowup:['若斜面倾角增大到 45°，木块还能匀速下滑吗？将怎样运动？','如何利用这一情境设计测量动摩擦因数的实验？'],
+    figureAdvice:'画斜面 + 木块，标出三个力：mg（竖直向下）、N（垂直斜面）、f（沿斜面向上）；再画沿斜面、垂直斜面的正交分解。',
+    courseType:'适用于必修一"摩擦力 / 共点力平衡"综合课。',
+    beforeAfter:{ before:'RJ-04：水平面马拉雪橇求拉力，层级Ⅰ，无助学栏目。', after:'迁移到斜面情境，加入受力分解与平衡方程，求动摩擦因数并讨论"与质量无关"，层级Ⅱ。' },
+    chain:[{tag:'基础变式',q:'水平面上匀速拉动物体，求动摩擦因数。'},{tag:'提升变式',q:'斜面匀速下滑求 μ（本题）。'},{tag:'高阶变式',q:'斜面上加速下滑，求 μ 与加速度的关系。'},{tag:'开放变式',q:'设计一个用斜面测动摩擦因数的实验方案。'}],
+    quality:['数据可计算（μ = tan30° ≈ 0.58）','单位已统一','受力过程清楚（三力平衡）','已知量 / 未知量明确','含方法迁移与讨论','无超纲内容','可直接用于课堂']
+  },
+  {
+    id:'kinematics-diff', type:'变式题', title:'连续相等时间位移求加速度（匀变速变式）', module:'运动', level:'Ⅱ→Ⅲ',
+    scenario:'一物体做匀加速直线运动，在连续相等的两段时间（每段 T = 1 s）内，位移分别为 s₁ = 2.0 m 和 s₂ = 3.5 m。',
+    keyData:['匀加速直线运动','每段时间 1 s','s₁ = 2.0 m','s₂ = 3.5 m'],
+    sources:[{code:'RJ-01',role:'物理模型',note:'匀变速直线运动'},{code:'HKJ-03',role:'高阶方法',note:'加速度计算入口'},{code:'RJ-03',role:'设问方式',note:'由位移反推运动量'}],
+    questions:[{tag:'Ⅰ',q:'求物体的加速度 a。'},{tag:'Ⅱ',q:'求第 1 s 初的速度 v₀。'},{tag:'Ⅲ',q:'求经过 s₁、s₂ 分界点（第 1 s 末）时的瞬时速度。'}],
+    solution:[
+      '匀变速直线运动，连续相等时间 T 内的位移差恒定：Δs = a·T²。',
+      'a = (s₂ − s₁) ÷ T² = (3.5 − 2.0) ÷ 1² = 1.5 m/s²。',
+      '第 1 s 平均速度 = s₁ ÷ T = 2.0 ÷ 1 = 2.0 m/s，等于第 1 s 中点（t = 0.5 s）的瞬时速度。',
+      '由 v(0.5 s) = v₀ + a×0.5 = 2.0 → v₀ = 2.0 − 1.5×0.5 = 2.0 − 0.75 = 1.25 m/s。',
+      '分界点（第 1 s 末）瞬时速度：v = v₀ + a·T = 1.25 + 1.5×1 = 2.75 m/s。',
+      '验证：第 2 s 平均速度 = 3.5 ÷ 1 = 3.5 m/s = 第 2 s 中点（t = 1.5 s）速度 = 1.25 + 1.5×1.5 = 3.5 m/s ✓。',
+      '最终结论：a = 1.5 m/s²，v₀ = 1.25 m/s，分界点速度 = 2.75 m/s。'
+    ],
+    pitfalls:['不会用 Δs = aT²，硬列两个方程容易出错。','把"第 1 s 末的瞬时速度"当成该段平均速度。','时间段与位移对应混乱。'],
+    teacherFollowup:['若给出连续三段位移，如何更快求 a？','若改为匀减速，Δs = aT² 是否仍成立（a 取负）？'],
+    figureAdvice:'画一条直线轨迹，等分标出第 1 s 位移 s₁ = 2.0 m、第 2 s 位移 s₂ = 3.5 m 及分界点；可配 v-t 图（斜率即 a）。',
+    courseType:'适用于必修一"匀变速直线运动规律"专题课。',
+    beforeAfter:{ before:'RJ-01 / RJ-03：单一阶段求距离或速度，层级Ⅱ。', after:'用"位移差 Δs = aT²"由两段位移反求加速度与速度，强化匀变速规律，层级Ⅱ→Ⅲ。' },
+    chain:[{tag:'基础变式',q:'已知初速和加速度，求各段位移。'},{tag:'提升变式',q:'由两段相等时间位移求加速度（本题）。'},{tag:'高阶变式',q:'由连续三段位移验证匀变速并求 a。'},{tag:'开放变式',q:'设计用打点计时器 / 频闪照片测加速度的方案。'}],
+    quality:['数据可计算（a = 1.5 m/s²，v₀ = 1.25 m/s）','单位已统一','方法清楚（Δs = aT²）','已知量 / 未知量明确','设问层级递进','无超纲内容','可直接用于课堂']
+  }
+);
+/* 内联成品面板（只读完整视图，复用 productBodyHTML，无 id 冲突） */
+function productPanelHTML(p){
+  return '<div class="panel product-inline">'
+    + '<div class="pi-head"><span class="tag">'+_esc(p.type)+'</span><span class="tag o">层级 '+_esc(p.level)+'</span><h3>'+_esc(p.title)+'</h3></div>'
+    + '<div class="product-body">'+productBodyHTML(p,'teacher')+'</div>'
+    + '<div class="product-actions"><button class="small-btn" onclick="showPage(\'products\')">在「成品题」页切换学生 / 投屏版并复制 →</button></div>'
+    + '</div>';
+}
+function renderIntegProduct(name){
+  var el=document.getElementById('integProduct'); if(!el) return;
+  var map={traffic:'traffic-brake', friction:'friction-critical'};
+  var p=map[name]&&_prod(map[name]);
+  el.innerHTML='<div class="op-label" style="margin:2px 0 8px">✅ 整合后的成品题（含完整题干与标准解答）</div>'
+    + (p?productPanelHTML(p):'<div class="empty">该一键演示暂未配套成品题；「成品题」页已提供完整整合案例。</div>');
+}
+(function(){
+  function r(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  r(function(){
+    renderProducts();
+    // 整合页：把"整合后的成品题"插到工作台标题下方，并随一键演示切换
+    try{
+      var integ=document.getElementById('integration');
+      if(integ && !document.getElementById('integProduct')){
+        var host=document.createElement('div'); host.id='integProduct'; host.style.margin='8px 0 16px';
+        var ts=integ.querySelectorAll('.section-title'), anchor=null;
+        for(var i=0;i<ts.length;i++){ var h=ts[i].querySelector('h2'); if(h&&h.textContent.indexOf('整合决策工作台')>=0){ anchor=ts[i]; break; } }
+        if(anchor) anchor.parentNode.insertBefore(host, anchor.nextSibling); else integ.insertBefore(host, integ.firstChild);
+      }
+      if(typeof window.v6Preset==='function' && !window.v6Preset.__wrap){
+        var _vp=window.v6Preset; var wf=function(name){ _vp(name); try{ renderIntegProduct(name); }catch(e){} }; wf.__wrap=true; window.v6Preset=wf;
+      }
+      renderIntegProduct('traffic');
+    }catch(e){ console.warn('integ product',e); }
+    // 拓展页：把"变式成品（含解答）"插到工作台标题下方
+    try{
+      var ext=document.getElementById('extension');
+      if(ext && !document.getElementById('extProduct')){
+        var host2=document.createElement('div'); host2.id='extProduct'; host2.style.margin='8px 0 16px';
+        var ts2=ext.querySelectorAll('.section-title'), anchor2=ts2.length?ts2[0]:null;
+        if(anchor2) anchor2.parentNode.insertBefore(host2, anchor2.nextSibling); else ext.insertBefore(host2, ext.firstChild);
+        var vlist=PRODUCTS.filter(function(p){return p.type==='变式题';});
+        host2.innerHTML='<div class="op-label" style="margin:2px 0 8px">① 变式成品（含完整题干与标准解答）</div>'+vlist.map(productPanelHTML).join('');
+      }
+    }catch(e){ console.warn('ext product',e); }
+  });
+})();
 </script>
 </body>
 </html>
