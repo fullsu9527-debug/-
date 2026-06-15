@@ -1925,9 +1925,23 @@ v6Ready(function(){
       if(wbTitle){ var wp=wbTitle.querySelector('p'); if(wp) wp.textContent='默认展示「交通制动梯度」一键演示。需要时在结果下方自行配置版本、模块与需求重新生成。'; }
     }catch(e){ console.warn('simpl integration',e); }
 
-    // —— 拓展策略：完整变式链条默认折叠，主角＝当前母题的一条变式成品 ——
+    // —— 拓展策略：先成品后操作（变式成品置顶）+ 完整变式链条默认折叠 ——
     try{
       var ext=document.getElementById('extension');
+      // 1) 把变式成品移到工作台上方，母题/维度选择下沉为操作区
+      var wb=ext?ext.querySelector('.variant-workbench'):null;
+      var vr=document.getElementById('variantResult');
+      if(wb&&vr&&vr.closest('.variant-workbench')){
+        var rLab=document.createElement('div'); rLab.className='op-label'; rLab.style.margin='4px 0 8px'; rLab.textContent='变式成品（示例 · 随母题 / 维度实时更新）';
+        var oLab=document.createElement('div'); oLab.className='op-label'; oLab.textContent='想换母题或改造维度？在下方调整';
+        wb.parentNode.insertBefore(rLab, wb);
+        wb.parentNode.insertBefore(vr, wb);
+        wb.parentNode.insertBefore(oLab, wb);
+      }
+      // 2) 精简工作台冗长说明
+      var exTitle=sectionByTitle(ext,'六维度变式拓展工作台');
+      if(exTitle){ var ep=exTitle.querySelector('p'); if(ep) ep.textContent='以任意原题为母题，按 D1–D6 定向生成一条变式成品。'; }
+      // 3) 完整变式链条默认折叠
       var stChain=sectionByTitle(ext,'变式链条');
       var timeline=document.getElementById('variantTimeline');
       if(stChain&&timeline) fold('▾ 查看完整变式链条（六步）','▴ 收起变式链条',[stChain,timeline]);
