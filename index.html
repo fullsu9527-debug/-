@@ -360,6 +360,13 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 #home.page.active{display:flex;flex-direction:column;justify-content:center;flex:1 0 auto}
 /* 内容页：作为列内普通块从顶部排布，必要时各自滚动 */
 #library.page.active,#analysis.page.active,#slice.page.active,#integration.page.active,#extension.page.active{display:block}
+
+/* v7.10 默认精简：文本分析只突出一张核心图、其余按需展开；OCR 实验默认折叠 */
+.chart-toggle,.adv-toggle{margin:2px 0 12px;font-size:13.5px}
+#analysis .chart-grid.collapsed .chart-secondary{display:none}
+#analysis .chart-grid.collapsed .chart-primary{grid-column:1 / -1}
+#ocrPanel.adv-collapsed{display:none}
+#ocrPanel.adv-collapsed.adv-open{display:block}
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 </head>
@@ -1813,6 +1820,39 @@ v6Ready(function(){
     if(typeof window.generateVariant==='function'){ var _gv=window.generateVariant; window.generateVariant=function(){ var r=_gv.apply(this,arguments); writeExtToHash(); return r; }; }
     applyExtFromHash();
     window.addEventListener('hashchange', applyExtFromHash);
+  });
+})();
+
+/* v7.10 默认精简：减少一眼看到的信息量，复杂/次要部分按需展开（不改任何渲染逻辑） */
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  ready(function(){
+    // 文本分析：默认只显示「认知层级金字塔」，其余 3 张图折叠
+    try{
+      var grid=document.querySelector('#analysis .grid.cols-2');
+      if(grid && !grid.classList.contains('chart-grid')){
+        grid.querySelectorAll('.chart-panel').forEach(function(p){ p.classList.add(p.querySelector('#pyramid')?'chart-primary':'chart-secondary'); });
+        var primary=grid.querySelector('.chart-primary'); if(primary) grid.insertBefore(primary, grid.firstChild);
+        grid.classList.add('chart-grid','collapsed');
+        var cbtn=document.createElement('button'); cbtn.type='button'; cbtn.className='btn ghost chart-toggle';
+        var clab=function(){ return grid.classList.contains('collapsed') ? '▾ 展开其余分析图表（版本×情境 / 版本×层级 / 模块热力图）' : '▴ 收起其余图表'; };
+        cbtn.textContent=clab();
+        cbtn.addEventListener('click', function(){ grid.classList.toggle('collapsed'); cbtn.textContent=clab(); });
+        grid.parentNode.insertBefore(cbtn, grid.nextSibling);
+      }
+    }catch(e){ console.warn('simplify analysis', e); }
+    // 拓展：OCR 识别实验默认折叠
+    try{
+      var ocr=document.getElementById('ocrPanel');
+      if(ocr && !ocr.classList.contains('adv-collapsed')){
+        ocr.classList.add('adv-collapsed');
+        var obtn=document.createElement('button'); obtn.type='button'; obtn.className='btn ghost adv-toggle';
+        var olab=function(){ return ocr.classList.contains('adv-open') ? '▴ 收起 OCR 识别实验' : '▾ 物理题 OCR 识别实验（可选 · 点此展开）'; };
+        obtn.textContent=olab();
+        obtn.addEventListener('click', function(){ ocr.classList.toggle('adv-open'); obtn.textContent=olab(); });
+        ocr.parentNode.insertBefore(obtn, ocr);
+      }
+    }catch(e){ console.warn('simplify ocr', e); }
   });
 })();
 
