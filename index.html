@@ -2243,10 +2243,45 @@ function productPanelHTML(p){
 }
 function renderIntegProduct(name){
   var el=document.getElementById('integProduct'); if(!el) return;
-  var map={traffic:'traffic-brake', friction:'friction-critical'};
+  var map={traffic:'traffic-brake', friction:'friction-critical', windvane:'windvane-deflect'};
   var p=map[name]&&_prod(map[name]);
   el.innerHTML='<div class="op-label" style="margin:2px 0 8px">✅ 整合后的成品题（含完整题干与标准解答）</div>'
     + (p?productPanelHTML(p):'<div class="empty">该一键演示暂未配套成品题；「成品题」页已提供完整整合案例。</div>');
+}
+/* 新增：风力仪偏角测量 完整变式成品（经验算） */
+PRODUCTS.push({
+  id:'windvane-deflect', type:'变式题', title:'风力仪偏角测量风力（共点力平衡变式）', module:'相互', level:'Ⅱ',
+  scenario:'某型风力仪用一根轻线在固定支架下悬挂一个质量 m = 0.10 kg 的小球。无风时悬线竖直；当稳定的水平风吹来时，悬线与竖直方向偏离 θ = 37° 并保持静止。（取 g = 10 m/s²，sin37° = 0.6，cos37° = 0.8）',
+  keyData:['小球质量 0.10 kg','偏角 θ = 37°','悬线轻、不可伸长','g = 10 m/s²'],
+  sources:[{code:'HK-10',role:'情境',note:'风力仪测量情境'},{code:'YJ-13',role:'物理模型',note:'悬线小球受力平衡'},{code:'RJ-09',role:'高阶方法',note:'力的合成与分解'}],
+  questions:[{tag:'Ⅰ',q:'对小球受力分析，画出受力图。'},{tag:'Ⅱ',q:'求此时水平风力 F 的大小。'},{tag:'Ⅱ',q:'求悬线张力 T 的大小。'},{tag:'Ⅲ',q:'若风力增大，偏角 θ 会变大还是变小？请定性说明。'}],
+  solution:[
+    '受力分析：小球受重力 mg（竖直向下）、悬线张力 T（沿线方向）、水平风力 F，三力平衡。',
+    '重力 mg = 0.10 × 10 = 1.0 N。',
+    '将 T 沿水平、竖直分解，由平衡条件：水平方向 T·sinθ = F；竖直方向 T·cosθ = mg。',
+    '两式相除：tanθ = F ÷ mg → F = mg·tanθ = 1.0 × tan37° = 1.0 × (0.6 ÷ 0.8) = 0.75 N。',
+    '由竖直方向：T = mg ÷ cosθ = 1.0 ÷ 0.8 = 1.25 N。',
+    '定性分析：tanθ = F ÷ mg，质量不变时 F 增大 → tanθ 增大 → 偏角 θ 增大。',
+    '最终结论：水平风力 F = 0.75 N，悬线张力 T = 1.25 N；风力越大，偏角越大。'
+  ],
+  pitfalls:['把风力当成沿悬线方向（风力是水平的）。','误用 F = mg·sinθ 或 mg·cosθ（正确关系是 tanθ = F/mg）。','忘记先求重力 mg = 1.0 N。'],
+  teacherFollowup:['能否由偏角直接读出风力大小？如何在风力仪上标刻度？','若把小球换成更重的，相同风力下偏角如何变化？'],
+  figureAdvice:'画悬挂的小球，标出三个力：mg（竖直向下）、T（沿悬线斜向上）、F（水平）；再画 T 的水平 / 竖直正交分解并标出偏角 θ。',
+  courseType:'适用于必修一"力的合成与分解 / 共点力平衡"应用课，可作为风力仪 STEM 情境。',
+  beforeAfter:{ before:'HK-10：风力仪情境，多为定性描述。', after:'给出质量与偏角的具体数据，用三力平衡定量求风力与张力，并讨论偏角随风力变化，层级Ⅱ。' },
+  chain:[{tag:'基础变式',q:'已知风力与质量，求偏角。'},{tag:'提升变式',q:'已知偏角与质量，求风力与张力（本题）。'},{tag:'高阶变式',q:'风力随时间变化时，偏角如何变化？'},{tag:'开放变式',q:'设计一个能直接读出风力大小的风力仪刻度方案。'}],
+  quality:['数据可计算（F = 0.75 N，T = 1.25 N）','单位已统一','受力过程清楚（三力平衡）','已知量 / 未知量明确','含定量 + 定性讨论','无超纲内容','可直接用于课堂']
+});
+/* 做变式页"与当前母题相关的成品题"——按母题情境家族自动匹配 */
+function _famOf(p){ if(!p) return ''; var s=(p.title||'')+(p.code||''); if(/风力|风速|风向|偏角|风标/.test(s)) return 'windvane'; if(/刹车|制动|交通|追及|高速|动车|路口|汽车|车/.test(s)) return 'traffic'; if(/摩擦|雪橇|拖|斜面|箱|滑块/.test(s)) return 'friction'; return ''; }
+function _famProducts(fam){ if(fam==='traffic') return ['traffic-brake']; if(fam==='friction') return ['friction-critical','friction-incline']; if(fam==='windvane') return ['windvane-deflect']; return ['friction-incline','kinematics-diff']; }
+var _extFam;
+function updateExtProduct(){
+  var el=document.getElementById('extProduct'); if(!el) return;
+  var m=null; try{ m=window.getMother&&getMother(); }catch(e){}
+  var fam=_famOf(m); if(fam===_extFam) return; _extFam=fam;
+  var ps=_famProducts(fam).map(_prod).filter(Boolean);
+  el.innerHTML='<div class="op-label" style="margin:2px 0 8px">① 与当前母题相关的完整成品题（题干 + 标准解答）</div>'+ps.map(productPanelHTML).join('');
 }
 (function(){
   function r(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
@@ -2266,16 +2301,18 @@ function renderIntegProduct(name){
       }
       renderIntegProduct('traffic');
     }catch(e){ console.warn('integ product',e); }
-    // 拓展页：把"变式成品（含解答）"插到工作台标题下方
+    // 做变式页：插入"与当前母题相关的成品题"面板，并随母题切换
     try{
       var ext=document.getElementById('extension');
       if(ext && !document.getElementById('extProduct')){
         var host2=document.createElement('div'); host2.id='extProduct'; host2.style.margin='8px 0 16px';
         var ts2=ext.querySelectorAll('.section-title'), anchor2=ts2.length?ts2[0]:null;
         if(anchor2) anchor2.parentNode.insertBefore(host2, anchor2.nextSibling); else ext.insertBefore(host2, ext.firstChild);
-        var vlist=PRODUCTS.filter(function(p){return p.type==='变式题';});
-        host2.innerHTML='<div class="op-label" style="margin:2px 0 8px">① 变式成品（含完整题干与标准解答）</div>'+vlist.map(productPanelHTML).join('');
       }
+      if(typeof window.generateVariant==='function' && !window.generateVariant.__extwrap){
+        var _gv=window.generateVariant; var gw=function(){ var rr=_gv.apply(this,arguments); try{ updateExtProduct(); }catch(e){} return rr; }; gw.__extwrap=true; window.generateVariant=gw;
+      }
+      updateExtProduct();
     }catch(e){ console.warn('ext product',e); }
   });
 })();
