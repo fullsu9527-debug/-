@@ -362,7 +362,8 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 #library.page.active,#analysis.page.active,#slice.page.active,#integration.page.active,#extension.page.active{display:block}
 
 /* v7.10 默认精简：文本分析只突出一张核心图、其余按需展开；OCR 实验默认折叠 */
-.chart-toggle,.adv-toggle{margin:2px 0 12px;font-size:13.5px}
+.chart-toggle,.adv-toggle,.fold-toggle{margin:6px 0 14px;font-size:13.5px}
+.op-label{font-size:13px;font-weight:800;color:var(--muted);margin:24px 0 8px;letter-spacing:.02em}
 #analysis .chart-grid.collapsed .chart-secondary{display:none}
 #analysis .chart-grid.collapsed .chart-primary{grid-column:1 / -1}
 #ocrPanel.adv-collapsed{display:none}
@@ -1853,6 +1854,71 @@ v6Ready(function(){
         ocr.parentNode.insertBefore(obtn, ocr);
       }
     }catch(e){ console.warn('simplify ocr', e); }
+  });
+})();
+
+/* v7.11 每屏一个主角 + 深层内容默认折叠 + 工具页先成品后操作（仅增减显示与折叠，不改渲染逻辑） */
+(function(){
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  // 折叠一组元素，在第一个前面插入展开按钮
+  function fold(closedLabel, openLabel, elements){
+    elements=(elements||[]).filter(Boolean); if(!elements.length) return;
+    var btn=document.createElement('button'); btn.type='button'; btn.className='btn ghost fold-toggle';
+    var open=false;
+    function render(){ elements.forEach(function(el){ el.style.display=open?'':'none'; }); btn.textContent=open?openLabel:closedLabel; }
+    btn.addEventListener('click', function(){ open=!open; render(); });
+    elements[0].parentNode.insertBefore(btn, elements[0]); render();
+  }
+  function sectionByTitle(root, text){
+    if(!root) return null;
+    var ts=root.querySelectorAll('.section-title');
+    for(var i=0;i<ts.length;i++){ var h=ts[i].querySelector('h2'); if(h && h.textContent.indexOf(text)>=0) return ts[i]; }
+    return null;
+  }
+  ready(function(){
+    // —— 横向切片：逐题详情默认折叠，主角＝版本×层级矩阵 ——
+    try{
+      var slice=document.getElementById('slice');
+      var stList=sectionByTitle(slice,'切片例题列表');
+      var tList=document.getElementById('trafficList');
+      if(stList&&tList) fold('▾ 查看逐题详情（交通制动 16 道）','▴ 收起逐题详情',[stList,tList]);
+    }catch(e){ console.warn('simpl slice',e); }
+
+    // —— 整合策略：先成品（交通制动梯度一键演示）后操作 + 折叠深层 ——
+    try{
+      var integ=document.getElementById('integration');
+      // 1) 进入即渲染交通制动梯度演示
+      try{ if(window.v6Init && document.getElementById('v6Ver') && !document.getElementById('v6Ver').options.length) v6Init(); if(window.v6Preset) v6Preset('traffic'); }catch(_){}
+      // 2) 操作区下移到演示结果下方
+      var draftWrap=document.getElementById('v6DraftWrap');
+      var tbMain=document.getElementById('v6Ver') ? document.getElementById('v6Ver').closest('.toolbar') : null;
+      var tbPreset=integ?integ.querySelector('.toolbar.v6-preset'):null;
+      if(draftWrap&&tbMain&&tbPreset){
+        var anchor=draftWrap.nextSibling;
+        var opLabel=document.createElement('div'); opLabel.className='op-label'; opLabel.textContent='想自己配置？在下方调整条件，点「检索并判定情形」重新生成';
+        draftWrap.parentNode.insertBefore(opLabel, anchor);
+        draftWrap.parentNode.insertBefore(tbMain, anchor);
+        draftWrap.parentNode.insertBefore(tbPreset, anchor);
+      }
+      // 3) 折叠 四项原则复核
+      var audit=document.getElementById('v6Audit');
+      if(audit) fold('▾ 显示四项原则复核（知识/情境/层级/学情）','▴ 收起原则复核',[audit]);
+      // 4) 折叠 下方三大工具
+      var stDec=sectionByTitle(integ,'跨版本整合决策工具');
+      if(stDec) fold('▾ 展开整合决策工具（按备课条件生成建议）','▴ 收起决策工具',[stDec, stDec.nextElementSibling]);
+      var stCase=sectionByTitle(integ,'固定案例库');
+      if(stCase) fold('▾ 展开第三章固定案例库（4 个案例）','▴ 收起案例库',[stCase, stCase.nextElementSibling]);
+      var stCombo=sectionByTitle(integ,'要素抽取与组合');
+      if(stCombo) fold('▾ 展开题干要素抽取与组合整合器','▴ 收起要素组合器',[stCombo, stCombo.nextElementSibling]);
+    }catch(e){ console.warn('simpl integration',e); }
+
+    // —— 拓展策略：完整变式链条默认折叠，主角＝当前母题的一条变式成品 ——
+    try{
+      var ext=document.getElementById('extension');
+      var stChain=sectionByTitle(ext,'变式链条');
+      var timeline=document.getElementById('variantTimeline');
+      if(stChain&&timeline) fold('▾ 查看完整变式链条（六步）','▴ 收起变式链条',[stChain,timeline]);
+    }catch(e){ console.warn('simpl extension',e); }
   });
 })();
 
