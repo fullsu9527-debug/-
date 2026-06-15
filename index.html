@@ -364,6 +364,8 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 /* v7.10 默认精简：文本分析只突出一张核心图、其余按需展开；OCR 实验默认折叠 */
 .chart-toggle,.adv-toggle,.fold-toggle{margin:6px 0 14px;font-size:13.5px}
 .op-label{font-size:13px;font-weight:800;color:var(--muted);margin:24px 0 8px;letter-spacing:.02em}
+.lead-finding{font-size:16px;font-weight:800;color:var(--p2);background:linear-gradient(135deg,rgba(49,86,212,.07),rgba(6,182,212,.05));border-left:5px solid var(--p);border-radius:14px;padding:14px 18px;margin:4px 0 16px;line-height:1.7}
+.lead-finding b{color:var(--r)}
 #analysis .chart-grid.collapsed .chart-secondary{display:none}
 #analysis .chart-grid.collapsed .chart-primary{grid-column:1 / -1}
 #ocrPanel.adv-collapsed{display:none}
@@ -1835,6 +1837,11 @@ v6Ready(function(){
         grid.querySelectorAll('.chart-panel').forEach(function(p){ p.classList.add(p.querySelector('#pyramid')?'chart-primary':'chart-secondary'); });
         var primary=grid.querySelector('.chart-primary'); if(primary) grid.insertBefore(primary, grid.firstChild);
         grid.classList.add('chart-grid','collapsed');
+        if(!grid.previousElementSibling || !grid.previousElementSibling.classList.contains('lead-finding')){
+          var lead=document.createElement('div'); lead.className='lead-finding';
+          lead.innerHTML='核心结论：全样本认知层级 <b>Ⅲ 仅占 10.5%</b>（10 / 95），高阶思维例题严重不足。';
+          grid.parentNode.insertBefore(lead, grid);
+        }
         var cbtn=document.createElement('button'); cbtn.type='button'; cbtn.className='btn ghost chart-toggle';
         var clab=function(){ return grid.classList.contains('collapsed') ? '▾ 展开其余分析图表（版本×情境 / 版本×层级 / 模块热力图）' : '▴ 收起其余图表'; };
         cbtn.textContent=clab();
@@ -1900,16 +1907,22 @@ v6Ready(function(){
         draftWrap.parentNode.insertBefore(tbMain, anchor);
         draftWrap.parentNode.insertBefore(tbPreset, anchor);
       }
-      // 3) 折叠 四项原则复核
+      // 3) 折叠 四项原则复核（主工作台内）
       var audit=document.getElementById('v6Audit');
       if(audit) fold('▾ 显示四项原则复核（知识/情境/层级/学情）','▴ 收起原则复核',[audit]);
-      // 4) 折叠 下方三大工具
+      // 4) 去重：撤掉与主工作台重复的旧工具（能力已被主工作台涵盖）——决策工具、要素组合器、分隔线永久隐藏
+      var hide=function(el){ if(el) el.style.display='none'; };
       var stDec=sectionByTitle(integ,'跨版本整合决策工具');
-      if(stDec) fold('▾ 展开整合决策工具（按备课条件生成建议）','▴ 收起决策工具',[stDec, stDec.nextElementSibling]);
-      var stCase=sectionByTitle(integ,'固定案例库');
-      if(stCase) fold('▾ 展开第三章固定案例库（4 个案例）','▴ 收起案例库',[stCase, stCase.nextElementSibling]);
+      if(stDec){ hide(stDec); hide(stDec.nextElementSibling); }
       var stCombo=sectionByTitle(integ,'要素抽取与组合');
-      if(stCombo) fold('▾ 展开题干要素抽取与组合整合器','▴ 收起要素组合器',[stCombo, stCombo.nextElementSibling]);
+      if(stCombo){ hide(stCombo); hide(stCombo.nextElementSibling); }
+      hide(integ?integ.querySelector('hr.v6-divider'):null);
+      // 5) 固定案例库折叠为"答辩演示案例"
+      var stCase=sectionByTitle(integ,'固定案例库');
+      if(stCase) fold('▾ 答辩演示案例（4 个 · 点击展开）','▴ 收起答辩演示案例',[stCase, stCase.nextElementSibling]);
+      // 6) 精简主工作台冗长说明
+      var wbTitle=sectionByTitle(integ,'整合决策工作台');
+      if(wbTitle){ var wp=wbTitle.querySelector('p'); if(wp) wp.textContent='默认展示「交通制动梯度」一键演示。需要时在结果下方自行配置版本、模块与需求重新生成。'; }
     }catch(e){ console.warn('simpl integration',e); }
 
     // —— 拓展策略：完整变式链条默认折叠，主角＝当前母题的一条变式成品 ——
