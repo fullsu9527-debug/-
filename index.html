@@ -359,7 +359,40 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 /* 首页：在主区内垂直居中并撑满剩余高度 */
 #home.page.active{display:flex;flex-direction:column;justify-content:center;flex:1 0 auto}
 /* 内容页：作为列内普通块从顶部排布，必要时各自滚动 */
-#library.page.active,#analysis.page.active,#slice.page.active,#integration.page.active,#extension.page.active{display:block}
+#library.page.active,#analysis.page.active,#slice.page.active,#integration.page.active,#extension.page.active,#products.page.active{display:block}
+
+/* v8 课堂成品题卡片 */
+#products .product-card{padding:0;overflow:hidden;margin-bottom:18px}
+.product-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:16px 20px;background:#f8fbff;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.product-head h3{margin-top:8px;color:var(--p2);font-size:19px}
+.ver-switch{display:inline-flex;background:#eef2ff;border:1px solid var(--line);border-radius:999px;padding:3px;flex:0 0 auto}
+.ver-switch button{border:0;background:transparent;color:var(--muted);padding:7px 13px;border-radius:999px;font-weight:800;font-size:13px;cursor:pointer;transition:.15s;white-space:nowrap}
+.ver-switch button.active{background:#fff;color:var(--p);box-shadow:0 2px 8px rgba(15,23,42,.10)}
+.product-body{padding:18px 20px}
+.product-actions{padding:0 20px 18px;display:flex;gap:8px;flex-wrap:wrap}
+.prod-block{margin-bottom:15px}
+.prod-label{display:inline-block;color:var(--p);font-weight:900;font-size:13px;margin-bottom:6px;padding-left:9px;border-left:3px solid var(--p)}
+.prod-p{color:var(--ink);line-height:1.85;font-size:14.5px}
+.prod-p.big{font-size:18px;line-height:1.9;font-weight:600}
+.prod-ol,.prod-ul{padding-left:22px;line-height:1.9;color:var(--ink);font-size:14px;margin:0}
+.prod-ul.big li{font-size:17px;margin:8px 0}
+.prod-ol li,.prod-ul li{margin:5px 0}
+.qtag{display:inline-block;background:#eef2ff;color:var(--p);font-weight:900;font-size:11px;border-radius:6px;padding:1px 6px;margin-right:4px}
+.src-list,.chain-list{display:grid;gap:8px}
+.src-item{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:13px}
+.src-item .chip{margin:0}
+.src-role{font-weight:900;color:var(--p2)}
+.src-note{color:var(--muted)}
+.chain-item{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:13.5px;line-height:1.7}
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}
+.ba-col{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px}
+.ba-col b{color:var(--p2)}
+.ba-col p{font-size:13px;color:var(--muted);line-height:1.7;margin-top:4px}
+.ba-arrow{font-size:24px;color:var(--a);font-weight:900}
+.check-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.check-list li{color:#047857;font-weight:700;font-size:12.5px;background:#ecfdf5;border:1px solid #bbf7d0;border-radius:10px;padding:6px 10px}
+.solution-box{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+@media(max-width:700px){.ba{grid-template-columns:1fr}.ba-arrow{display:none}.check-list{grid-template-columns:1fr}.product-head{flex-direction:column}}
 
 /* v7.10 默认精简：文本分析只突出一张核心图、其余按需展开；OCR 实验默认折叠 */
 .chart-toggle,.adv-toggle,.fold-toggle{margin:6px 0 14px;font-size:13.5px}
@@ -376,7 +409,7 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 <body>
 <a class="skip-link" href="#main" onclick="event.preventDefault();var m=document.getElementById('main');if(m){m.focus();m.scrollIntoView();}">跳到主内容</a>
 <noscript><div style="margin:0;padding:14px 18px;background:#fff7ed;color:#9a3412;border-bottom:1px solid #fed7aa;font-size:14px;line-height:1.7;text-align:center">本平台为交互式研究网页，95 道例题数据、图表与工具均由 JavaScript 即时生成。请在浏览器中启用 JavaScript 后刷新本页以正常使用。</div></noscript>
-<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="library">原题库</button><button data-page="analysis">文本分析</button><button data-page="slice">横向切片</button><button data-page="integration">整合策略</button><button data-page="extension">拓展策略</button></nav></div></header>
+<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="products">成品题</button><button data-page="library">原题库</button><button data-page="analysis">文本分析</button><button data-page="slice">横向切片</button><button data-page="integration">整合策略</button><button data-page="extension">拓展策略</button></nav></div></header>
 <main class="container" id="main" tabindex="-1">
 <section id="home" class="page active"><div id="homeMetrics" hidden></div><div class="home-hero"><div class="home-logo">⚛</div><h1 class="home-title">六个版本高中物理例题资源平台</h1></div><div class="home-line-wrap"><div class="rl-label">研究主线 · 点击任一环节进入</div><div class="research-line"><div class="rl-step" onclick="showPage('library')"><b>① 原题库</b><span>素材 · 95 道例题</span></div><div class="rl-step" onclick="showPage('analysis')"><b>② 文本分析</b><span>发现 · 六维统计</span></div><div class="rl-step" onclick="showPage('slice')"><b>③ 横向切片</b><span>聚焦 · 交通制动</span></div><div class="rl-step" onclick="showPage('integration')"><b>④ 整合策略</b><span>对策一 · 跨版本调配</span></div><div class="rl-step" onclick="showPage('extension')"><b>⑤ 拓展策略</b><span>对策二 · 母题变式</span></div></div></div></section>
 
@@ -450,6 +483,8 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
   <textarea id="ocrText" class="ocr-textarea" placeholder="OCR 识别结果会显示在这里。物理单位、上下标、希腊字母和公式建议人工校对后再保存。"></textarea>
   <div class="ocr-mini">建议校对重点：m/s²、km/h、N、kg、μ、θ、v₀、a、t、x、正负号、题目设问序号。OCR 文本保存在本浏览器 localStorage 中，不上传服务器。</div>
 </div></div><div class="panel variant-output"><h3 style="color:var(--p2);margin-bottom:12px">2. 选择改造维度</h3><div class="dim-grid" id="dimGrid"></div><div class="toolbar" style="margin-top:12px"><label>目标类别</label><select id="variantTarget" onchange="generateVariant()"></select><button class="btn" onclick="generateVariant()">生成六维变式</button><button class="btn secondary" onclick="copyVariantText()">复制变式文本</button></div><div id="variantResult"></div></div></div><div class="section-title"><h2>变式链条示例</h2><p>同一道母题可形成“基础变式—情境变式—图示变式—方法变式—高阶变式—开放探究变式”的连续链条。</p></div><div class="timeline" id="variantTimeline"></div><div class="page-next"><button class="btn secondary" onclick="showPage('home')">↺ 回到首页总览</button></div></section>
+
+<section id="products" class="page"><div class="section-title"><h2>课堂成品题</h2><p>由原题库整合 / 变式而来、可直接上课的资源：完整题干 · 标准解答 · 学生 / 教师 / 投屏三版本 · 一键复制。</p></div><div class="list" id="productList"></div></section>
 </main>
 
 <footer class="site-footer">
@@ -1641,7 +1676,7 @@ v6Ready(function(){
    书签分享，并更新浏览器标签标题。包裹现有 window.showPage（不改其逻辑）。 */
 (function(){
   if(typeof window.showPage!=='function') return;
-  var titles={home:'研究总览',library:'原题库',analysis:'文本分析',slice:'横向切片',integration:'整合策略',extension:'拓展策略'};
+  var titles={home:'研究总览',products:'课堂成品题',library:'原题库',analysis:'文本分析',slice:'横向切片',integration:'整合策略',extension:'拓展策略'};
   var base='多版本高中物理例题资源研究平台';
   var inner=window.showPage;
   function pageOf(){ return location.hash.slice(1).split('?')[0]; } // 容忍 #page?params
@@ -1949,6 +1984,187 @@ v6Ready(function(){
   });
 })();
 
+</script>
+
+<!-- v8 课堂成品题：整合/变式成品（完整题干+标准解答+三版本+质量核查），数据可计算、情境借鉴原题库 -->
+<script>
+const PRODUCTS = [
+  {
+    id:'traffic-brake', type:'整合题', title:'校门口交通制动安全综合题', module:'运动',  level:'Ⅱ→Ⅲ',
+    scenario:'某校门口限速 40 km/h。一辆汽车以 54 km/h 的速度驶近校门口，驾驶员发现前方 35 m 处有学生横穿马路，反应时间为 0.8 s；之后踩下刹车，汽车以大小为 5.0 m/s² 的加速度做匀减速直线运动。',
+    keyData:['限速 40 km/h','初速 54 km/h','发现距离 35 m','反应时间 0.8 s','减速度 5.0 m/s²'],
+    sources:[
+      {code:'HKJ-03', role:'物理模型', note:'匀变速直线运动与加速度计算入口'},
+      {code:'RJ-01',  role:'物理过程', note:'反应段 + 制动段两阶段运动衔接'},
+      {code:'LK-02',  role:'设问方式', note:'停止时间 / 距离判断'},
+      {code:'YJ-05',  role:'高阶裁决', note:'安全距离裁决'},
+      {code:'YJ-16',  role:'情境拓展', note:'限速法规判断情境'}
+    ],
+    questions:[
+      {tag:'Ⅰ', q:'反应时间内汽车前进的距离 s₁ 是多少？'},
+      {tag:'Ⅱ', q:'从踩下刹车到停下，制动距离 s₂ 是多少？汽车总共前进多少？'},
+      {tag:'Ⅲ', q:'汽车能否在学生前方安全停下？请通过计算判断，并说明安全余量。'},
+      {tag:'Ⅲ', q:'该车是否超速？请判断并说明依据。'}
+    ],
+    solution:[
+      '已知量整理：v₀ = 54 km/h，反应时间 t = 0.8 s，制动加速度 a = 5.0 m/s²，发现距离 d = 35 m，限速 v_lim = 40 km/h。',
+      '单位换算：v₀ = 54 km/h = 54 ÷ 3.6 = 15 m/s；v_lim = 40 km/h ≈ 11.1 m/s。',
+      '反应距离（匀速）：s₁ = v₀·t = 15 × 0.8 = 12 m。',
+      '制动距离（匀减速到 0）：s₂ = v₀² ÷ (2a) = 15² ÷ (2 × 5.0) = 225 ÷ 10 = 22.5 m。',
+      '总停车距离：s = s₁ + s₂ = 12 + 22.5 = 34.5 m。',
+      '安全判断：因为 s = 34.5 m < d = 35 m，理论上能在学生前方停下，但安全余量仅 35 − 34.5 = 0.5 m，几乎没有裕度。',
+      '超速判断：因为 v₀ = 15 m/s > v_lim ≈ 11.1 m/s（即 54 km/h > 40 km/h），该车超速。',
+      '最终结论：该车虽勉强能停下，但已超速且安全余量极小，存在严重安全隐患。'
+    ],
+    pitfalls:[
+      '忘记单位换算，直接拿 54 与 40 比较或代入公式——必须先化成 m/s。',
+      '漏掉反应段距离 s₁，只算制动距离 s₂，导致总距离偏小。',
+      '把"能停下"等同于"安全"，忽略安全余量只有 0.5 m。'
+    ],
+    teacherFollowup:[
+      '若反应时间增大到 1.2 s（如疲劳驾驶），结论会怎样变化？',
+      '若路面湿滑使减速度降为 3.0 m/s²，汽车还能在学生前方停下吗？'
+    ],
+    figureAdvice:'画一条水平线段图：起点 → 反应距离 s₁(12 m) → 制动距离 s₂(22.5 m) → 停车点，并标出"发现距离 35 m"和"学生位置"；可再配一张 v-t 图（前 0.8 s 水平线段，之后斜线降到 0）。',
+    courseType:'适用于必修一"匀变速直线运动"复习课 / 综合应用课，可作为情境化高阶训练。',
+    beforeAfter:{ before:'RJ-01：汽车加速后刹车，单一两阶段运动，设问仅求距离 / 速度，层级Ⅱ，无助学栏目。', after:'保留两阶段制动情境，叠加"反应时间 + 安全距离 + 限速裁决"，设问扩展为 Ⅰ→Ⅲ 四问，加入安全 / 法规高阶判断与策略追问。' },
+    chain:[
+      {tag:'基础变式', q:'直接给初速和减速度，求制动距离。'},
+      {tag:'提升变式', q:'加入反应时间，求总停车距离。'},
+      {tag:'高阶变式', q:'判断是否满足给定安全距离。'},
+      {tag:'开放变式', q:'为校门口设计合理的限速与警示牌距离方案，并说明依据。'}
+    ],
+    quality:['数据可计算（34.5 m 与 35 m、15 m/s 与 11.1 m/s 均算得通）','单位已统一（全部化为 m/s、m）','物理过程分段清楚（反应段匀速 + 制动段匀减速）','已知量 / 未知量明确','设问层级递进（Ⅰ→Ⅱ→Ⅲ）','无超纲内容（匀变速直线运动）','可直接用于课堂练习']
+  },
+  {
+    id:'friction-critical', type:'整合题', title:'救援物资箱摩擦力临界综合题', module:'相互', level:'Ⅰ→Ⅱ',
+    scenario:'救援队员用水平拉力拖动质量为 m = 20 kg 的物资箱。物资箱与地面间的动摩擦因数 μ = 0.30，最大静摩擦力为 f_max = 80 N。（取 g = 10 m/s²）',
+    keyData:['质量 20 kg','动摩擦因数 0.30','最大静摩擦力 80 N','g = 10 m/s²'],
+    sources:[
+      {code:'RJ-04', role:'情境模型', note:'马拉雪橇 → 水平拉动物体的生活情境'},
+      {code:'LK-05', role:'物理过程', note:'静摩擦 / 滑动摩擦的状态判断'},
+      {code:'HK-06', role:'设问方式', note:'多拉力下分类讨论'},
+      {code:'YJ-08', role:'高阶方法', note:'临界分析与方法策略提炼'}
+    ],
+    questions:[
+      {tag:'Ⅰ', q:'当水平拉力 F = 40 N 时，箱子处于什么状态？摩擦力多大？'},
+      {tag:'Ⅱ', q:'当 F = 80 N 时，箱子处于什么状态？摩擦力多大？'},
+      {tag:'Ⅱ', q:'当 F = 120 N 时，箱子处于什么状态？此时摩擦力多大？'},
+      {tag:'Ⅱ', q:'总结：判断摩擦力大小的正确步骤是什么？'}
+    ],
+    solution:[
+      '已知量：m = 20 kg，μ = 0.30，f_max = 80 N，g = 10 m/s²。',
+      '先求滑动摩擦力大小：f_滑 = μmg = 0.30 × 20 × 10 = 60 N（一旦滑动即为此值）。',
+      'F = 40 N：因为 40 N < f_max = 80 N，箱子保持静止；静摩擦力与拉力平衡，f = 40 N。',
+      'F = 80 N：恰好等于最大静摩擦力，箱子处于将要滑动的临界状态；f = 80 N。',
+      'F = 120 N：因为 120 N > f_max = 80 N，箱子开始滑动；此时为滑动摩擦力，f = μmg = 60 N。',
+      '方法总结：先求 f_滑 与 f_max；再比较拉力 F 与 f_max——F ≤ f_max 时静止，静摩擦 f = F；F > f_max 时滑动，f = μmg。',
+      '最终结论：静止时静摩擦力随拉力变化（≤ 80 N）；一旦滑动，摩擦力突变为恒定的 60 N。'
+    ],
+    pitfalls:[
+      '一看到动摩擦因数就直接用 f = μmg，忽略是否已经发生相对滑动（静止时 f = 拉力，不是 μmg）。',
+      '把最大静摩擦力 80 N 与滑动摩擦力 60 N 混为一谈。',
+      '把临界状态（F = 80 N）误判为已经滑动。'
+    ],
+    teacherFollowup:[
+      '为什么滑动后摩擦力（60 N）反而比临界静摩擦力（80 N）小？',
+      '若在箱子上再压 10 kg 重物，三个拉力下的结论会怎样改变？'
+    ],
+    figureAdvice:'画物块受力图：水平拉力 F、重力 mg（向下）、支持力 N（向上）、摩擦力 f（与运动 / 趋势反向）；并用文字区分"静摩擦（可变，≤ 80 N）"与"滑动摩擦（恒定 60 N）"。',
+    courseType:'适用于必修一"摩擦力"新授后的巩固课，重点训练状态判断与临界分析。',
+    beforeAfter:{ before:'RJ-04：马拉雪橇，仅求拉力，层级Ⅰ，无助学栏目。', after:'保留水平拉动的生活情境，扩展为三种拉力下的状态判断 + 临界分析，层级Ⅰ→Ⅱ，加入方法策略提炼与迁移追问。' },
+    chain:[
+      {tag:'基础变式', q:'给定拉力小于最大静摩擦力，求静摩擦力。'},
+      {tag:'提升变式', q:'多个拉力下分类判断状态与摩擦力。'},
+      {tag:'高阶变式', q:'求恰好拉动物资箱所需的最小拉力（临界）。'},
+      {tag:'开放变式', q:'设计减小拉动难度的方案（加润滑 / 减重等）并定量说明。'}
+    ],
+    quality:['数据可计算（60 N、80 N 临界关系清楚）','单位已统一','过程分类清楚（静止 / 临界 / 滑动三种状态）','已知量 / 未知量明确','设问层级递进并含方法总结','无超纲内容','可直接用于课堂练习']
+  }
+];
+const VERNAME = {student:'学生练习版', teacher:'教师备课版', screen:'课堂投屏版'};
+function _prod(id){ return PRODUCTS.find(function(x){return x.id===id;}); }
+function _esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(m){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[m];}); }
+function productBodyHTML(p, ver){
+  function block(t, inner){ return '<div class="prod-block"><b class="prod-label">'+t+'</b>'+inner+'</div>'; }
+  function ol(a){ return '<ol class="prod-ol">'+a.map(function(x){return '<li>'+_esc(x)+'</li>';}).join('')+'</ol>'; }
+  function ul(a,big){ return '<ul class="prod-ul'+(big?' big':'')+'">'+a.map(function(x){return '<li>'+_esc(x)+'</li>';}).join('')+'</ul>'; }
+  function qlist(q){ return '<ol class="prod-ol">'+q.map(function(x){return '<li><span class="qtag">'+_esc(x.tag)+'</span>'+_esc(x.q)+'</li>';}).join('')+'</ol>'; }
+  var chips='<div class="tags">'+p.keyData.map(function(d){return '<span class="tag">'+_esc(d)+'</span>';}).join('')+'</div>';
+  if(ver==='student'){
+    return block('情境', '<p class="prod-p">'+_esc(p.scenario)+'</p>') + block('必要数据', chips) + block('设问', qlist(p.questions));
+  }
+  if(ver==='screen'){
+    return '<div class="screen-view">'
+      + block('情境', '<p class="prod-p big">'+_esc(p.scenario)+'</p>')
+      + block('核心问题', ul(p.questions.map(function(x){return x.q;}), true))
+      + block('必要数据', chips)
+      + block('关键图示', '<p class="prod-p">'+_esc(p.figureAdvice)+'</p>')
+      + block('讨论', ul(p.teacherFollowup)) + '</div>';
+  }
+  var src='<div class="src-list">'+p.sources.map(function(s){return '<div class="src-item"><span class="chip" onclick="openProblem(\''+s.code+'\')">'+_esc(s.code)+'</span><span class="src-role">'+_esc(s.role)+'</span><span class="src-note">'+_esc(s.note)+'</span></div>';}).join('')+'</div>';
+  var chain='<div class="chain-list">'+p.chain.map(function(c){return '<div class="chain-item"><span class="tag v">'+_esc(c.tag)+'</span> '+_esc(c.q)+'</div>';}).join('')+'</div>';
+  var check='<ul class="check-list">'+p.quality.map(function(q){return '<li>✓ '+_esc(q)+'</li>';}).join('')+'</ul>';
+  var ba='<div class="ba"><div class="ba-col"><b>原题</b><p>'+_esc(p.beforeAfter.before)+'</p></div><div class="ba-arrow">→</div><div class="ba-col"><b>整合后</b><p>'+_esc(p.beforeAfter.after)+'</p></div></div>';
+  return block('情境', '<p class="prod-p">'+_esc(p.scenario)+'</p>')
+    + block('必要数据', chips)
+    + block('来源要素（整合自原题库）', src)
+    + block('分层设问', qlist(p.questions))
+    + block('标准解答', '<div class="solution-box">'+ol(p.solution)+'</div>')
+    + block('易错点', ul(p.pitfalls))
+    + block('教师追问', ul(p.teacherFollowup))
+    + block('图示建议', '<p class="prod-p">'+_esc(p.figureAdvice)+'</p>')
+    + block('整合前后对比', ba)
+    + block('变式链', chain)
+    + block('适用课型', '<p class="prod-p">'+_esc(p.courseType)+'</p>')
+    + block('质量核查', check);
+}
+function renderProductBody(id, ver){ var p=_prod(id); var el=document.getElementById('prodBody-'+id); if(!p||!el) return; el.innerHTML=productBodyHTML(p, ver); el.dataset.ver=ver; }
+function setProductVer(id, ver, btn){ renderProductBody(id, ver); if(btn&&btn.parentNode){ Array.prototype.forEach.call(btn.parentNode.querySelectorAll('button'), function(b){ b.classList.toggle('active', b===btn); }); } }
+function renderProducts(){
+  var box=document.getElementById('productList'); if(!box) return;
+  var fullmap=(typeof full!=='undefined')?full:{};
+  box.innerHTML=PRODUCTS.map(function(p){
+    return '<div class="card product-card" id="prod-'+p.id+'">'
+      + '<div class="product-head"><div class="product-meta"><div class="tags"><span class="tag">'+_esc(p.type)+'</span><span class="tag o">层级 '+_esc(p.level)+'</span><span class="tag">'+_esc(fullmap[p.module]||p.module)+'</span></div><h3>'+_esc(p.title)+'</h3></div>'
+      + '<div class="ver-switch">'
+        + '<button onclick="setProductVer(\''+p.id+'\',\'student\',this)">学生练习版</button>'
+        + '<button class="active" onclick="setProductVer(\''+p.id+'\',\'teacher\',this)">教师备课版</button>'
+        + '<button onclick="setProductVer(\''+p.id+'\',\'screen\',this)">课堂投屏版</button>'
+      + '</div></div>'
+      + '<div class="product-body" id="prodBody-'+p.id+'"></div>'
+      + '<div class="product-actions"><button class="btn secondary" onclick="copyProduct(\''+p.id+'\')">复制本版文本</button></div>'
+      + '</div>';
+  }).join('');
+  PRODUCTS.forEach(function(p){ renderProductBody(p.id,'teacher'); });
+}
+function copyProduct(id){
+  var p=_prod(id); if(!p) return;
+  var el=document.getElementById('prodBody-'+id); var ver=el?(el.dataset.ver||'teacher'):'teacher';
+  var L=[]; L.push('【'+p.title+'】（'+(VERNAME[ver]||'')+'）');
+  L.push('情境：'+p.scenario);
+  L.push('必要数据：'+p.keyData.join('；'));
+  L.push('设问：'); p.questions.forEach(function(q,i){ L.push('  ('+(i+1)+')['+q.tag+'] '+q.q); });
+  if(ver==='teacher'){
+    L.push('来源要素：'); p.sources.forEach(function(s){ L.push('  '+s.code+'｜'+s.role+'：'+s.note); });
+    L.push('标准解答：'); p.solution.forEach(function(s,i){ L.push('  '+(i+1)+'. '+s); });
+    L.push('易错点：'); p.pitfalls.forEach(function(s){ L.push('  · '+s); });
+    L.push('教师追问：'); p.teacherFollowup.forEach(function(s){ L.push('  · '+s); });
+    L.push('图示建议：'+p.figureAdvice);
+    L.push('整合前后：原题—'+p.beforeAfter.before+'｜整合后—'+p.beforeAfter.after);
+    L.push('变式链：'); p.chain.forEach(function(c){ L.push('  ['+c.tag+'] '+c.q); });
+    L.push('适用课型：'+p.courseType);
+    L.push('质量核查：'+p.quality.map(function(q){return '✓'+q;}).join('；'));
+  } else if(ver==='screen'){
+    L.push('关键图示：'+p.figureAdvice);
+    L.push('讨论：'+p.teacherFollowup.join('；'));
+  }
+  var text=L.join('\n');
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).catch(function(){}); }
+  else { try{ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }catch(e){} }
+  try{ alert('已复制「'+p.title+'」'+VERNAME[ver]+'文本'); }catch(e){}
+}
+(function(){ function r(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); } r(renderProducts); })();
 </script>
 </body>
 </html>
