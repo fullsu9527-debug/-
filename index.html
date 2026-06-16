@@ -483,6 +483,42 @@ header{ background:#163a5f; box-shadow:0 4px 16px rgba(22,58,95,.16) }
 .print-bar{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 14px}
 
 /* ============================================================
+   v19 备课手册质感：3 层折叠成品卡 · 整合方案册 · 轻量化 · 收窄阅读宽度
+   ============================================================ */
+.container{ width:min(1160px,92vw) }
+main{ width:min(1160px,92vw) }
+.section-title h2{ font-size:22px }
+/* 一句关系说明（替代第一屏的来源要素大块） */
+.relation-note{ background:#fbf7ef; border-left:3px solid var(--accent); border-radius:8px; padding:9px 12px; color:#5a5346; font-size:13.5px; line-height:1.7; margin:2px 0 12px }
+/* 折叠块：答案解析 / 研究依据 / 决策流程 / 自定义工具 */
+details.prod-fold, details.fold-block, details.scheme-card{ border:1px solid var(--line); border-radius:12px; background:#fff; margin:10px 0 }
+details.prod-fold>summary, details.fold-block>summary{ list-style:none; cursor:pointer; padding:11px 14px; font-weight:800; color:var(--p); font-size:13.5px; display:flex; align-items:center; gap:6px }
+details.prod-fold>summary::-webkit-details-marker, details.fold-block>summary::-webkit-details-marker{ display:none }
+details.prod-fold>summary::before, details.fold-block>summary::before{ content:'▸'; color:var(--accent); font-weight:900; transition:transform .15s ease }
+details[open].prod-fold>summary::before, details[open].fold-block>summary::before{ transform:rotate(90deg) }
+.prod-fold-body, .fold-block-body{ padding:2px 14px 14px }
+/* 整合方案册卡片 */
+.scheme-card{ overflow:hidden }
+.scheme-head{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:16px 18px }
+.scheme-head::-webkit-details-marker{ display:none }
+.scheme-title{ font-size:17px; font-weight:800; color:var(--p2); margin-bottom:4px }
+.scheme-sub{ font-size:13px; color:#5b6470; line-height:1.65; max-width:760px }
+.scheme-meta{ margin-top:8px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:8px; flex-wrap:wrap }
+.scheme-cta{ flex:0 0 auto; color:#fff; background:var(--accent); border-radius:999px; padding:8px 14px; font-weight:800; font-size:13px; white-space:nowrap }
+details[open] .scheme-cta{ background:var(--p) }
+.scheme-body{ padding:4px 18px 16px; border-top:1px solid var(--line) }
+/* 轻量成品内联卡（变式页用）：白底细边，无蓝色大头 */
+.product-inline-light{ padding:0; overflow:hidden }
+.pil-head{ padding:14px 18px 4px }
+.pil-head h3{ color:var(--p2); font-size:17px; margin-bottom:6px }
+.pil-tags{ display:flex; gap:6px }
+.product-inline-light .product-body{ padding:6px 18px 14px }
+.product-inline-light .product-actions{ padding:0 18px 14px }
+.prod-label{ color:var(--p2) }
+.df-fold .decision-flow{ border:0; box-shadow:none; padding:8px 2px 2px; margin:0 }
+@media(max-width:760px){ .scheme-head{ flex-direction:column; align-items:flex-start } .scheme-cta{ align-self:flex-start } }
+
+/* ============================================================
    A4 讲义打印：隐藏界面 chrome，只留成品题；卡片避免被切断
    ============================================================ */
 @media print{
@@ -543,7 +579,7 @@ header{ background:#163a5f; box-shadow:0 4px 16px rgba(22,58,95,.16) }
 </style>
 <!-- v6 整合决策工作台 -->
 <div class="section-title"><h2>整合决策工作台（第三章框架 · 情形一/情形二）</h2><p>左：主用版本例题（选基底）；中：跨版本候选（标注可融合/补充/替换的具体要素）；右：方案序列与整合类型标注。下方生成"要素抽取与组合"级别的整合草案，并自动完成四项原则复核取证。</p></div>
-<div class="decision-flow"><div class="df-title">图 3-1 · 整合决策流程（整合推荐的依据，并非黑箱）</div><div class="df-row"><div class="df-node df-q">主用版本该课时<br>是否有例题？</div><span class="df-arrow">→</span><div class="df-branch"><div class="df-path"><span class="df-tag g">有</span><div class="df-node">融合 / 补充 / 替换</div></div><div class="df-path"><span class="df-tag o">无</span><div class="df-node">筛选判断 + 定位判断</div></div></div><span class="df-arrow">→</span><div class="df-node">四项原则复核<span>知识 · 情境 · 层级 · 学情</span></div><span class="df-arrow">→</span><div class="df-node df-end">生成整合成品题</div></div></div>
+<details class="fold-block df-fold"><summary>整合决策流程（图 3-1）· 点开查看依据</summary><div class="decision-flow"><div class="df-title">图 3-1 · 整合决策流程（整合推荐的依据，并非黑箱）</div><div class="df-row"><div class="df-node df-q">主用版本该课时<br>是否有例题？</div><span class="df-arrow">→</span><div class="df-branch"><div class="df-path"><span class="df-tag g">有</span><div class="df-node">融合 / 补充 / 替换</div></div><div class="df-path"><span class="df-tag o">无</span><div class="df-node">筛选判断 + 定位判断</div></div></div><span class="df-arrow">→</span><div class="df-node">四项原则复核<span>知识 · 情境 · 层级 · 学情</span></div><span class="df-arrow">→</span><div class="df-node df-end">生成整合成品题</div></div></div></details>
 <div class="toolbar">
   <label>主用版本</label><select id="v6Ver"></select>
   <label>目标模块</label><select id="v6Mod"></select>
@@ -2032,35 +2068,32 @@ v6Ready(function(){
     // —— 整合策略：先成品（交通制动梯度一键演示）后操作 + 折叠深层 ——
     try{
       var integ=document.getElementById('integration');
-      // 1) 进入即渲染交通制动梯度演示
+      // 进入即渲染交通制动梯度演示（供自定义工具展开时已有内容）
       try{ if(window.v6Init && document.getElementById('v6Ver') && !document.getElementById('v6Ver').options.length) v6Init(); if(window.v6Preset) v6Preset('traffic'); }catch(_){}
-      // 2) 操作区下移到演示结果下方
+      // 标题改为「整合方案册」，去掉冗长说明（用途说明在页顶 page-intro）
+      var wbTitle=sectionByTitle(integ,'整合决策工作台');
+      if(wbTitle){ var h2=wbTitle.querySelector('h2'); if(h2) h2.textContent='整合方案册'; var wp=wbTitle.querySelector('p'); if(wp) wp.style.display='none'; }
+      // 去重：撤掉与主工作台重复的旧工具（能力已被方案册/工作台涵盖）
+      var hide=function(el){ if(el) el.style.display='none'; };
+      var stDec=sectionByTitle(integ,'跨版本整合决策工具'); if(stDec){ hide(stDec); hide(stDec.nextElementSibling); }
+      var stCombo=sectionByTitle(integ,'要素抽取与组合'); if(stCombo){ hide(stCombo); hide(stCombo.nextElementSibling); }
+      hide(integ?integ.querySelector('hr.v6-divider'):null);
+      // 把"自定义整合工具"（三列工作台＋草案＋操作区＋原则复核）整体折叠
+      var v6cols=integ?integ.querySelector('.v6-cols'):null;
       var draftWrap=document.getElementById('v6DraftWrap');
       var tbMain=document.getElementById('v6Ver') ? document.getElementById('v6Ver').closest('.toolbar') : null;
       var tbPreset=integ?integ.querySelector('.toolbar.v6-preset'):null;
-      if(draftWrap&&tbMain&&tbPreset){
-        var anchor=draftWrap.nextSibling;
-        var opLabel=document.createElement('div'); opLabel.className='op-label'; opLabel.textContent='想自己配置？在下方调整条件，点「检索并判定情形」重新生成';
-        draftWrap.parentNode.insertBefore(opLabel, anchor);
-        draftWrap.parentNode.insertBefore(tbMain, anchor);
-        draftWrap.parentNode.insertBefore(tbPreset, anchor);
-      }
-      // 3) 折叠 四项原则复核（主工作台内）
       var audit=document.getElementById('v6Audit');
-      if(audit) fold('▾ 显示四项原则复核（知识/情境/层级/学情）','▴ 收起原则复核',[audit]);
-      // 4) 去重：撤掉与主工作台重复的旧工具（能力已被主工作台涵盖）——决策工具、要素组合器、分隔线永久隐藏
-      var hide=function(el){ if(el) el.style.display='none'; };
-      var stDec=sectionByTitle(integ,'跨版本整合决策工具');
-      if(stDec){ hide(stDec); hide(stDec.nextElementSibling); }
-      var stCombo=sectionByTitle(integ,'要素抽取与组合');
-      if(stCombo){ hide(stCombo); hide(stCombo.nextElementSibling); }
-      hide(integ?integ.querySelector('hr.v6-divider'):null);
-      // 5) 固定案例库折叠为"答辩演示案例"
+      if(v6cols && !document.getElementById('customIntegWrap')){
+        var det=document.createElement('details'); det.id='customIntegWrap'; det.className='fold-block';
+        det.innerHTML='<summary>🔧 自定义整合工具（自己按版本 / 模块检索生成，不熟可不用）</summary>';
+        var bd=document.createElement('div'); bd.className='fold-block-body'; det.appendChild(bd);
+        v6cols.parentNode.insertBefore(det, v6cols);
+        [tbMain, tbPreset, v6cols, draftWrap, audit].forEach(function(el){ if(el) bd.appendChild(el); });
+      }
+      // 固定案例库折叠为"答辩演示案例"
       var stCase=sectionByTitle(integ,'固定案例库');
       if(stCase) fold('▾ 答辩演示案例（4 个 · 点击展开）','▴ 收起答辩演示案例',[stCase, stCase.nextElementSibling]);
-      // 6) 精简主工作台冗长说明
-      var wbTitle=sectionByTitle(integ,'整合决策工作台');
-      if(wbTitle){ var wp=wbTitle.querySelector('p'); if(wp) wp.textContent='默认展示「交通制动梯度」一键演示。需要时在结果下方自行配置版本、模块与需求重新生成。'; }
     }catch(e){ console.warn('simpl integration',e); }
 
     // —— 拓展策略：先成品后操作（变式成品置顶）+ 完整变式链条默认折叠 ——
@@ -2209,19 +2242,36 @@ function productBodyHTML(p, ver){
   var chain='<div class="chain-list">'+p.chain.map(function(c){return '<div class="chain-item"><span class="tag v">'+_esc(c.tag)+'</span> '+_esc(c.q)+'</div>';}).join('')+'</div>';
   var check='<ul class="check-list">'+p.quality.map(function(q){return '<li>✓ '+_esc(q)+'</li>';}).join('')+'</ul>';
   var ba='<div class="ba"><div class="ba-col"><b>原题</b><p>'+_esc(p.beforeAfter.before)+'</p></div><div class="ba-arrow">→</div><div class="ba-col"><b>整合后</b><p>'+_esc(p.beforeAfter.after)+'</p></div></div>';
-  return block('情境', '<p class="prod-p">'+_esc(p.scenario)+'</p>')
-    + block('必要数据', chips)
-    + block('来源要素（整合自原题库）', src)
+  var lead = p.lead ? '<p class="relation-note">'+_esc(p.lead)+'</p>' : '';
+  // 第一层：题干 + 一句关系 + 分层设问（学生先看到）
+  // 第二层：答案解析（折叠）  第三层：研究依据（折叠）
+  return block('题干', '<p class="prod-p">'+_esc(p.scenario)+'</p>')
+    + lead
     + block('分层设问', qlist(p.questions))
-    + block('标准解答', '<div class="solution-box">'+ol(p.solution)+'</div>')
-    + block('易错点', ul(p.pitfalls))
-    + block('教师追问', ul(p.teacherFollowup))
-    + block('图示建议', '<p class="prod-p">'+_esc(p.figureAdvice)+'</p>')
-    + block('整合前后对比', ba)
-    + block('变式链', chain)
-    + block('适用课型', '<p class="prod-p">'+_esc(p.courseType)+'</p>')
-    + block('质量核查', check);
+    + '<details class="prod-fold"><summary>展开答案解析</summary><div class="prod-fold-body">'
+      + block('标准解答', '<div class="solution-box">'+ol(p.solution)+'</div>')
+      + block('易错点', ul(p.pitfalls))
+      + block('教师追问', ul(p.teacherFollowup))
+      + block('图示建议', '<p class="prod-p">'+_esc(p.figureAdvice)+'</p>')
+    + '</div></details>'
+    + '<details class="prod-fold"><summary>展开研究依据</summary><div class="prod-fold-body">'
+      + block('必要数据', chips)
+      + block('来源要素（整合自原题库）', src)
+      + block('整合 / 改造前后对比', ba)
+      + block('变式链', chain)
+      + block('适用课型', '<p class="prod-p">'+_esc(p.courseType)+'</p>')
+      + block('质量核查', check)
+    + '</div></details>';
 }
+/* 成品题简短关系说明（第一屏只显示一句，详细来源链折叠在研究依据里） */
+var _LEADS={
+  'traffic-brake':'本题由 RJ-01「汽车加速后刹车」的情境延伸而来，整合 HKJ-03、LK-02、YJ-05、YJ-16，加入反应时间、安全距离与限速裁决。',
+  'friction-critical':'本题以 RJ-04「马拉雪橇」的摩擦情境为基础，整合 LK-05、HK-06、YJ-08，从单一摩擦计算走向动静摩擦与临界判断。',
+  'friction-incline':'本题由 RJ-04「马拉雪橇」的水平摩擦迁移到斜面，改为"恰好匀速下滑"求动摩擦因数。',
+  'kinematics-diff':'本题由 RJ-01 / RJ-03 的匀变速情境改编，用"连续相等时间位移差"反求加速度。',
+  'windvane-deflect':'本题以 HK-10「风力仪」情境为基础，用三力平衡定量求风力与悬线张力。'
+};
+try{ PRODUCTS.forEach(function(p){ if(_LEADS[p.id]) p.lead=_LEADS[p.id]; }); }catch(e){}
 function renderProductBody(id, ver){ var p=_prod(id); var el=document.getElementById('prodBody-'+id); if(!p||!el) return; el.innerHTML=productBodyHTML(p, ver); el.dataset.ver=ver; }
 function setProductVer(id, ver, btn){ renderProductBody(id, ver); if(btn&&btn.parentNode){ Array.prototype.forEach.call(btn.parentNode.querySelectorAll('button'), function(b){ b.classList.toggle('active', b===btn); }); } }
 function renderProducts(){
@@ -2318,18 +2368,29 @@ PRODUCTS.push(
 );
 /* 内联成品面板（只读完整视图，复用 productBodyHTML，无 id 冲突） */
 function productPanelHTML(p){
-  return '<div class="panel product-inline">'
-    + '<div class="pi-head"><span class="tag">'+_esc(p.type)+'</span><span class="tag o">层级 '+_esc(p.level)+'</span><h3>'+_esc(p.title)+'</h3></div>'
+  return '<div class="card product-inline-light">'
+    + '<div class="pil-head"><h3>'+_esc(p.title)+'</h3><div class="pil-tags"><span class="tag">'+_esc(p.type)+'</span><span class="tag o">层级 '+_esc(p.level)+'</span></div></div>'
     + '<div class="product-body">'+productBodyHTML(p,'teacher')+'</div>'
-    + '<div class="product-actions"><button class="small-btn" onclick="window.print()">🖨 打印讲义</button> <button class="small-btn" onclick="showPage(\'products\')">在「成品题」页切换学生 / 投屏版并复制 →</button></div>'
+    + '<div class="product-actions"><button class="small-btn" onclick="window.print()">🖨 打印讲义</button> <button class="small-btn" onclick="showPage(\'products\')">三版本切换 / 复制 →</button></div>'
     + '</div>';
 }
-function renderIntegProduct(name){
+/* 整合方案册：每张方案卡默认只显示 标题/一句话/课型/来源 + 查看成品题，点开才展开成品题 */
+function schemeCardHTML(p){
+  var srcShort=p.sources.map(function(s){return s.code;}).join('、');
+  return '<details class="scheme-card">'
+    + '<summary class="scheme-head"><div class="scheme-info">'
+      + '<div class="scheme-title">'+_esc(p.title)+'</div>'
+      + '<div class="scheme-sub">'+_esc(p.lead||p.courseType)+'</div>'
+      + '<div class="scheme-meta"><span class="tag">'+_esc(p.type)+'</span><span class="tag o">层级 '+_esc(p.level)+'</span><span class="scheme-src">来源：'+_esc(srcShort)+'</span></div>'
+    + '</div><span class="scheme-cta">查看成品题 ▾</span></summary>'
+    + '<div class="scheme-body"><div class="product-body">'+productBodyHTML(p,'teacher')+'</div>'
+      + '<div class="product-actions"><button class="small-btn" onclick="window.print()">🖨 打印讲义</button> <button class="small-btn" onclick="showPage(\'products\')">三版本切换 / 复制 →</button></div></div>'
+  + '</details>';
+}
+function renderIntegProduct(){
   var el=document.getElementById('integProduct'); if(!el) return;
-  var map={traffic:'traffic-brake', friction:'friction-critical', windvane:'windvane-deflect'};
-  var p=map[name]&&_prod(map[name]);
-  el.innerHTML='<div class="op-label" style="margin:2px 0 8px">✅ 整合后的成品题（含完整题干与标准解答）</div>'
-    + (p?productPanelHTML(p):'<div class="empty">该一键演示暂未配套成品题；「成品题」页已提供完整整合案例。</div>');
+  var list=PRODUCTS.filter(function(p){return p.type==='整合题';});
+  el.innerHTML='<div class="op-label" style="margin:2px 0 10px">整合方案册 · 点开任一方案查看成品题</div>'+list.map(schemeCardHTML).join('');
 }
 /* 新增：风力仪偏角测量 完整变式成品（经验算） */
 PRODUCTS.push({
@@ -2376,7 +2437,7 @@ function updateExtProduct(){
       if(integ && !document.getElementById('integProduct')){
         var host=document.createElement('div'); host.id='integProduct'; host.style.margin='8px 0 16px';
         var ts=integ.querySelectorAll('.section-title'), anchor=null;
-        for(var i=0;i<ts.length;i++){ var h=ts[i].querySelector('h2'); if(h&&h.textContent.indexOf('整合决策工作台')>=0){ anchor=ts[i]; break; } }
+        for(var i=0;i<ts.length;i++){ var h=ts[i].querySelector('h2'); if(h&&(h.textContent.indexOf('整合方案册')>=0||h.textContent.indexOf('整合决策工作台')>=0)){ anchor=ts[i]; break; } }
         if(anchor) anchor.parentNode.insertBefore(host, anchor.nextSibling); else integ.insertBefore(host, integ.firstChild);
       }
       if(typeof window.v6Preset==='function' && !window.v6Preset.__wrap){
