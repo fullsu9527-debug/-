@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="多版本高中物理例题资源研究平台：对六版必修一全部 95 道例题做六维全样本编码，发现认知层级与情境配置的结构性失衡，并提供原题库、文本分析、横向切片、整合与拓展工具。" />
+<meta name="description" content="高中物理例题整合与变式工作台：面向教师备课，按‘找例题 → 做整合 → 做变式 → 导出讲义’的路径，把六版必修一例题重组为可直接上课的整合题与变式成品题。" />
 <meta name="author" content="物理例题资源研究" />
 <meta name="theme-color" content="#172554" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="多版本高中物理例题资源研究平台" />
+<meta property="og:title" content="高中物理例题整合与变式工作台" />
 <meta property="og:description" content="95 道例题 · 六维编码 · 文本分析 · 整合与拓展策略工作台" />
 <meta name="twitter:card" content="summary" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23172554'/><g stroke='%2360a5fa' stroke-width='3' fill='none'><ellipse cx='32' cy='32' rx='22' ry='9'/><ellipse cx='32' cy='32' rx='22' ry='9' transform='rotate(60 32 32)'/><ellipse cx='32' cy='32' rx='22' ry='9' transform='rotate(120 32 32)'/></g><circle cx='32' cy='32' r='5.5' fill='%2322d3ee'/></svg>" />
-<title>多版本高中物理例题资源研究平台 · v6 整合决策与语义变式版</title>
+<title>高中物理例题整合与变式工作台</title>
 <style>
 :root{--p:#3156d4;--p2:#172554;--a:#06b6d4;--g:#10b981;--o:#f59e0b;--r:#ef4444;--v:#8b5cf6;--pink:#ec4899;--ink:#142033;--muted:#64748b;--line:#dce6f3;--soft:#f8fbff;--card:#fff;--bg:#eef5ff;--shadow:0 18px 45px rgba(15,23,42,.10);--radius:22px}
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Microsoft YaHei","PingFang SC",system-ui,-apple-system,Segoe UI,sans-serif}html{scroll-behavior:smooth}body{min-height:100vh;color:var(--ink);background:radial-gradient(circle at 6% 2%,rgba(6,182,212,.20),transparent 32%),radial-gradient(circle at 92% 0%,rgba(49,86,212,.20),transparent 35%),linear-gradient(135deg,#f8fbff,#eaf0ff 60%,#f8fafc);}.container{width:min(1380px,94vw);margin:auto}header{position:sticky;top:0;z-index:80;background:rgba(23,37,84,.92);backdrop-filter:blur(18px);box-shadow:0 10px 35px rgba(15,23,42,.18)}.topbar{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:#fff}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:19px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#60a5fa,#22d3ee);display:grid;place-items:center;box-shadow:0 12px 28px rgba(6,182,212,.28)}nav{display:flex;gap:8px;flex-wrap:wrap}nav button{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);color:rgba(255,255,255,.86);border-radius:999px;padding:9px 13px;cursor:pointer;font-weight:700;transition:.2s}nav button:hover,nav button.active{background:#fff;color:var(--p2);transform:translateY(-1px)}main{padding:26px 0 54px}.page{display:none;animation:fade .35s ease}.page.active{display:block}@keyframes fade{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch;margin:20px 0 24px}.hero-card,.panel{background:rgba(255,255,255,.86);border:1px solid rgba(220,230,243,.95);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.hero-card{padding:34px}.eyebrow{color:var(--p);font-weight:900;letter-spacing:.06em;font-size:13px;margin-bottom:10px}.hero h1{font-size:42px;line-height:1.13;color:var(--p2);margin-bottom:16px}.hero p{color:var(--muted);font-size:16px;line-height:1.85}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{border:0;background:linear-gradient(135deg,var(--p),var(--a));color:white;padding:11px 16px;border-radius:14px;cursor:pointer;font-weight:900;box-shadow:0 12px 25px rgba(49,86,212,.20);transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:#fff;color:var(--p);border:1px solid var(--line);box-shadow:none}.btn.ghost{background:#eef6ff;color:var(--p);box-shadow:none}.canvas{padding:26px;min-height:100%}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:center}.node{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;text-align:center;box-shadow:0 10px 24px rgba(15,23,42,.06);position:relative}.node b{display:block;color:var(--p2);margin:8px 0 4px}.node span{font-size:12px;color:var(--muted)}.node:after{content:'→';position:absolute;right:-14px;top:38%;color:var(--a);font-size:25px;font-weight:900}.node:last-child:after{display:none}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:18px 0}.metric{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 12px 28px rgba(15,23,42,.06)}.metric .num{font-size:32px;font-weight:950;color:var(--p)}.metric .lab{color:var(--muted);font-size:13px}.section-title{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin:22px 0 14px}.section-title h2{font-size:25px;color:var(--p2)}.section-title p{color:var(--muted);font-size:14px;max-width:760px;line-height:1.7}.grid{display:grid;gap:16px}.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.toolbar{padding:16px;background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}.toolbar label{font-size:13px;font-weight:900;color:var(--p2)}select,input{border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 12px;outline:none;color:var(--ink);min-height:40px}input{min-width:220px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 28px rgba(15,23,42,.06);padding:16px;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(49,86,212,.14)}.card h3{color:var(--p2);margin-bottom:8px}.meta{color:var(--muted);font-size:13px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.tag{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:900;background:#eef2ff;color:var(--p)}.tag.g{background:#dcfce7;color:#047857}.tag.o{background:#ffedd5;color:#b45309}.tag.r{background:#fee2e2;color:#b91c1c}.tag.v{background:#f3e8ff;color:#6d28d9}.tag.p{background:#fce7f3;color:#be185d}.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:950;color:var(--p)}.list{display:grid;gap:10px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:#fff}.row:hover{border-color:#93c5fd;background:#f8fbff}.row .left{min-width:0}.row .title{font-weight:900;color:var(--p2)}.row .desc{font-size:12px;color:var(--muted);margin-top:3px}.small-btn{border:1px solid var(--line);background:#fff;color:var(--p);border-radius:999px;padding:7px 10px;font-weight:900;cursor:pointer;white-space:nowrap}.small-btn:hover{background:#eef6ff}.chart-panel{padding:18px}.stack-row{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:center;margin:10px 0}.stack-label{font-size:13px;font-weight:900;color:var(--p2);text-align:right}.stack{display:flex;height:30px;border-radius:999px;overflow:hidden;background:#eef2ff;border:1px solid var(--line)}.seg{height:100%;min-width:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:900;transition:.2s}.seg:hover{filter:brightness(.92);transform:scaleY(1.08)}.heatmap{display:grid;gap:8px}.heat-row{display:grid;grid-template-columns:110px repeat(4,1fr);gap:8px;align-items:stretch}.heat-cell{border-radius:14px;padding:12px 8px;text-align:center;font-weight:950;border:1px solid rgba(255,255,255,.7);cursor:pointer;min-height:48px}.heat-head{font-weight:900;color:var(--muted);font-size:13px;text-align:center;padding:8px}.pyramid{display:grid;gap:10px;justify-items:center}.pyr{height:46px;border-radius:14px;color:#fff;font-weight:950;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 20px rgba(15,23,42,.08)}.matrix{display:grid;grid-template-columns:120px repeat(6,1fr);gap:8px}.matrix .head,.matrix .level{padding:10px;border-radius:14px;background:#eef2ff;font-weight:950;text-align:center;color:var(--p2)}.matrix .cell{min-height:92px;border:1px dashed var(--line);border-radius:16px;padding:8px;background:#fff}.chip{display:inline-block;margin:3px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:12px;font-weight:950;padding:5px 8px;cursor:pointer}.chip:hover{background:#bae6fd}.decision-wrap{display:grid;grid-template-columns:360px 1fr;gap:16px}.form-col{padding:18px}.form-col .field{display:grid;gap:6px;margin-bottom:12px}.result-box{padding:18px}.path-banner{border-left:6px solid var(--p);background:#f8fbff;padding:15px;border-radius:16px;margin-bottom:14px}.step{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff;margin-bottom:10px}.step b{color:var(--p)}.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}.principle{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:12px}.principle b{display:block;color:var(--p2);margin-bottom:4px}.variant-workbench{display:grid;grid-template-columns:360px 1fr;gap:16px}.dim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.dim-card{border:2px solid var(--line);background:#fff;border-radius:18px;padding:12px;cursor:pointer;transition:.2s}.dim-card.active{border-color:var(--p);box-shadow:0 0 0 4px rgba(49,86,212,.10)}.dim-card b{display:block;color:var(--p2);margin-bottom:4px}.dim-card span{font-size:12px;color:var(--muted)}.variant-output{padding:18px}.coding-change{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}.coding-box{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:14px}.arrow-big{font-size:28px;color:var(--a);font-weight:950}.variant-text{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;line-height:1.8;margin-top:14px}.timeline{display:grid;gap:12px}.timeline-item{display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:start}.time-badge{background:linear-gradient(135deg,var(--p),var(--a));color:#fff;border-radius:16px;padding:10px;text-align:center;font-weight:950}.timeline-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}.modal{position:fixed;inset:0;background:rgba(15,23,42,.58);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}.modal.active{display:flex}.modal-card{width:min(1060px,96vw);max-height:90vh;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 35px 80px rgba(0,0,0,.28);display:flex;flex-direction:column}.modal-header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#f8fbff}.modal-body{padding:20px;overflow:auto}.close{border:0;background:#e2e8f0;width:36px;height:36px;border-radius:50%;font-size:23px;cursor:pointer}.img-wrap{display:grid;gap:12px}.problem-img{width:100%;border:1px solid var(--line);border-radius:16px;background:#fff}.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:18px;background:#fff}.footer-note{color:var(--muted);font-size:12px;line-height:1.6;margin-top:12px}@media(max-width:1000px){.hero,.decision-wrap,.variant-workbench{grid-template-columns:1fr}.flow,.metrics,.cols-3,.cols-4,.principles,.dim-grid{grid-template-columns:1fr 1fr}.cols-2{grid-template-columns:1fr}.matrix{grid-template-columns:90px repeat(3,1fr);overflow-x:auto}.heat-row{grid-template-columns:80px repeat(4,1fr)}}@media(max-width:640px){nav{display:none}.hero h1{font-size:30px}.flow,.metrics,.principles,.dim-grid{grid-template-columns:1fr}.row{align-items:flex-start;flex-direction:column}.coding-change{grid-template-columns:1fr}.arrow-big{display:none}}
@@ -419,6 +419,87 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 .task-card .tc-sub{font-size:12.5px;color:var(--muted);line-height:1.6}
 @media(max-width:980px){.task-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.task-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   v18 浅色教研风主题：纸面感、深蓝标题/导航、暖橙重点按钮、淡绿质量标签
+   覆盖前面的科技蓝主题，去掉大渐变与坐标纸底纹
+   ============================================================ */
+:root{
+  --p:#1f4e79;            /* 深蓝：标题 / 导航 / 主色 */
+  --p2:#163a5f;           /* 更深蓝 */
+  --a:#3f74a8;            /* 同色系蓝（替代霓虹青，渐变保持稳重） */
+  --accent:#e0852c;       /* 暖橙：生成 / 拓展 / 重点按钮 */
+  --accent-d:#c9731d;
+  --ink:#27313d;
+  --muted:#6b727e;
+  --line:#e3e6ec;
+  --soft:#f3f4f0;
+  --card:#ffffff;
+  --shadow:0 6px 18px rgba(22,58,95,.07);
+  --shadow-soft:0 3px 10px rgba(22,58,95,.05);
+  --radius:16px;
+}
+/* 纸面底色，去掉坐标纸网格与径向科技光斑 */
+body{ background:#f4f3ee !important; }
+/* 头部稳重深蓝 */
+header{ background:#163a5f; box-shadow:0 4px 16px rgba(22,58,95,.16) }
+/* 卡片浅一点的纸感、阴影更轻 */
+.hero-card,.panel,.card,.metric,.timeline-card,.step,.rl-step,.task-card{ box-shadow:var(--shadow-soft) }
+.card,.panel,.task-card,.product-inline{ background:#fcfdff }
+/* 主按钮：暖橙（生成 / 重点 / 拓展） */
+.btn{ background:var(--accent); box-shadow:0 6px 14px rgba(224,133,44,.22) }
+.btn:hover{ background:var(--accent-d); transform:translateY(-1px) }
+.btn.secondary{ background:#fff; color:var(--p); border:1px solid var(--line) }
+.btn.ghost{ background:#eef3f8; color:var(--p) }
+/* logo / 徽章等用纯深蓝，避免霓虹渐变 */
+.logo,.home-logo,.time-badge{ background:var(--p) !important; box-shadow:none }
+.metric::before,.section-title h2::before,.finding-main,.finding-go{ }
+.section-title h2::before{ background:var(--accent) }
+.metric::before{ background:var(--accent) }
+/* 质量核查淡绿（沿用绿色系，柔和） */
+.quality-list li,.tag.g{ }
+/* 弱化通用卡片 hover 的位移幅度，更稳重 */
+.card:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(22,58,95,.10) }
+.home-tagline{ color:#5a6470 }
+.task-grid-3{grid-template-columns:repeat(3,1fr);max-width:940px}
+@media(max-width:760px){.task-grid-3{grid-template-columns:1fr}}
+.research-card h3{color:var(--p2);margin-bottom:8px;font-size:17px}
+.research-card .btn{margin-top:12px}
+.ocr-disclaimer{display:block;margin-top:8px;color:#9a3412;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:8px 11px;font-size:12.5px;font-weight:700;line-height:1.6}
+/* 图 3-1 决策流程 */
+.decision-flow{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:6px 0 16px;box-shadow:var(--shadow-soft)}
+.df-title{font-weight:800;color:var(--p2);font-size:13.5px;margin-bottom:12px}
+.df-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.df-node{background:#f3f6fb;border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-weight:800;color:var(--p2);font-size:13px;text-align:center;line-height:1.4}
+.df-node span{display:block;font-weight:600;color:var(--muted);font-size:11px;margin-top:2px}
+.df-node.df-end{background:var(--accent);color:#fff;border-color:var(--accent)}
+.df-branch{display:flex;flex-direction:column;gap:6px}
+.df-path{display:flex;align-items:center;gap:6px}
+.df-tag{font-size:11px;font-weight:800;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.df-tag.g{background:#dcfce7;color:#166534}.df-tag.o{background:#ffedd5;color:#9a3412}
+.df-arrow{color:var(--a);font-weight:900;font-size:18px}
+@media(max-width:760px){.df-arrow{display:none}.df-row{flex-direction:column;align-items:stretch}.df-node,.df-branch{width:100%}}
+/* 讲义打印按钮 */
+.print-bar{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 14px}
+
+/* ============================================================
+   A4 讲义打印：隐藏界面 chrome，只留成品题；卡片避免被切断
+   ============================================================ */
+@media print{
+  @page{ size:A4; margin:14mm 12mm; }
+  html,body{ background:#fff !important; }
+  header,.nav-toggle,#toTop,.site-footer,.modal,.lightbox,.skip-link,.page-intro,.page-next,.toolbar,.df-arrow,
+  .fold-toggle,.chart-toggle,.adv-toggle,.print-bar,.op-label,.decision-flow,.research-card .btn,
+  .small-btn,.btn,.product-actions,.v6-cols,#v6DraftWrap,#v6Audit,.ocr-panel,.dim-grid,.variant-output .toolbar{ display:none !important; }
+  main{ width:100% !important; padding:0 !important; display:block !important; }
+  .page{ display:none !important; }
+  .page.active{ display:block !important; }
+  .panel,.card,.product-inline,.product-card,.solution-box,.variant-text,.element-table,.coding-box{ box-shadow:none !important; border:1px solid #d4d8df !important; break-inside:avoid; page-break-inside:avoid; }
+  .product-inline,.product-card{ margin-bottom:10mm; }
+  .section-title h2{ font-size:18px }
+  a[href]:after{ content:"" }
+}
+@media(max-width:480px){.task-grid{grid-template-columns:1fr}}
 #analysis .chart-grid.collapsed .chart-secondary{display:none}
 #analysis .chart-grid.collapsed .chart-primary{grid-column:1 / -1}
 #ocrPanel.adv-collapsed{display:none}
@@ -429,18 +510,18 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 <body>
 <a class="skip-link" href="#main" onclick="event.preventDefault();var m=document.getElementById('main');if(m){m.focus();m.scrollIntoView();}">跳到主内容</a>
 <noscript><div style="margin:0;padding:14px 18px;background:#fff7ed;color:#9a3412;border-bottom:1px solid #fed7aa;font-size:14px;line-height:1.7;text-align:center">本平台为交互式研究网页，95 道例题数据、图表与工具均由 JavaScript 即时生成。请在浏览器中启用 JavaScript 后刷新本页以正常使用。</div></noscript>
-<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>多版本高中物理例题资源研究平台<br><span style="font-size:12px;font-weight:500;opacity:.75">真实编码数据驱动 · 整合决策 · 六维变式拓展</span></div></div><button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="library">找原题</button><button data-page="integration">做整合</button><button data-page="extension">做变式</button><button data-page="products">成品题</button></nav></div></header>
+<header><div class="container topbar"><div class="brand"><div class="logo">⚛</div><div>高中物理例题整合与变式工作台<br><span style="font-size:12px;font-weight:500;opacity:.78">找例题 · 做整合 · 做变式 · 导出讲义</span></div></div><button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button><nav id="nav"><button class="active" data-page="home">首页</button><button data-page="library">原题</button><button data-page="integration">整合</button><button data-page="extension">变式</button><button data-page="research">研究</button></nav></div></header>
 <main class="container" id="main" tabindex="-1">
-<section id="home" class="page active"><div id="homeMetrics" hidden></div><div class="home-hero"><div class="home-logo">⚛</div><h1 class="home-title">六个版本高中物理例题资源平台</h1><p class="home-tagline">原题库 → 六维编码 → 整合 / 变式 → 完整成品题资源包</p></div><div class="task-grid"><button type="button" class="task-card" onclick="showPage('library')"><span class="tc-ico">🔍</span><b>找原题</b><span class="tc-sub">95 道原题库 · 按版本 / 情境 / 层级筛选</span></button><button type="button" class="task-card" onclick="showPage('integration')"><span class="tc-ico">🧩</span><b>做整合</b><span class="tc-sub">跨版本调配 · 直接出整合成品题</span></button><button type="button" class="task-card" onclick="showPage('extension')"><span class="tc-ico">✏️</span><b>做变式</b><span class="tc-sub">选母题 · 改方向 · 直接出变式成品题</span></button><button type="button" class="task-card" onclick="showPage('products')"><span class="tc-ico">📦</span><b>看成品</b><span class="tc-sub">题干 + 解答 + 教学说明 · 三版本可复制</span></button></div></section>
+<section id="home" class="page active"><div id="homeMetrics" hidden></div><div class="home-hero"><div class="home-logo">⚛</div><h1 class="home-title">高中物理例题整合与变式工作台</h1><p class="home-tagline">选择一个任务开始：查找教材原题、组合整合题，或基于母题生成变式题。</p></div><div class="task-grid task-grid-3"><button type="button" class="task-card" onclick="showPage('library')"><span class="tc-ico">🔍</span><b>找例题</b><span class="tc-sub">在六版必修一例题库中按版本 / 模型 / 情境 / 层级查找</span></button><button type="button" class="task-card" onclick="showPage('integration')"><span class="tc-ico">🧩</span><b>做整合</b><span class="tc-sub">把多版本例题重组成可直接上课的整合成品题</span></button><button type="button" class="task-card" onclick="showPage('extension')"><span class="tc-ico">✏️</span><b>做变式</b><span class="tc-sub">以原题为母题，沿六个方向生成变式成品题</span></button></div></section>
 
-<section id="library" class="page"><div class="page-intro">一切结论的源头是这 95 道真实例题，每道都经过六个维度的精细编码。</div><div class="section-title"><h2>95 道教材原题库</h2><p>每道原题均以编码总表中的 D1–D6 为准，并保留原题截图。可筛选、查看、设为拓展母题。</p></div><div class="toolbar"><label>关键词</label><input id="libSearch" placeholder="编号/题名，如 YJ-05、刹车、风力仪" oninput="renderLibrary()"><label>版本</label><select id="libVersion" onchange="renderLibrary()"></select><label>D1 情境</label><select id="libD1" onchange="renderLibrary()"></select><label>D2 模块</label><select id="libD2" onchange="renderLibrary()"></select><label>D6 层级</label><select id="libD6" onchange="renderLibrary()"></select><button class="btn secondary" onclick="resetLibrary()">清空筛选</button><button class="btn ghost" id="libShareBtn" onclick="copyShareLink(this)" title="复制带当前筛选条件的链接，可分享/收藏">🔗 复制筛选链接</button><span class="meta" id="libCount"></span></div><div class="list" id="libraryList"></div><div class="page-next"><button class="btn" onclick="showPage('analysis')">下一步：文本分析 →</button></div></section>
+<section id="library" class="page"><div class="page-intro">在六版本必修一例题库中，按版本、模块、物理模型、情境类型和认知层级查找可用原题。</div><div class="section-title"><h2>教材原题库</h2></div><div class="toolbar"><label>关键词</label><input id="libSearch" placeholder="编号/题名，如 YJ-05、刹车、风力仪" oninput="renderLibrary()"><label>版本</label><select id="libVersion" onchange="renderLibrary()"></select><label>D1 情境</label><select id="libD1" onchange="renderLibrary()"></select><label>D2 模块</label><select id="libD2" onchange="renderLibrary()"></select><label>D6 层级</label><select id="libD6" onchange="renderLibrary()"></select><button class="btn secondary" onclick="resetLibrary()">清空筛选</button><button class="btn ghost" id="libShareBtn" onclick="copyShareLink(this)" title="复制带当前筛选条件的链接，可分享/收藏">🔗 复制筛选链接</button><span class="meta" id="libCount"></span></div><div class="list" id="libraryList"></div><div class="page-next"><button class="btn" onclick="showPage('integration')">下一步：做整合 →</button></div></section>
 
 <section id="analysis" class="page"><div class="page-intro">对 95 道题做横向统计，六个维度逐一比较，结构性差异随即浮现。</div><div class="section-title"><h2>第二章文本分析 · 动态图表</h2><p>图表均由 95 道真实编码数据即时统计生成。点击任意图形片段，下方会列出对应例题。</p></div><div class="grid cols-2"><div class="panel chart-panel"><h3>版本 × 情境类型堆叠图</h3><div id="d1Stack"></div></div><div class="panel chart-panel"><h3>版本 × 认知层级堆叠图</h3><div id="d6Stack"></div></div><div class="panel chart-panel"><h3>知识模块 × 情境类型交叉热力图</h3><div id="heatmap"></div></div><div class="panel chart-panel"><h3>认知层级金字塔</h3><div id="pyramid"></div></div></div><div class="section-title"><h2 id="analysisTitle">图表筛选结果</h2><p id="analysisSub">点击上方图表后显示对应例题。</p></div><div class="list" id="analysisList"></div><div class="page-next"><button class="btn" onclick="showPage('slice')">下一步：横向切片 →</button></div></section>
 
 <section id="slice" class="page"><div class="page-intro">宏观统计会不会只是数字巧合？选取交通制动这一最具代表性的模型逐题剖析，用微观证据印证宏观结论。</div><div class="section-title"><h2>横向切片专题：交通制动安全模型</h2><p>将 16 道交通制动安全相关例题放入“版本 × 层级”矩阵，展示“同模型异层级”“一境多级”的规律。</p></div><div class="panel chart-panel"><div class="matrix" id="trafficMatrix"></div></div><div class="section-title"><h2>切片例题列表</h2><p>点击编号查看原题截图与核心认知任务。</p></div><div class="list" id="trafficList"></div><div class="page-next"><button class="btn" onclick="showPage('integration')">下一步：整合策略 →</button></div></section>
 
 <section id="integration" class="page">
-<div class="page-intro">既然单一版本各有缺口，第一条对策是跨版本调配现有例题——融合、补充、替换。</div>
+<div class="page-intro">基于跨版本整合策略，将多版本例题重组为可直接用于课堂的整合成品题。</div>
 <style id="v6-style">
 /* v6: 整合决策工作台与可编辑要素 */
 .v6-cols{display:grid;grid-template-columns:1fr 1.05fr 1.15fr;gap:14px;margin:14px 0}
@@ -462,6 +543,7 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 </style>
 <!-- v6 整合决策工作台 -->
 <div class="section-title"><h2>整合决策工作台（第三章框架 · 情形一/情形二）</h2><p>左：主用版本例题（选基底）；中：跨版本候选（标注可融合/补充/替换的具体要素）；右：方案序列与整合类型标注。下方生成"要素抽取与组合"级别的整合草案，并自动完成四项原则复核取证。</p></div>
+<div class="decision-flow"><div class="df-title">图 3-1 · 整合决策流程（整合推荐的依据，并非黑箱）</div><div class="df-row"><div class="df-node df-q">主用版本该课时<br>是否有例题？</div><span class="df-arrow">→</span><div class="df-branch"><div class="df-path"><span class="df-tag g">有</span><div class="df-node">融合 / 补充 / 替换</div></div><div class="df-path"><span class="df-tag o">无</span><div class="df-node">筛选判断 + 定位判断</div></div></div><span class="df-arrow">→</span><div class="df-node">四项原则复核<span>知识 · 情境 · 层级 · 学情</span></div><span class="df-arrow">→</span><div class="df-node df-end">生成整合成品题</div></div></div>
 <div class="toolbar">
   <label>主用版本</label><select id="v6Ver"></select>
   <label>目标模块</label><select id="v6Mod"></select>
@@ -488,7 +570,7 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
 
 <div class="section-title"><h2>第三章整合策略 · 跨版本整合决策工具</h2><p>整合不是生成原创题，而是在六版已有资源之间进行选择、组合与替换。工具按“主用版本有无例题”自动进入情形一或情形二。</p></div><div class="decision-wrap"><div class="panel form-col"><h3 style="margin-bottom:12px;color:var(--p2)">输入备课条件</h3><div class="field"><label>主用版本</label><select id="intVersion"></select></div><div class="field"><label>目标知识模块 / 课时范围</label><select id="intModule"></select></div><div class="field"><label>想补的主要维度</label><select id="intDimension"><option value="d1">D1 情境类型</option><option value="d3">D3 图示类型</option><option value="d4">D4 呈现结构</option><option value="d5">D5 助学栏目</option><option value="d6">D6 认知层级</option></select></div><div class="field"><label>学生基础</label><select id="intStudent"><option value="normal">普通班级</option><option value="weak">基础较弱</option><option value="strong">基础较强</option></select></div><button class="btn" onclick="runIntegrationDecision()">生成整合建议</button><div class="footer-note">判断规则：先看主用版本在该模块是否有例题；有则进入情形一，优先融合，再补充，最后谨慎替换；无则进入情形二，执行知识一致、情境适切、层级匹配、呈现兼容四项筛选，并确定教学定位。</div></div><div class="panel result-box"><div id="integrationResult"></div></div></div><div class="section-title"><h2>第三章固定案例库</h2><p>以下四个案例对应情境、知识模块、呈现系统、认知层级四类整合策略，可直接用于答辩演示。</p></div><div class="grid cols-2" id="integrationCases"></div><div class="section-title"><h2>题干要素抽取与组合整合器</h2><p>把整合从“编号推荐”推进到“题干要素层面”：先抽取研究对象、物理过程、已知量、未知量、模型与设问，再进行融合、两两组合或多题组合。</p></div><div class="combo-workbench"><div class="panel form-col"><h3 style="color:var(--p2);margin-bottom:12px">选择要组合的例题</h3><div class="semantic-note">说明：当前版本先依据已录入的题名、编号与六维编码进行要素抽取；若后续补入 OCR 校对后的题干全文，抽取结果会更精确。</div><div class="field"><label>基底母题</label><select id="comboBase"></select></div><div class="field"><label>组合题编号</label><input id="comboCodes" placeholder="例如 LK-05,HK-06,YJ-08"></div><div class="toolbar"><button class="btn" onclick="generateElementCombo()">生成要素组合方案</button><button class="btn secondary" onclick="autoFillCombo()">按母题自动推荐</button></div></div><div class="panel result-box"><div id="comboOutput"><div class="empty">请选择基底母题和组合题，生成要素抽取与整合草案。</div></div></div></div><div class="page-next"><button class="btn" onclick="showPage('extension')">下一步：拓展策略 →</button></div></section>
 
-<section id="extension" class="page"><div class="page-intro">当六版都无可调资源，第二条对策是以原题为母题定向生成变式，补齐层级Ⅲ与工程情境的空白。</div><div class="section-title"><h2>第四章拓展策略 · 六维度变式拓展工作台</h2><p>从全部原题库中选取任意一道母题，按 D1–D6 选择改造方向。输出内容包括变式题干、设问、编码变化、教学定位和变式链条。</p></div><div class="variant-workbench"><div class="panel form-col"><h3 style="color:var(--p2);margin-bottom:12px">1. 选择母题</h3><div class="field"><label>母题编号/关键词</label><input id="motherSearch" placeholder="如 RJ-04、YJ-05、风力仪" oninput="renderMotherOptions()"></div><div class="field"><label>母题</label><select id="motherSelect" onchange="selectMother()"></select></div><div id="motherCard" class="card" style="margin-top:12px"></div><button class="btn secondary" style="margin-top:12px" onclick="openProblem(getMother().code)">查看原题截图</button>
+<section id="extension" class="page"><div class="page-intro">以原题为母题，沿情境、模型、图示、结构、提示和认知层级生成变式成品题。</div><div class="section-title"><h2>变式工作台</h2></div><div class="variant-workbench"><div class="panel form-col"><h3 style="color:var(--p2);margin-bottom:12px">1. 选择母题</h3><div class="field"><label>母题编号/关键词</label><input id="motherSearch" placeholder="如 RJ-04、YJ-05、风力仪" oninput="renderMotherOptions()"></div><div class="field"><label>母题</label><select id="motherSelect" onchange="selectMother()"></select></div><div id="motherCard" class="card" style="margin-top:12px"></div><button class="btn secondary" style="margin-top:12px" onclick="openProblem(getMother().code)">查看原题截图</button>
 <div class="ocr-panel" id="ocrPanel">
   <h3>2. 物理题 OCR 识别实验</h3>
   <div class="ocr-help">先对母题截图进行浏览器端 OCR，识别结果可手动校对。保存后，下面的题干要素抽取与六维变式会优先使用 OCR 题干全文，而不是只依赖题名与编码。</div>
@@ -504,12 +586,14 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
   <div class="ocr-mini">建议校对重点：m/s²、km/h、N、kg、μ、θ、v₀、a、t、x、正负号、题目设问序号。OCR 文本保存在本浏览器 localStorage 中，不上传服务器。</div>
 </div></div><div class="panel variant-output"><h3 style="color:var(--p2);margin-bottom:12px">2. 选择改造维度</h3><div class="dim-grid" id="dimGrid"></div><div class="toolbar" style="margin-top:12px"><label>目标类别</label><select id="variantTarget" onchange="generateVariant()"></select><button class="btn" onclick="generateVariant()">生成六维变式</button><button class="btn secondary" onclick="copyVariantText()">复制变式文本</button></div><div id="variantResult"></div></div></div><div class="section-title"><h2>变式链条示例</h2><p>同一道母题可形成“基础变式—情境变式—图示变式—方法变式—高阶变式—开放探究变式”的连续链条。</p></div><div class="timeline" id="variantTimeline"></div><div class="page-next"><button class="btn secondary" onclick="showPage('home')">↺ 回到首页总览</button></div></section>
 
-<section id="products" class="page"><div class="section-title"><h2>课堂成品题</h2><p>由原题库整合 / 变式而来、可直接上课的资源：完整题干 · 标准解答 · 学生 / 教师 / 投屏三版本 · 一键复制。</p></div><div class="list" id="productList"></div></section>
+<section id="products" class="page"><div class="page-intro">由原题库整合 / 变式而来、可直接上课的成品题：完整题干 · 标准解答 · 学生 / 教师 / 投屏三版本 · 一键复制。</div><div class="section-title"><h2>课堂成品题</h2></div><div class="print-bar"><button class="btn" onclick="window.print()">🖨 打印 / 导出 A4 讲义（按当前选定版本）</button></div><div class="list" id="productList"></div></section>
+
+<section id="research" class="page"><div class="page-intro">查看例题资源整合与变式设计的研究依据，包括文本分析、横向切片和关键发现。这些数据在背后为整合与变式推荐提供支撑，平时无需关注。</div><div class="section-title"><h2>研究依据</h2></div><div class="grid cols-3"><div class="card research-card"><h3>📊 第二章 · 文本分析</h3><p class="meta">六维编码的版本 × 情境、版本 × 层级统计与交叉热力图、认知层级金字塔。</p><button class="btn" onclick="showPage('analysis')">查看文本分析与六维统计</button></div><div class="card research-card"><h3>🔬 横向切片</h3><p class="meta">以"交通制动安全"为例，按版本 × 层级矩阵逐题剖析"同模型异层级"。</p><button class="btn" onclick="showPage('slice')">查看横向切片</button></div><div class="card research-card"><h3>🧭 关键研究发现</h3><p class="meta">全样本层级Ⅲ 仅占 10.5%（10/95），高阶思维例题不足且情境配置失衡——整合与变式正是据此设计的两条对策。</p><button class="btn secondary" onclick="showPage('analysis')">在文本分析中查看</button></div></div><div class="section-title" style="margin-top:22px"><h2>高级工具与完整数据</h2></div><div class="card"><p class="meta" style="line-height:1.9">· <b>完整六维编码数据（D1–D6）</b>：全部 95 道原题的编码可在「原题」页逐题查看（卡片展开即见）。<br>· <b>OCR 识别（实验性）</b>：用于把原题截图转成可编辑题干，辅助变式生成。入口在「变式」页母题卡下方的折叠面板中。<br><span class="ocr-disclaimer">⚠️ OCR 仅用于辅助识别，中文题干、公式、上下标和单位可能存在误差，请人工校对后再用于变式生成。</span></p></div><div class="page-next"><button class="btn secondary" onclick="showPage('home')">↺ 回到首页</button></div></section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-brand"><div class="logo">⚛</div><div class="footer-brand-text"><b>多版本高中物理例题资源研究平台</b><span>95 道例题 · 六维全样本编码 · 整合与拓展策略工作台</span></div></div>
+    <div class="footer-brand"><div class="logo">⚛</div><div class="footer-brand-text"><b>高中物理例题整合与变式工作台</b><span>找例题 · 做整合 · 做变式 · 导出讲义</span></div></div>
     <div class="footer-links">
       <button type="button" onclick="showPage('library')">找原题</button>
       <button type="button" onclick="showPage('integration')">做整合</button>
@@ -517,7 +601,6 @@ main{flex:1 0 auto;display:flex;flex-direction:column;width:min(1380px,94vw);mar
       <button type="button" onclick="showPage('products')">成品题</button>
     </div>
   </div>
-  <div class="container footer-research"><span class="fr-label">背后研究依据（六维编码自动支撑）：</span><button type="button" onclick="showPage('analysis')">文本分析</button><button type="button" onclick="showPage('slice')">横向切片</button></div>
   <div class="container footer-meta">数据来源：六版必修一例题六维编码总表（D1–D6）。本平台为硕士学位论文配套研究工具，所有统计基于全样本精编、非抽样。OCR 与要素校对结果仅保存在本地浏览器，不上传服务器。</div>
 </footer>
 
@@ -571,7 +654,7 @@ function renderMotherOptions(){let q=($('motherSearch')?.value||'').trim().toLow
 function getMother(){return problem($('motherSelect').value)||P[0]}
 function selectMother(update=true){let p=getMother();if(!p)return;$('motherCard').innerHTML=`<h3><span class="code">${p.code}</span> ${esc(p.title)}</h3><div class="meta">${p.version} · ${p.module} · ${p.situation} · ${p.level}</div>${tags(p)}`;if(update)generateVariant();else generateVariant()}
 function useAsMother(code){showPage('extension');setTimeout(()=>{ $('motherSearch').value=code; renderMotherOptions(); $('motherSelect').value=code; selectMother();},50)}
-function renderDimGrid(){const dims=[['d1','D1 情境类型','生活化/工程化/探究化/纯模型化'],['d2','D2 知识模块','单模块巩固或跨模块联结'],['d3','D3 图示类型','无图、示意图、复合图重构'],['d4','D4 呈现结构','二段、三段、闭环式升级'],['d5','D5 助学栏目','规范、方法、反思支架'],['d6','D6 认知层级','Ⅰ→Ⅱ→Ⅲ 层级提升']];$('dimGrid').innerHTML=dims.map(d=>`<div class="dim-card ${d[0]===selectedDim?'active':''}" onclick="selectedDim='${d[0]}';renderDimGrid();updateTargetOptions();generateVariant()"><b>${d[1]}</b><span>${d[2]}</span></div>`).join('');updateTargetOptions()}
+function renderDimGrid(){const dims=[['d1','换情境','把题目换到新的生活 / 工程 / 探究场景'],['d2','加知识','单模块巩固或跨模块联结'],['d3','改图示','无图 / 示意图 / 复合图重构'],['d4','改结构','二段 / 三段 / 闭环式结构升级'],['d5','加提示','加入规范、方法或反思支架'],['d6','升层级','认知层级 Ⅰ→Ⅱ→Ⅲ 提升']];$('dimGrid').innerHTML=dims.map(d=>`<div class="dim-card ${d[0]===selectedDim?'active':''}" onclick="selectedDim='${d[0]}';renderDimGrid();updateTargetOptions();generateVariant()"><b>${d[1]}</b><span>${d[2]}</span></div>`).join('');updateTargetOptions()}
 function updateTargetOptions(){let p=getMother();let options={d1:D1,d2:D2,d3:D3,d4:D4,d5:D5,d6:D6}[selectedDim];$('variantTarget').innerHTML=options.map(x=>`<option value="${x}" ${p&&p[selectedDim]===x?'disabled':''}>${full[x]||x}${p&&p[selectedDim]===x?'（原编码）':''}</option>`).join('');let first=options.find(x=>!p||p[selectedDim]!==x);if(first)$('variantTarget').value=first;}
 function variantCore(p, dim, target){let newCode={d1:p.d1,d2:p.d2,d3:p.d3,d4:p.d4,d5:p.d5,d6:p.d6};newCode[dim]=target;let title=`${p.title}的${dLabel[dim]}变式`;let stem='', qs=[], note='', use='';
 if(dim==='d1'){let ctx={生活:'将问题改写为学生熟悉的日常生活场景，如校园、交通、体育或家庭劳动。',工程:'将母题迁移到工程技术场景，如桥梁、起重机、传送带、航天或交通安全系统。',探究:'把题目改造成含数据处理、实验判断、方法论反思或科学史证据的探究任务。',纯模:'去掉真实情境包装，保留研究对象、几何关系和物理量，突出模型分析。'}[target];stem=`以“${p.title}”的物理结构为母题，${ctx}保持核心知识点不变，重新给出必要数据。`;qs=['提取新情境中的研究对象与关键物理量。','建立与原题相同或相近的物理模型并完成求解。','说明新情境与原题在物理本质上的相同点和差异点。'];note='情境拓展的关键是不改变核心物理结构，而是改变知识应用背景与社会功能取向。';use='适合导入、情境迁移或章节末应用拓展。'}
@@ -1696,8 +1779,8 @@ v6Ready(function(){
    书签分享，并更新浏览器标签标题。包裹现有 window.showPage（不改其逻辑）。 */
 (function(){
   if(typeof window.showPage!=='function') return;
-  var titles={home:'研究总览',products:'课堂成品题',library:'原题库',analysis:'文本分析',slice:'横向切片',integration:'整合策略',extension:'拓展策略'};
-  var base='多版本高中物理例题资源研究平台';
+  var titles={home:'工作台首页',library:'找原题',integration:'做整合',extension:'做变式',research:'研究依据',products:'课堂成品题',analysis:'文本分析',slice:'横向切片'};
+  var base='高中物理例题整合与变式工作台';
   var inner=window.showPage;
   function pageOf(){ return location.hash.slice(1).split('?')[0]; } // 容忍 #page?params
   window.showPage=function(id){
@@ -2238,7 +2321,7 @@ function productPanelHTML(p){
   return '<div class="panel product-inline">'
     + '<div class="pi-head"><span class="tag">'+_esc(p.type)+'</span><span class="tag o">层级 '+_esc(p.level)+'</span><h3>'+_esc(p.title)+'</h3></div>'
     + '<div class="product-body">'+productBodyHTML(p,'teacher')+'</div>'
-    + '<div class="product-actions"><button class="small-btn" onclick="showPage(\'products\')">在「成品题」页切换学生 / 投屏版并复制 →</button></div>'
+    + '<div class="product-actions"><button class="small-btn" onclick="window.print()">🖨 打印讲义</button> <button class="small-btn" onclick="showPage(\'products\')">在「成品题」页切换学生 / 投屏版并复制 →</button></div>'
     + '</div>';
 }
 function renderIntegProduct(name){
