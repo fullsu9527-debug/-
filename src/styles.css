@@ -487,3 +487,8 @@ button.agent-hide-print{display:none!important}
   .agent-panel,.agent-v21-shell,.ai-agent-panel{display:none!important;}
   .print-toolbox{display:none!important;}
   @media(max-width:900px){.grid.cols-2{grid-template-columns:1fr!important}.seed-two-col{grid-template-columns:1fr!important}#variation .choice-grid{grid-template-columns:1fr 1fr!important}}
+
+/* ===== 阶段2：在线 AI 生成按钮（绿色以区分离线“生成提示词”） ===== */
+.online-ai-btn{background:#10b981;border-color:#10b981;color:#fff}
+.online-ai-btn:hover{filter:brightness(.95)}
+.online-ai-btn:disabled{opacity:.6;cursor:progress}

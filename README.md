@@ -51,3 +51,24 @@ OCR 功能需联网（从 CDN 加载 tesseract.js），其余完全离线可用�
 
 > **一次性设置**：仓库 **Settings → Pages → Source** 选 **“GitHub Actions”**。
 > 需要更换部署分支时改 workflow 里的 `branches` 列表。
+
+## 阶段 2（可选）：真·AI 在线生成
+
+默认**关闭**——不配置就和离线版一模一样，“AI 成品题生成区”保持 v23 起的折叠状态，
+教师走原有「生成提示词 → 复制给 Claude → 粘回拆卡」的离线路径。
+
+要启用在线生成：
+
+1. 按 `worker/阶段2_AI后端接入说明.md` 把 `worker/worker.js` 部署成 Cloudflare Worker
+   （API key 作为后端 Secret，**先在 Anthropic 控制台设月度花费上限**）。
+2. 在 `src/scripts/14-stage2-online-ai.js` 顶部填 `WORKER_URL` 与 `ACCESS_TOKEN`
+   （或在该脚本之前定义 `window.PHYSICS_AI_CONFIG = { WORKER_URL, ACCESS_TOKEN }`），
+   然后 `node build.mjs`。
+
+一旦配置好，整合页 / 拓展页的 AI 区会重新显示，并多出一个绿色「直接生成（在线）」按钮：
+它复用现有 `buildAgentPrompt` 生成的结构化提示词，POST 给 Worker，再用现有
+`renderAgentResult` 把返回结果拆成「学生版题目 / 教师版解析 / 研究依据」三层卡片。
+离线「复制提示词」按钮始终保留作降级。
+
+> `ACCESS_TOKEN` 在前端可见，只抬高门槛、不是鉴权；真正的兜底是后端花费上限 + 限流。
+> 切勿把真实 API key 写进前端或提交进仓库。
