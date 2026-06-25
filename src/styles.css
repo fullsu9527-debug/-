@@ -519,3 +519,31 @@ select.teacher-situation{min-width:120px}
   .status-banner{border:1px solid #999;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   h3,h4,h5,h6{break-after:avoid;page-break-after:avoid}
 }
+
+/* ===== 阶段1-3：课堂投屏 · 分步演示器（全屏、大字号、一屏一题） ===== */
+.proj-btn{background:#17365d!important;color:#fff!important}
+.projector{position:fixed;inset:0;z-index:300;display:none;flex-direction:column;background:#0b1f3a;color:#fff;padding:2.5vmin 4vmin}
+.projector.open{display:flex}
+body.projector-on{overflow:hidden}
+.proj-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.proj-dots{display:flex;gap:10px}
+.proj-dot{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.25)}
+.proj-dot.on{background:#22d3ee;box-shadow:0 0 0 4px rgba(34,211,238,.25)}
+.proj-close{background:rgba(255,255,255,.12);color:#fff;border:0;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer}
+.proj-close:hover{background:rgba(255,255,255,.22)}
+.proj-stage{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:1500px;width:100%;margin:0 auto;overflow:auto}
+.proj-tag{font-size:clamp(22px,3.4vmin,40px);font-weight:900;color:#22d3ee;margin-bottom:10px}
+.proj-focus{font-size:clamp(18px,2.6vmin,30px);color:#cbd5e1;margin-bottom:22px;line-height:1.5}
+.proj-body{font-size:clamp(20px,2.9vmin,34px);line-height:1.7}
+.proj-stem{background:rgba(255,255,255,.06);border-left:6px solid #22d3ee;border-radius:14px;padding:18px 22px;margin-bottom:18px}
+.proj-stem.hi{border-left-color:#fbbf24;background:rgba(251,191,36,.10)}
+.proj-qs{margin:6px 0 0 1.4em;display:grid;gap:12px}
+.proj-qs li{padding-left:6px}
+.proj-lead,.proj-known,.proj-concl{margin:10px 0}
+.proj-concl{color:#86efac;font-weight:800}
+.proj-muted{color:#fca5a5;font-weight:700}
+.proj-nav{display:flex;align-items:center;justify-content:center;gap:26px;padding-top:14px}
+.proj-nav button{background:#22d3ee;color:#06283d;border:0;border-radius:14px;padding:14px 26px;font-size:clamp(16px,2.2vmin,22px);font-weight:900;cursor:pointer}
+.proj-nav button:disabled{opacity:.35;cursor:default}
+.proj-count{font-size:clamp(16px,2.2vmin,22px);font-weight:900;min-width:84px;text-align:center}
+@media print{.projector{display:none!important}}
