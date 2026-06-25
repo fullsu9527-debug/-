@@ -492,3 +492,9 @@ button.agent-hide-print{display:none!important}
 .online-ai-btn{background:#10b981;border-color:#10b981;color:#fff}
 .online-ai-btn:hover{filter:brightness(.95)}
 .online-ai-btn:disabled{opacity:.6;cursor:progress}
+
+/* ===== 阶段1-1：难度徽章（基础/进阶/挑战；挑战=红，沿用论文层级Ⅲ语义） ===== */
+.tag.diff-1{background:#dcfce7;color:#047857}   /* 基础（层级Ⅰ） */
+.tag.diff-2{background:#ffedd5;color:#b45309}   /* 进阶（层级Ⅱ） */
+.tag.diff-3{background:#fee2e2;color:#b91c1c}   /* 挑战（层级Ⅲ） */
+select.teacher-situation{min-width:120px}
