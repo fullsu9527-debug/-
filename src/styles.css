@@ -498,3 +498,12 @@ button.agent-hide-print{display:none!important}
 .tag.diff-2{background:#ffedd5;color:#b45309}   /* 进阶（层级Ⅱ） */
 .tag.diff-3{background:#fee2e2;color:#b91c1c}   /* 挑战（层级Ⅲ） */
 select.teacher-situation{min-width:120px}
+
+/* ===== 阶段1-2：成品/草稿状态角标 + 标准答案前置 ===== */
+.resource-pack.is-final{border-left:6px solid #10b981}
+.resource-pack.is-draft{border:2px dashed #f59e0b;background:#fffdf5}
+.status-banner{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;border-radius:12px;padding:9px 13px;margin-bottom:12px;font-weight:900}
+.status-banner.final{background:#dcfce7;color:#047857}
+.status-banner.draft{background:#fff7ed;color:#b45309}
+.status-banner span{font-weight:600;font-size:12px;opacity:.9}
+.teacher-view .answer-box{border-left:5px solid #10b981;background:#f6fffb;border-radius:12px;padding:10px 12px;margin:10px 0}
