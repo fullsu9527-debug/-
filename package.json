@@ -1,0 +1,10 @@
+{
+  "name": "physics-example-workbench",
+  "version": "24.0.0",
+  "private": true,
+  "description": "高中物理例题整合与变式工作台 — 拆分源码 + 构建脚本",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:dist": "node build.mjs dist"
+  }
+}

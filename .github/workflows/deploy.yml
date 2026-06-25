@@ -1,0 +1,47 @@
+name: Build & Deploy to GitHub Pages
+
+# 阶段 0 · 自动部署：push 到下列分支即自动构建并发布到 GitHub Pages。
+# 前置设置（仓库 Settings → Pages → Build and deployment → Source）须选
+# "GitHub Actions"。需要换部署分支时，改下面 branches 列表即可。
+
+on:
+  push:
+    branches:
+      - claude/awesome-noether-iju6k7
+      - claude/friendly-galileo-ezp646
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一个部署，新 push 取消进行中的旧部署。
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build deployable site into ./dist
+        run: node build.mjs dist
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
