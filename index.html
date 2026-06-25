@@ -556,6 +556,25 @@ body.projector-on{overflow:hidden}
 .proj-count{font-size:clamp(16px,2.2vmin,22px);font-weight:900;min-width:84px;text-align:center}
 @media print{.projector{display:none!important}}
 
+/* ===== 阶段1-5：移动端 / 平板适配修正 ===== */
+/* 修复：窄屏下 .toolbar{display:grid!important} 会盖过 .hide，把“研究筛选”漏出来。
+   用更高优先级（.toolbar.hide）保证隐藏的筛选条在任何屏宽都不显示。 */
+.toolbar.hide{display:none!important}
+@media(max-width:760px){
+  .resource-tabs{flex-wrap:wrap}
+  .resource-tabs button{flex:1 1 30%}
+  .copy-row{flex-wrap:wrap}
+  .copy-row .copy-btn{flex:1 1 auto}
+  .agent-actions button,.print-actions button{flex:1 1 auto}
+  .proj-tag{font-size:22px}.proj-focus{font-size:17px}.proj-body{font-size:19px}
+  .proj-nav button{padding:13px 18px}
+  .modal-card,.modal-content{width:96vw!important;max-width:96vw!important}
+}
+@media(max-width:520px){
+  .nav{gap:6px;flex-wrap:wrap}
+  .nav button{padding:8px 12px}
+}
+
 </style>
 </head>
 <body>
