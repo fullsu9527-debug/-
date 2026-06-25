@@ -507,3 +507,15 @@ select.teacher-situation{min-width:120px}
 .status-banner.draft{background:#fff7ed;color:#b45309}
 .status-banner span{font-weight:600;font-size:12px;opacity:.9}
 .teacher-view .answer-box{border-left:5px solid #10b981;background:#f6fffb;border-radius:12px;padding:10px 12px;margin:10px 0}
+
+/* ===== 阶段1-4：讲义打印加固（题号/小问不被分页拆裂、列表标号不被裁切） ===== */
+@media print{
+  .resource-pack ol,.output ol,.answer-box ol,.seed-qs,.teacher-note-grid,.handbook-layer ol{
+    list-style-position:outside;padding-left:1.9em;margin-left:0}
+  .resource-pack li,.output li,.answer-box li,.seed-qs li,.handbook-layer li{
+    break-inside:avoid;page-break-inside:avoid}
+  .seed-card,.answer-box,.output-section,.resource-head,.status-banner{
+    break-inside:avoid;page-break-inside:avoid}
+  .status-banner{border:1px solid #999;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h3,h4,h5,h6{break-after:avoid;page-break-after:avoid}
+}
