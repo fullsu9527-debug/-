@@ -1874,20 +1874,17 @@ setTimeout(function(){try{ if(typeof renderCaseOutput==='function') renderCaseOu
   function studentText(p){return `【${p.title}】
 ${p.stem}
 
-${p.questions.map((q,i)=>`（${i+1}）${q}`).join('
-')}`;}
+${p.questions.map((q,i)=>`（${i+1}）${q}`).join('\n')}`;}
   function teacherText(p){return `【${p.title}】
 解题思路：${p.idea}
 
 解答步骤：
-${p.steps.map((s,i)=>`${i+1}. ${s}`).join('
-')}
+${p.steps.map((s,i)=>`${i+1}. ${s}`).join('\n')}
 
 结论：${p.conclusion}
 
 易错点：
-${p.mistakes.map((s,i)=>`${i+1}. ${s}`).join('
-')}
+${p.mistakes.map((s,i)=>`${i+1}. ${s}`).join('\n')}
 
 图示建议：${p.diagram}`;}
   function copySeed(id,type){const p=seedProblems.find(x=>x.id===id); if(!p)return; const text=type==='teacher'?teacherText(p):studentText(p); if(window.copySmart) return window.copySmart(text,type==='teacher'?'教师版':'学生版'); if(window.v21Copy) return window.v21Copy(text,type==='teacher'?'教师版':'学生版'); navigator.clipboard?.writeText(text);}
